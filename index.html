@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <link rel="shortcut icon" href="../images/Favicon.png">
+    <title>FOCUS</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -201,7 +202,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;php&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -211,10 +212,8 @@
     <div class="toc-wrapper">
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="shell">cURL</a>
+              <a href="#" data-language-name="php">PHP</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -225,279 +224,2530 @@
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
           <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
-          </li>
-          <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#requests" class="toc-h1 toc-link" data-title="Requests">Requests</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
-                  </li>
-                  <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
-                  </li>
-                  <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#request-headers" class="toc-h2 toc-link" data-title="Request Headers">Request Headers</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#configuration" class="toc-h1 toc-link" data-title="Configuration">Configuration</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-groups" class="toc-h2 toc-link" data-title="Get Groups">Get Groups</a>
+                  </li>
+                  <li>
+                    <a href="#get-store-view" class="toc-h2 toc-link" data-title="get store view">get store view</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#catalog" class="toc-h1 toc-link" data-title="Catalog">Catalog</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-home-data" class="toc-h2 toc-link" data-title="Get Home Data">Get Home Data</a>
+                  </li>
+                  <li>
+                    <a href="#get-products" class="toc-h2 toc-link" data-title="Get Products">Get Products</a>
+                  </li>
+                  <li>
+                    <a href="#get-filters" class="toc-h2 toc-link" data-title="Get Filters">Get Filters</a>
+                  </li>
+                  <li>
+                    <a href="#get-product-detail" class="toc-h2 toc-link" data-title="Get Product Detail">Get Product Detail</a>
+                  </li>
+                  <li>
+                    <a href="#get-product-reviews" class="toc-h2 toc-link" data-title="Get Product Reviews">Get Product Reviews</a>
+                  </li>
+                  <li>
+                    <a href="#set-product-review" class="toc-h2 toc-link" data-title="Set Product Review">Set Product Review</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#checkout" class="toc-h1 toc-link" data-title="Checkout">Checkout</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#add-to-cart" class="toc-h2 toc-link" data-title="Add to cart">Add to cart</a>
+                  </li>
+                  <li>
+                    <a href="#get-cart" class="toc-h2 toc-link" data-title="Get Cart">Get Cart</a>
+                  </li>
+                  <li>
+                    <a href="#edit-cart" class="toc-h2 toc-link" data-title="Edit Cart">Edit Cart</a>
+                  </li>
+                  <li>
+                    <a href="#get-order-configuration" class="toc-h2 toc-link" data-title="Get Order Configuration">Get Order Configuration</a>
+                  </li>
+                  <li>
+                    <a href="#save-payment-method" class="toc-h2 toc-link" data-title="Save Payment Method">Save Payment Method</a>
+                  </li>
+                  <li>
+                    <a href="#place-order" class="toc-h2 toc-link" data-title="Place Order">Place Order</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#customer" class="toc-h1 toc-link" data-title="Customer">Customer</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#registration" class="toc-h2 toc-link" data-title="Registration">Registration</a>
+                  </li>
+              </ul>
           </li>
       </ul>
-        <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
-        </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+<p>Welcome to the Focus API! You can use our API to access Focus API endpoints.</p>
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p>We have language bindings in Shell, Php! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<h1 id='requests'>Requests</h1>
+<p>The base URL for all requests to the Arabianoud Web API is :
+http://shop.arabianoud.com/index.php/</p>
 
-<p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
+<p>Our API is REST-based. This means:</p>
+
+<ol>
+<li>It make use of standard HTTP verbs like GET, POST, DELETE.</li>
+<li>The API uses standard HTTP error responses(status codes) to indicate status of your requests – success and error codes.</li>
+<li>Authentication is specified with HTTP Basic Authentication.</li>
+</ol>
+<h3 id='request-headers'>Request Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Sample Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Content-Type</td>
+<td>application/json</td>
+<td>JSON request</td>
+</tr>
+<tr>
+<td>WWW-Authenticate</td>
+<td>fjswe98w9wjkd23jsd23</td>
+<td>Authentication Token</td>
+</tr>
+</tbody></table>
 <h1 id='authentication'>Authentication</h1>
+<p>Focus Api uses Basic Authentication to provide you an authorized access. 
+Please Visit our ( http://efocus.store ) focus website and get the authorize token.</p>
+
 <blockquote>
 <p>To authorize, use this code:</p>
 </blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
+<pre class="highlight php tab-php"><code>Token:fjswe98w9wjkd23jsd23
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
 curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
+  -H <span class="s2">"Token: fjswe98w9wjkd23jsd23"</span>
 </code></pre>
 <blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
+<p>Make sure to replace <code>fjswe98w9wjkd23jsd23</code> with your API token.</p>
 </blockquote>
 
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+<p>Focus uses API keys to allow access to the API. </p>
+<h1 id='configuration'>Configuration</h1>
+<p>Configuration apis use to basic mobile app home, category, search related apis.</p>
+<h2 id='get-groups'>Get Groups</h2>
+<p>This api is get the all groups detail of stores,websites,languages</p>
 
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+<blockquote>
+<p>Definition</p>
+</blockquote>
+<pre class="highlight php tab-php"><code>
+$request = new HttpRequest();
+$request-&gt;setUrl('http://shop.arabianoud.com/index.php/connector/config/get_groups');
+$request-&gt;setHeaders(array(
+  'Content-Type' =&gt; 'application/json',
+  'Token' =&gt; 'fjswe98w9wjkd23jsd23'
+));
 
-<p><code>Authorization: meowmeowmeow</code></p>
+</code></pre><pre class="highlight shell tab-shell"><code>
+curl -X GET <span class="se">\</span>
+  http://shop.arabianoud.com/index.php/connector/config/get_groups <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Token: fjswe98w9wjkd23jsd23'</span> <span class="se">\</span>
 
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+</code></pre>
+<p>Request :
+<span class="post">GET</span><span class="prettyprint">http://shop.arabianoud.com/index.php/connector/config/get_groups</span></p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<blockquote>
+<p>Response </p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "status": "SUCCESS",
+    "message": [
+        "SUCCESS"
+    ],
+    "data": [
+        {
+            "group_id": "1",
+            "website_id": "1",
+            "name": "KSA",
+            "root_category_id": "2",
+            "default_store_id": "1",
+            "country_flag": "http://shop.arabianoud.com/focus/flag/sa.png",
+            "is_selected": "1",
+            "storeviews": [
+                {
+                    "store_id": "2",
+                    "code": "ksa_ar",
+                    "website_id": "1",
+                    "group_id": "1",
+                    "name": "العربية",
+                    "sort_order": "0",
+                    "is_active": "1",
+                    "use_store": "0",
+                    "lang_flag": "http://shop.arabianoud.com/focus/flag/ar.png"
+                },
+                {
+                    "store_id": "1",
+                    "code": "ksa_en",
+                    "website_id": "1",
+                    "group_id": "1",
+                    "name": "English",
+                    "sort_order": "0",
+                    "is_active": "1",
+                    "use_store": "0",
+                    "lang_flag": "http://shop.arabianoud.com/focus/flag/en.png"
+                }
+            ]
+        }
+    ]
+}
+</code></pre><h2 id='get-store-view'>get store view</h2>
+<p>This api is set the your current selected store like english,arabic etc.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+<p>get-groups api gives the list of store-view and set store using this get-store-view api</p>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
+<blockquote>
+<p>Definition</p>
+</blockquote>
+<pre class="highlight plaintext"><code>http://shop.arabianoud.com/index.php/connector/config/get_store_view
 </code></pre>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Request Body</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
+<pre class="highlight php tab-php"><code>$request-&gt;setBody('{
+  "store_id":1
+}');
+
+</code></pre><pre class="highlight plaintext"><code>  -d '{
+  "store_id":1
+}'
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "status": "SUCCESS",
+    "message": [
+        "SUCCESS"
+    ],
+    "data": [
+        {
+            "store_config": {
+                "country_code": "SA",
+                "country_name": "Saudi Arabia",
+                "locale_identifier": "en_US",
+                "currency_symbol": null,
+                "currency_code": "SAR",
+                "store_id": "1",
+                "store_name": "English"
+            },
+            "category_version": "v556",
+            "algolia": {
+                "search_index": "ksa_en_products",
+                "currency": "SAR"
+            },
+            "theme_version": "674",
+            "sorting_options": [
+                {
+                    "title": "None",
+                    "value": 0
+                },
+                {
+                    "title": "Name : A To Z",
+                    "value": 3
+                },
+                {
+                    "title": "Name : Z To A",
+                    "value": 4
+                },
+                {
+                    "title": "Price : Low To High",
+                    "value": 1
+                },
+                {
+                    "title": "Price : High To Low",
+                    "value": 2
+                }
+            ],
+            "offers": {
+                "offer_version": "v"
+            }
+        }
+    ]
+}
+</code></pre><h3 id='request'>Request</h3>
+<p><span class="post">POST</span><span class="prettyprint">http://shop.arabianoud.com/index.php/connector/catalog/get_store_view</span></p>
+<h3 id='request-parameter'>Request Parameter</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Default</th>
+<th>Data Type</th>
+<th>Length</th>
+<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>store_id</td>
+<td>Integer</td>
+<td>32</td>
+<td>Mandatory</td>
+<td>Store id associated with the website.</td>
 </tr>
 </tbody></table>
+<h1 id='catalog'>Catalog</h1>
+<p>List of product apis.</p>
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<blockquote>
+<p>Definition</p>
+</blockquote>
+<pre class="highlight plaintext"><code>http://shop.arabianoud.com/index.php/connector/catalog/get_home_dataV2
+</code></pre><h2 id='get-home-data'>Get Home Data</h2>
+<p>This is Mobile App home screen apis. There are 8 types of home screen data.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p>List of Home Screen Data :</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+<p>1) Header Banner </p>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<p>2) Trending category</p>
+
+<p>3) Home Category</p>
+
+<p>4) Seasonal products</p>
+
+<p>5) Trending products</p>
+
+<p>6) Best Seller products</p>
+
+<p>7) banner</p>
+
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"http://shop.arabianoud.com/index.php/connector/catalog/get_home_dataV2"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
+  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_POSTFIELDS</span> <span class="o">=&gt;</span> <span class="s2">"{ </span><span class="se">\"</span><span class="s2">limit</span><span class="se">\"</span><span class="s2">:7, </span><span class="se">\"</span><span class="s2">offset</span><span class="se">\"</span><span class="s2">:0, </span><span class="se">\"</span><span class="s2">store_id</span><span class="se">\"</span><span class="s2">:1 }"</span><span class="p">,</span>
+  <span class="nx">CURLOPT_HTTPHEADER</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">"Content-Type: application/json"</span><span class="p">,</span>
+    <span class="s2">"Token: fjswe98w9wjkd23jsd23"</span><span class="p">,</span>
+  <span class="p">),</span>
+<span class="p">));</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre><pre class="highlight plaintext"><code>   curl -X POST \
+     http://shop.arabianoud.com/index.php/connector/catalog/get_home_dataV2 \
+     -H 'Content-Type: application/json' \
+     -H 'Token: fjswe98w9wjkd23jsd23' \
+     -d '{ "limit":7, "offset":0, "store_id":1 }'
+}'
 </code></pre>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Response</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
+<pre class="highlight plaintext"><code>{
+    "status": "SUCCESS",
+    "message": [
+        "SUCCESS"
+    ],
+    "data": [
+        {
+            "type": "banners",
+            "data": {
+                "aspectRatio": 1.13,
+                "title": "banner1",
+                "NumberernalItemAspectratio": 1,
+                "welcomeImage": "http://52.77.143.184/focus/home/images/banner.png",
+                "type": "fullwidth",
+                "items": [
+                    {
+                        "image_url": "http://52.77.143.184/media/focus/focus/banner/1/AO_99_SAR_banner_-_English.png",
+                        "redirection_url": "arabianoud://products?category_id=93"
+                    },
+                    {
+                        "image_url": "http://52.77.143.184/media/focus/focus/banner/1/WOW_offers_-_English.png",
+                        "redirection_url": null
+                    }
+                ]
+            }
+        },
+        {
+            "type": "categories",
+            "data": {
+                "aspectRatio": 1.13,
+                "title": "products",
+                "NumberernalItemAspectratio": 1,
+                "welcomeImage": "http://52.77.143.184/focus/home/images/banner.png",
+                "type": "horizontallist",
+                "items": [
+                    {
+                        "category_name": null,
+                        "category_id": "87",
+                        "category_image": null,
+                        "image_thumbnail": null,
+                        "children": [],
+                        "products": []
+                    },
+                    {
+                        "category_name": "العود والبخور",
+                        "category_id": "34",
+                        "category_image": "http://52.77.143.184/media/catalog/category/oud_incense_1.jpg",
+                        "image_thumbnail": "http://52.77.143.184/media/catalog/category/oud.png",
+                        "children": [],
+                        "products": []
+                    },
+                    {
+                        "category_name": null,
+                        "category_id": "89",
+                        "category_image": null,
+                        "image_thumbnail": null,
+                        "children": [],
+                        "products": []
+                    }
+                ]
+            }
+        },
+        {
+            "type": "categories",
+            "data": {
+                "aspectRatio": 1.13,
+                "title": "categories",
+                "NumberernalItemAspectratio": 1,
+                "welcomeImage": "http://52.77.143.184/focus/home/images/banner.png",
+                "type": "complex_grid",
+                "items": [
+                    {
+                        "category_name": "عطور",
+                        "category_id": "32",
+                        "category_image": "http://52.77.143.184/media/catalog/category/perfumes_1.jpg",
+                        "image_thumbnail": "http://52.77.143.184/media/catalog/category/perfume.png",
+                        "children": [
+                            {
+                                "category_name": "عطور للرجال",
+                                "category_id": "27",
+                                "category_image": "http://52.77.143.184/media/catalog/category/Artboard_73.png",
+                                "image_thumbnail": null,
+                                "children": null,
+                                "products": []
+                            },
+                            {
+                                "category_name": "عطور للنساء",
+                                "category_id": "26",
+                                "category_image": "http://52.77.143.184/media/catalog/category/Artboard_74.png",
+                                "image_thumbnail": null,
+                                "children": null,
+                                "products": []
+                            },
+                            {
+                                "category_name": "عطور للجنسين",
+                                "category_id": "28",
+                                "category_image": "http://52.77.143.184/media/catalog/category/Artboard_75.png",
+                                "image_thumbnail": null,
+                                "children": null,
+                                "products": []
+                            }
+                        ]
+                    },
+                    {
+                        "category_name": "العود والبخور",
+                        "category_id": "34",
+                        "category_image": "http://52.77.143.184/media/catalog/category/oud_incense_1.jpg",
+                        "image_thumbnail": "http://52.77.143.184/media/catalog/category/oud.png",
+                        "children": [
+                            {
+                                "category_name": "العود",
+                                "category_id": "36",
+                                "category_image": "http://52.77.143.184/media/catalog/category/Artboard_81.png",
+                                "image_thumbnail": null,
+                                "children": null,
+                                "products": []
+                            },
+                            {
+                                "category_name": "أنواع المعجون ",
+                                "category_id": "37",
+                                "category_image": "http://52.77.143.184/media/catalog/category/Artboard_82.png",
+                                "image_thumbnail": null,
+                                "children": null,
+                                "products": []
+                            },
+                            {
+                                "category_name": "المبثوث الفاخر",
+                                "category_id": "38",
+                                "category_image": "http://52.77.143.184/media/catalog/category/Artboard_83.png",
+                                "image_thumbnail": null,
+                                "children": null,
+                                "products": []
+                            }
+                        ]
+                    },
+                    {
+                        "category_name": "شنط واكسسورات",
+                        "category_id": "44",
+                        "category_image": "http://52.77.143.184/media/catalog/category/gifts_accessories_1.jpg",
+                        "image_thumbnail": "http://52.77.143.184/media/catalog/category/gift.png",
+                        "children": null
+                    },
+                    {
+                        "category_name": " زيوت عطرية",
+                        "category_id": "35",
+                        "category_image": "http://52.77.143.184/media/catalog/category/oil_perfumes_1.jpg",
+                        "image_thumbnail": "http://52.77.143.184/media/catalog/category/oil.png",
+                        "children": [
+                            {
+                                "category_name": "دهن العود ",
+                                "category_id": "7",
+                                "category_image": "http://52.77.143.184/media/catalog/category/Artboard_88.png",
+                                "image_thumbnail": null,
+                                "children": null,
+                                "products": []
+                            },
+                            {
+                                "category_name": "مخلطات العربية",
+                                "category_id": "24",
+                                "category_image": "http://52.77.143.184/media/catalog/category/Artboard_89.png",
+                                "image_thumbnail": null,
+                                "children": null,
+                                "products": []
+                            },
+                            {
+                                "category_name": "زيوت عطرية",
+                                "category_id": "50",
+                                "category_image": "http://52.77.143.184/media/catalog/category/Artboard_90.png",
+                                "image_thumbnail": null,
+                                "children": null,
+                                "products": []
+                            }
+                        ]
+                    },
+                    {
+                        "category_name": "منتجات حصرية",
+                        "category_id": "61",
+                        "category_image": "http://52.77.143.184/media/catalog/category/Exclusives_Banner_1_.png",
+                        "image_thumbnail": "http://52.77.143.184/media/catalog/category/exclusive_1.png",
+                        "children": null
+                    }
+                ]
+            }
+        },
+        {
+            "type": "category",
+            "data": {
+                "aspectRatio": 1.13,
+                "title": "category",
+                "NumberernalItemAspectratio": 1,
+                "welcomeImage": "http://52.77.143.184/focus/home/images/banner.png",
+                "type": "horizontallistwithproducts",
+                "items": [
+                    {
+                        "category_name": "منتجات حصرية",
+                        "category_id": "61",
+                        "category_image": "http://52.77.143.184/media/catalog/category/Exclusives_Banner_1_.png",
+                        "image_thumbnail": "http://52.77.143.184/media/catalog/category/exclusive_1.png",
+                        "children": [],
+                        "products": [
+                            {
+                                "product_id": "791",
+                                "product_name": "حياتي، 100 مل",
+                                "product_type": "بخاخ",
+                                "type": "simple",
+                                "product_regular_price": 113.4,
+                                "product_price": 40.5,
+                                "product_rate": 0,
+                                "discount_percentage": 64,
+                                "stock_status": false,
+                                "product_review_number": 0,
+                                "product_image": "http://52.77.143.184/media/catalog/product/cache/5/thumbnail/600x600/040ec09b1e35df139433887a97daa66f/images/catalog/product/placeholder/thumbnail.jpg",
+                                "manufacturer_name": "",
+                                "brand": ""
+                            },
+                            {
+                                "product_id": "1188",
+                                "product_name": "مجموعة سحر الكلمات و غرام بخاخ",
+                                "product_type": "بخاخ",
+                                "type": "simple",
+                                "product_regular_price": 232.2,
+                                "product_price": 86.4,
+                                "product_rate": 0,
+                                "discount_percentage": 63,
+                                "stock_status": false,
+                                "product_review_number": 0,
+                                "product_image": "http://52.77.143.184/media/catalog/product/cache/5/thumbnail/600x600/040ec09b1e35df139433887a97daa66f/images/catalog/product/placeholder/thumbnail.jpg",
+                                "manufacturer_name": "",
+                                "brand": ""
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "type": "products",
+            "data": {
+                "aspectRatio": 1.13,
+                "title": "products",
+                "NumberernalItemAspectratio": 1,
+                "welcomeImage": "http://52.77.143.184/focus/home/images/banner.png",
+                "type": "carousellist",
+                "items": [
+                    {
+                        "product_id": "1268",
+                        "product_sku": "Test1",
+                        "product_name": "Test1",
+                        "product_type": "دهن عود",
+                        "product_regular_price": 32.4,
+                        "product_price": 16.2,
+                        "discount_percentage": 50,
+                        "product_rate": 0,
+                        "stock_status": true,
+                        "product_review_number": 0,
+                        "product_image": null,
+                        "manufacturer_name": "Itcan",
+                        "brand": " "
+                    },
+                    {
+                        "product_id": "1267",
+                        "product_sku": "Test124",
+                        "product_name": "Test",
+                        "product_type": "دهن عود",
+                        "product_regular_price": 32.4,
+                        "product_price": 16.2,
+                        "discount_percentage": 50,
+                        "product_rate": 0,
+                        "stock_status": true,
+                        "product_review_number": 0,
+                        "product_image": null,
+                        "manufacturer_name": "Itcan",
+                        "brand": " "
+                    }
+                ]
+            }
+        },
+        {
+            "type": "banners",
+            "data": {
+                "aspectRatio": 1.13,
+                "title": "banner",
+                "NumberernalItemAspectratio": 1,
+                "welcomeImage": "http://52.77.143.184/focus/home/images/banner.png",
+                "type": "fullwidth",
+                "items": [
+                    {
+                        "image_url": "http://52.77.143.184/media/focus/focus/banner/1/AO_99_SAR_banner_-_English.png",
+                        "redirection_url": "arabianoud://products?category_id=93"
+                    },
+                    {
+                        "image_url": "http://52.77.143.184/media/focus/focus/banner/1/WOW_offers_-_English.png",
+                        "redirection_url": null
+                    }
+                ]
+            }
+        },
+        {
+            "type": "products",
+            "data": {
+                "title": "products",
+                "aspectRatio": 1.13,
+                "NumberernalItemAspectratio": 1,
+                "welcomeImage": "http://52.77.143.184/focus/home/images/banner.png",
+                "type": "grid",
+                "items": [
+                    {
+                        "product_id": "784",
+                        "product_sku": "301020398",
+                        "product_name": "جنتل مان سيكريت، 100 مل",
+                        "product_type": "بخاخ",
+                        "product_regular_price": 78.3,
+                        "product_price": 24.3,
+                        "discount_percentage": 69,
+                        "product_rate": 0,
+                        "stock_status": false,
+                        "product_review_number": 0,
+                        "product_image": null,
+                        "manufacturer_name": "Itcan",
+                        "brand": " "
+                    },
+                    {
+                        "product_id": "1201",
+                        "product_sku": "301020435",
+                        "product_name": "رويال بلو ، 100 مل ",
+                        "product_type": "بخاخ",
+                        "product_regular_price": 102.6,
+                        "product_price": 26.73,
+                        "discount_percentage": 74,
+                        "product_rate": 0,
+                        "stock_status": false,
+                        "product_review_number": 0,
+                        "product_image": null,
+                        "manufacturer_name": "Itcan",
+                        "brand": " "
+                    }
+                ]
+            }
+        }
+    ]
+}
+</code></pre><h3 id='request-2'>Request</h3>
+<p><span class="post">POST</span><span class="prettyprint">http://shop.arabianoud.com/index.php/connector/catalog/get_home_dataV2</span></p>
+<h3 id='request-parameters'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>DataType</th>
+<th>Length</th>
+<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td>limit</td>
+<td>Int</td>
+<td>0-7</td>
+<td>Mandatory</td>
+<td>0-7 types of screen data</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Int</td>
+<td>0-6</td>
+<td>Mandatory</td>
+<td>Set first Screen example : Trending product you display first then you set &quot;offset&quot;:1</td>
+</tr>
+<tr>
+<td>store_id</td>
+<td>Int</td>
+<td>2</td>
+<td>Mandatory</td>
+<td>Set store id</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h2 id='get-products'>Get Products</h2>
+<p>This Api is use to get Product list.
+Get product list using category-id Or key-word parameter.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p>In this api multiple filter apply. </p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+<blockquote>
+<p>Definition</p>
+</blockquote>
+<pre class="highlight plaintext"><code>http://shop.arabianoud.com/index.php/connector/catalog/get_all_productsV2
+</code></pre><h3 id='request-3'>Request</h3>
+<p><span class="post">POST</span><span class="prettyprint">http://shop.arabianoud.com/index.php/connector/catalog/get_all_productsV2</span></p>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<blockquote>
+<p>Request Body Without Filter</p>
+</blockquote>
+<pre class="highlight php tab-php"><code>    $request-&gt;setBody('{
+      "category_id":4,
+      "offset":0,
+      "limit":10,
+      "filter":[] ,
+      "width":110,
+      "height":110
+    }');
+</code></pre><pre class="highlight plaintext"><code>     -d '{
+     "category_id":4,
+     "offset":0,
+     "limit":10,
+     "filter":[] ,
+     "width":110,
+     "height":110
+   }'
 </code></pre>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Response Without Filter</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+<pre class="highlight plaintext"><code>    "status": "SUCCESS",
+        "message": [
+            40
+        ],
+        "data": {
+            "products": [
+                {
+                    "product_id": "80",
+                    "product_sku": "3607347336914",
+                    "product_name": "Chopard Oud Malaki - Eau de Parfum 80ml",
+                    "product_type": "simple",
+                    "product_regular_price": 485,
+                    "special_price_time_left": 0,
+                    "product_price": 485,
+                    "product_rate": 0,
+                    "discount_percentage": 0,
+                    "stock_status": true,
+                    "max_qty": 3,
+                    "available_quantity": 3,
+                    "product_review_number": 0,
+                    "product_image": "http://shop.arabianoud.com/media/catalog/product/cache/1/thumbnail/110x110/040ec09b1e35df139433887a97daa66f/1/7/17.png",
+                    "manufacturer_name": "",
+                    "brand": "CHOPARD"
+                },
+                {
+                    "product_id": "117",
+                    "product_sku": "3386460058728",
+                    "product_name": "Mont Blanc Emblem Eau de Toilette",
+                    "product_type": "simple",
+                    "product_regular_price": 336,
+                    "special_price_time_left": 0,
+                    "product_price": 336,
+                    "product_rate": 0,
+                    "discount_percentage": 0,
+                    "stock_status": true,
+                    "max_qty": 1,
+                    "available_quantity": 1,
+                    "product_review_number": 0,
+                    "product_image": "http://shop.arabianoud.com/media/catalog/product/cache/1/thumbnail/110x110/040ec09b1e35df139433887a97daa66f/5/4/54.png",
+                    "manufacturer_name": "",
+                    "brand": "MONT BLANC"
+                }
+            ],
+        },
+        "applied_filters": []
+    }
+</code></pre><h3 id='request-parameters-2'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>DataType</th>
+<th>Length</th>
+<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td>category_id</td>
+<td>Int</td>
+<td>100</td>
+<td>Optional</td>
+<td>If Set category id then remove key-word parameter</td>
+</tr>
+<tr>
+<td>key_word</td>
+<td>String</td>
+<td>100</td>
+<td>Optional</td>
+<td>If set key_word parameter then remove category_id</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Int</td>
+<td>100</td>
+<td>Mandatory</td>
+<td>default &#39;0&#39; , Set product start position</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Int</td>
+<td>2</td>
+<td>Mandatory</td>
+<td>Set the product list limit 10 to 100</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>String</td>
+<td>255</td>
+<td>Optional</td>
+<td>get-filter api gives list of filters. Set product Filter like price, category etc.</td>
+</tr>
+<tr>
+<td>width</td>
+<td>Int</td>
+<td>100</td>
+<td>Mandatory</td>
+<td>Set product image width</td>
+</tr>
+<tr>
+<td>height</td>
+<td>Int</td>
+<td>100</td>
+<td>Mandatory</td>
+<td>Set product image height</td>
 </tr>
 </tbody></table>
-<h1 id='errors'>Errors</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
 
-<p>The Kittn API uses the following error codes:</p>
+<blockquote>
+<p>Request Body With Filter</p>
+</blockquote>
+<pre class="highlight php tab-php"><code>$request-&gt;setBody('{
+  "category_id":11,
+  "offset":0,
+  "limit":10,
+  "filter":[{ "key":"price", "value":"15-300" }, {"key":"category","value":["157"]} ] ,
+  "width":110,
+  "height":110
+}');
+</code></pre><pre class="highlight plaintext"><code>  -d '{
+  "category_id":11,
+  "offset":0,
+  "limit":10,
+  "filter":[{ "key":"price", "value":"15-300" }, {"key":"category","value":["157"]} ] ,
+  "width":110,
+  "height":110
+}'
+</code></pre>
+<blockquote>
+<p>Response With Filter</p>
+</blockquote>
+<pre class="highlight plaintext"><code>    {
+        "status": "SUCCESS",
+        "message": [
+            2
+        ],
+        "data": {
+            "products": [
+                {
+                    "product_id": "325",
+                    "product_sku": "8411061081600",
+                    "product_name": "Carolina Herrera Chic Eau de Toilette For Men 100m",
+                    "product_type": "simple",
+                    "product_regular_price": 296,
+                    "special_price_time_left": 0,
+                    "product_price": 296,
+                    "product_rate": 0,
+                    "discount_percentage": 0,
+                    "stock_status": true,
+                    "max_qty": 2,
+                    "available_quantity": 2,
+                    "product_review_number": 0,
+                    "product_image": "http://shop.arabianoud.com/media/catalog/product/cache/1/thumbnail/110x110/040ec09b1e35df139433887a97daa66f/2/6/266.png",
+                    "manufacturer_name": "",
+                    "brand": "CAROLINA HERRERA"
+                },
+                {
+                    "product_id": "528",
+                    "product_sku": "3607344163773",
+                    "product_name": "Davidoff Hot Water Eau de Toilette For Men - 110ml",
+                    "product_type": "simple",
+                    "product_regular_price": 280,
+                    "special_price_time_left": 0,
+                    "product_price": 280,
+                    "product_rate": 0,
+                    "discount_percentage": 0,
+                    "stock_status": true,
+                    "max_qty": 1,
+                    "available_quantity": 1,
+                    "product_review_number": 0,
+                    "product_image": "http://shop.arabianoud.com/media/catalog/product/cache/1/thumbnail/110x110/040ec09b1e35df139433887a97daa66f/4/7/474.png",
+                    "manufacturer_name": "",
+                    "brand": "FENDI"
+                }
+            ]
+        },
+        "applied_filters": [
+            {
+                "key": "price",
+                "value": "15-300"
+            },
+            {
+                "key": "category",
+                "value": [
+                    "157"
+                ]
+            }
+        ]
+    }
+</code></pre><h2 id='get-filters'>Get Filters</h2>
+<p>This Api Gives list of product filters.</p>
 
+<blockquote>
+<p>Definition</p>
+</blockquote>
+<pre class="highlight plaintext"><code>http://shop.arabianoud.com.com/index.php/connector/catalog/get_all_filters
+</code></pre><h3 id='request-4'>Request</h3>
+<p><span class="post">POST</span><span class="prettyprint">http://shop.arabianoud.com/index.php/connector/catalog/get_all_filters</span></p>
+
+<blockquote>
+<p>Request Body</p>
+</blockquote>
+<pre class="highlight php tab-php"><code>    $request-&gt;setBody('{
+      "category_id":4,
+      "offset":0,
+      "limit":10,
+      "filter":[] ,
+      "width":110,
+      "height":110
+    }');
+</code></pre><pre class="highlight plaintext"><code>     -d '{
+     "category_id":4,
+     "offset":0,
+     "limit":10,
+     "filter":[] ,
+     "width":110,
+     "height":110
+   }'
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "status": "SUCCESS",
+    "message": [
+        "SUCCESS"
+    ],
+    "data": {
+        "filter": [
+            {
+                "title": "Type",
+                "code": "type",
+                "type": 4,
+                "is_multiselect": true,
+                "value": [
+                    {
+                        "image": "https://shop.arabianoud.com/focus/images/type6.png",
+                        "label": "Incense",
+                        "id": "20"
+                    },
+                    {
+                        "image": "https://shop.arabianoud.com/focus/images/type4.png",
+                        "label": "Spray",
+                        "id": "19"
+                    }
+                ]
+            },
+            {
+                "title": "Origins",
+                "code": "origins",
+                "type": 5,
+                "is_multiselect": true,
+                "value": [
+                    {
+                        "image": "https://shop.arabianoud.com/focus/images/origin1.png",
+                        "label": "Mix (Oriental &amp; Western)",
+                        "id": "24"
+                    },
+                    {
+                        "image": "https://shop.arabianoud.com/focus/images/origin2.png",
+                        "label": "Oriental",
+                        "id": "22"
+                    },
+                    {
+                        "image": "https://shop.arabianoud.com/focus/images/origin3.png",
+                        "label": "Western",
+                        "id": "23"
+                    }
+                ]
+            },
+            {
+                "title": "Sizes",
+                "code": "size",
+                "type": 2,
+                "is_multiselect": true,
+                "value": [
+                    {
+                        "image": "",
+                        "label": "3 FL OZ - 90ml",
+                        "id": "33"
+                    },
+                    {
+                        "image": "",
+                        "label": "30 ml",
+                        "id": "64"
+                    },
+                    {
+                        "image": "",
+                        "label": "35 gm",
+                        "id": "102"
+                    },
+                    {
+                        "image": "",
+                        "label": "95 Ml",
+                        "id": "105"
+                    },
+                    {
+                        "image": "",
+                        "label": "40 gm",
+                        "id": "39"
+                    },
+                    {
+                        "image": "",
+                        "label": "50 ml",
+                        "id": "61"
+                    },
+                    {
+                        "image": "",
+                        "label": "75 ml",
+                        "id": "62"
+                    },
+                    {
+                        "image": "",
+                        "label": "90 ml",
+                        "id": "70"
+                    },
+                    {
+                        "image": "",
+                        "label": "100 ml",
+                        "id": "59"
+                    },
+                    {
+                        "image": "",
+                        "label": "110 ml",
+                        "id": "69"
+                    },
+                    {
+                        "image": "",
+                        "label": "250 ml",
+                        "id": "72"
+                    }
+                ]
+            },
+            {
+                "title": "Price",
+                "code": "price",
+                "type": 1,
+                "is_multiselect": false,
+                "value": [
+                    {
+                        "min": 0,
+                        "max": 600,
+                        "id": "0-600"
+                    }
+                ]
+            },
+            {
+                "title": "Fragrance",
+                "code": "fragrance",
+                "type": 3,
+                "is_multiselect": true,
+                "value": [
+                    {
+                        "image": "",
+                        "label": "For Kids",
+                        "id": "80"
+                    },
+                    {
+                        "image": "",
+                        "label": "For Men",
+                        "id": "14"
+                    },
+                    {
+                        "image": "",
+                        "label": "For Women",
+                        "id": "15"
+                    },
+                    {
+                        "image": "",
+                        "label": "Unisex",
+                        "id": "16"
+                    }
+                ]
+            }
+        ]
+    }
+}
+</code></pre><h3 id='request-parameters-3'>Request Parameters</h3>
 <table><thead>
 <tr>
-<th>Error Code</th>
-<th>Meaning</th>
+<th>Parameter</th>
+<th>DataType</th>
+<th>Length</th>
+<th>Required</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
+<td>category_id</td>
+<td>Int</td>
+<td>100</td>
+<td>Optional</td>
+<td>If Set category id then remove key-word parameter</td>
 </tr>
 <tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
+<td>key_word</td>
+<td>String</td>
+<td>100</td>
+<td>Optional</td>
+<td>If set key_word parameter then remove category_id</td>
 </tr>
 <tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+<td>offset</td>
+<td>Int</td>
+<td>100</td>
+<td>Mandatory</td>
+<td>default &#39;0&#39; , Set product start position</td>
 </tr>
 <tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
+<td>limit</td>
+<td>Int</td>
+<td>2</td>
+<td>Mandatory</td>
+<td>Set the product list limit 10 to 100</td>
 </tr>
 <tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+<td>filter</td>
+<td>String</td>
+<td>255</td>
+<td>Optional</td>
+<td>get-filter api gives list of filters. Set product Filter like price, category etc.</td>
 </tr>
 <tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+<td>width</td>
+<td>Int</td>
+<td>100</td>
+<td>Mandatory</td>
+<td>Set product image width</td>
 </tr>
 <tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
+<td>height</td>
+<td>Int</td>
+<td>100</td>
+<td>Mandatory</td>
+<td>Set product image height</td>
 </tr>
+</tbody></table>
+<h2 id='get-product-detail'>Get Product Detail</h2>
+<p>This Api is user to get product full detail.</p>
+<h3 id='request-5'>Request</h3>
+<p><code class="post">POST</code>
+<span class="prettyprint">http://shop.arabianoud.com/index.php/connector/catalog/get_product_detail</span></p>
+
+<blockquote>
+<p>Definition</p>
+</blockquote>
+<pre class="highlight plaintext"><code>http://shop.arabianoud.com.com/index.php/connector/catalog/get_product_detail
+</code></pre>
+<blockquote>
+<p>Request Body</p>
+</blockquote>
+<pre class="highlight php tab-php"><code>    $request-&gt;setBody('{
+      "product_id":789
+    }');
+</code></pre><pre class="highlight plaintext"><code>    -d '{
+      "product_id":789
+    }'
+</code></pre><h3 id='request-parameters-4'>Request Parameters</h3>
+<table><thead>
 <tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
+<th>Parameter</th>
+<th>DataType</th>
+<th>Length</th>
+<th>Required</th>
+<th>Description</th>
 </tr>
+</thead><tbody>
 <tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+<td>product_id</td>
+<td>Int</td>
+<td>100</td>
+<td>Mandatory</td>
+<td>Set product id</td>
 </tr>
 </tbody></table>
 
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "status": "SUCCESS",
+    "message": [
+        "SUCCESS"
+    ],
+    "data": [
+        {
+            "product_id": 789,
+            "product_name": "Lara, 100 ml",
+            "product_type": "Spray",
+            "type": "simple",
+            "product_regular_price": 200,
+            "product_price": 200,
+            "special_price_start_date": "2017-09-22 00:00:00",
+            "special_price_end_date": "",
+            "product_description": "&lt;p&gt;\r\nLara by Arabian Oud is a Floral fragrance for unisex. A new and distinct language in the world of perfumes that represents you in an elegant and wonderful way. \r\nOnce you apply Lara by Arabian Oud you will notice a lingering quality of warmer and softer hints that hide an essence of elegant and calming feelings.\r\nWith the unique mixture of the floral fresh flowers, Lilies of the valley, Musk, Chocolate and Litchi&lt;br/&gt; \r\n&lt;/p&gt;",
+            "product_short_description": "&lt;p&gt;\r\nLara by Arabian Oud is a Floral fragrance for unisex. A new and distinct language in the world of perfumes that represents you in an elegant and wonderful way. \r\nOnce you apply Lara by Arabian Oud you will notice a lingering quality of warmer and softer hints that hide an essence of elegant and calming feelings.\r\nWith the unique mixture of the floral fresh flowers, Lilies of the valley, Musk, Chocolate and Litchi&lt;br/&gt; \r\n&lt;/p&gt;",
+            "product_sku": "301020107",
+            "discount_percentage": 0,
+            "max_qty": 10,
+            "product_rate": 5,
+            "product_images": [
+                "https://media.cdn-arabianoud.com/media/catalog/product/cache/1/thumbnail/600x600/6b9ffbf72458f4fd2d3cb995d92e8889/3/0/301020107_4.png",
+                "https://media.cdn-arabianoud.com/media/catalog/product/cache/1/thumbnail/600x600/6b9ffbf72458f4fd2d3cb995d92e8889/3/0/301020107-1_4.png",
+                "https://media.cdn-arabianoud.com/media/catalog/product/cache/1/thumbnail/600x600/6b9ffbf72458f4fd2d3cb995d92e8889/3/0/301020107-2_4.png"
+            ],
+            "product_image": "https://media.cdn-arabianoud.com/media/catalog/product/cache/1/thumbnail/600x600/6b9ffbf72458f4fd2d3cb995d92e8889/3/0/301020107-2_4.png",
+            "manufacturer_name": "",
+            "brand": "",
+            "product_review_number": 1,
+            "star_number_5": 1,
+            "star_number_4": 0,
+            "star_number_3": 0,
+            "star_number_2": 0,
+            "star_number_1": 0,
+            "stock_status": true,
+            "configurable_attribute": "",
+            "options": [],
+            "review": [
+                {
+                    "review_id": "4519",
+                    "customer_name": "lara",
+                    "review_title": "",
+                    "review_body": "love ",
+                    "review_time": "2018-05-14 10:37:13",
+                    "rate_point": 5
+                },
+                {
+                    "review_id": "5622",
+                    "customer_name": "",
+                    "review_title": "",
+                    "review_body": "Perfect gift and attractive smell for women",
+                    "review_time": "2018-05-02 05:12:27",
+                    "rate_point": 0
+                },
+                {
+                    "review_id": "183",
+                    "customer_name": "Umar",
+                    "review_title": "Good",
+                    "review_body": "Good fragrance, and i like the presentation for gifts",
+                    "review_time": "2014-07-06 11:26:05",
+                    "rate_point": 0
+                }
+            ],
+            "product_attributes": [
+                {
+                    "title": "Sizes",
+                    "value": "100 ml"
+                },
+                {
+                    "title": "Origins",
+                    "value": "Mix (Oriental &amp; Western)"
+                },
+                {
+                    "title": "Fragrance",
+                    "value": "Unisex"
+                },
+                {
+                    "title": "Type",
+                    "value": "Spray"
+                }
+            ],
+            "related_products": [
+                {
+                    "product_id": "862",
+                    "product_name": "Kingdom Mabthoth Incense, 120 gm",
+                    "brand": "",
+                    "product_image": "https://media.cdn-arabianoud.com/media/catalog/product/cache/1/thumbnail/600x600/6b9ffbf72458f4fd2d3cb995d92e8889/3/0/302010334_4.png",
+                    "product_regular_price": 290,
+                    "product_price": 290,
+                    "discount_percentage": 0,
+                    "stock_status": true
+                },
+                {
+                    "product_id": "878",
+                    "product_name": "Resala for Unisex, 100 ml",
+                    "brand": "",
+                    "product_image": "https://media.cdn-arabianoud.com/media/catalog/product/cache/1/thumbnail/600x600/6b9ffbf72458f4fd2d3cb995d92e8889/3/0/301020426_3.png",
+                    "product_regular_price": 480,
+                    "product_price": 480,
+                    "discount_percentage": 0,
+                    "stock_status": true
+                }
+            ],
+            "gift_products": []
+        }
+    ]
+}
+</code></pre><h2 id='get-product-reviews'>Get Product Reviews</h2>
+<p>This Api get reviews of product.Get the list of current product reviews like rate, comment, name etc.</p>
+<h3 id='request-6'>Request</h3>
+<p><code class="post">POST</code>
+<span class="prettyprint">http://shop.arabianoud.com/index.php/connector/catalog/get_product_review</span></p>
+
+<blockquote>
+<p>Definition</p>
+</blockquote>
+<pre class="highlight plaintext"><code>http://shop.arabianoud.com.com/index.php/connector/catalog/get_product_review
+</code></pre>
+<blockquote>
+<p>Request Body</p>
+</blockquote>
+<pre class="highlight php tab-php"><code>    $request-&gt;setBody('{
+      "product_id":789,
+      "star":0,
+      "offset":0,
+      "limit":10
+    }');
+
+</code></pre><pre class="highlight plaintext"><code>    -d '{
+      "product_id":789,
+      "star":0,
+      "offset":0,
+      "limit":10
+    }'
+</code></pre><h3 id='request-parameters-5'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>DataType</th>
+<th>Length</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>product_id</td>
+<td>Int</td>
+<td>100</td>
+<td>Mandatory</td>
+<td>Set product id</td>
+</tr>
+<tr>
+<td>star</td>
+<td>Int</td>
+<td>0-5</td>
+<td>Optional</td>
+<td>Default &#39;0&#39;, Get specific rate reviews</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Int</td>
+<td>100</td>
+<td>Optional</td>
+<td>Default &#39;0&#39;, Set start review number</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Int</td>
+<td>100</td>
+<td>Mandatory</td>
+<td>set list of reviews 10 to 100</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "status": "SUCCESS",
+    "message": [
+        "SUCCESS"
+    ],
+    "data": {
+        "review": [
+            {
+                "review_id": "4519",
+                "customer_name": "lara",
+                "review_title": "",
+                "review_body": "love ",
+                "review_time": "2018-05-14 10:37:13",
+                "rate_point": 5
+            },
+            {
+                "review_id": "5622",
+                "customer_name": "",
+                "review_title": "",
+                "review_body": "Perfect gift and attractive smell for women",
+                "review_time": "2018-05-02 05:12:27",
+                "rate_point": 4
+            },
+            {
+                "review_id": "183",
+                "customer_name": "Umar",
+                "review_title": "Good",
+                "review_body": "Good fragrance, and i like the presentation for gifts",
+                "review_time": "2014-07-06 11:26:05",
+                "rate_point": 4
+            }
+        ],
+        "count": {
+            "1_star": 0,
+            "2_star": 0,
+            "3_star": 0,
+            "4_star": 2,
+            "5_star": 1
+        }
+    }
+}
+</code></pre><h2 id='set-product-review'>Set Product Review</h2>
+<p>This Api set the product review like comment,rate etc.</p>
+
+<p><code class="post">POST</code>
+<span class="prettyprint">http://shop.arabianoud.com/index.php/connector/catalog/set_product_rate</span></p>
+
+<blockquote>
+<p>Definition</p>
+</blockquote>
+<pre class="highlight plaintext"><code>http://shop.arabianoud.com.com/index.php/connector/catalog/set_product_rate
+</code></pre>
+<blockquote>
+<p>Request Body</p>
+</blockquote>
+<pre class="highlight php tab-php"><code>    $request-&gt;setBody('{
+      "product_id":677,
+      "title":"Great Product now",
+      "description":"This best product for me",
+      "nickname":"devangi",
+      "ratting_star":4,
+      "type":"price"
+    }');
+
+</code></pre><pre class="highlight plaintext"><code>    -d '{
+      "product_id":677,
+      "title":"Great Product now",
+      "description":"This is best product for me",
+      "nickname":"devangi",
+      "ratting_star":4,
+      "type":"price"
+    }'
+</code></pre><h3 id='request-parameters-6'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>DataType</th>
+<th>Length</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>product_id</td>
+<td>Int</td>
+<td>100</td>
+<td>Mandatory</td>
+<td>Set product id</td>
+</tr>
+<tr>
+<td>title</td>
+<td>String</td>
+<td>100</td>
+<td>Mandatory</td>
+<td>Set review title</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>255</td>
+<td>Mandatory</td>
+<td>Add product review in detail</td>
+</tr>
+<tr>
+<td>nickname</td>
+<td>Int</td>
+<td>100</td>
+<td>Mandatory</td>
+<td>Add name of reviewer</td>
+</tr>
+<tr>
+<td>ratting_star</td>
+<td>Int</td>
+<td>1-5</td>
+<td>Mandatory</td>
+<td>Set 1 to 5 Ratting Star</td>
+</tr>
+<tr>
+<td>type</td>
+<td>String</td>
+<td>20</td>
+<td>Mandatory</td>
+<td>Set review type this : &quot;price&quot;, &quot;quality&quot;, &quot;quantity&quot;</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "status": "SUCCESS",
+    "message": [
+        "Your review has been accepted for moderation."
+    ],
+    "data": []
+}
+</code></pre><h1 id='checkout'>Checkout</h1>
+<p>Checkout is main part of Application. In this part apis use to place order on website.</p>
+<h2 id='add-to-cart'>Add to cart</h2>
+<p>This api is product add to cart. Multiple product add to cart using single request. In this api 2 different request: 1) Simple Product 2) Configurable product</p>
+
+<p><code class="post">POST</code>
+<span class="prettyprint">http://shop.arabianoud.com/index.php/connector/checkout/add_to_cart_bulk</span></p>
+
+<blockquote>
+<p>Definition</p>
+</blockquote>
+<pre class="highlight plaintext"><code>http://shop.arabianoud.com.com/index.php/connector/checkout/add_to_cart_bulk
+</code></pre>
+<blockquote>
+<p>Request Body For Simple Product</p>
+</blockquote>
+<pre class="highlight php tab-php"><code>    $request-&gt;setBody('{
+      "products": [
+        {
+          "product_id": 791,
+          "product_qty": 1
+        }
+      ]
+    }');
+</code></pre><pre class="highlight plaintext"><code>    -d '{
+      "products": [
+        {
+          "product_id": 791,
+          "product_qty": 1
+        }
+      ]
+    }'
+</code></pre><h3 id='request-parameters-for-simple-product'>Request Parameters For Simple Product</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>DataType</th>
+<th>Length</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>product_id</td>
+<td>Int</td>
+<td>100</td>
+<td>Mandatory</td>
+<td>Set product id</td>
+</tr>
+<tr>
+<td>product_qty</td>
+<td>Int</td>
+<td>10</td>
+<td>Mandatory</td>
+<td>Set Quantity minimum 1 quantity Required</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response Body For Simple Product</p>
+</blockquote>
+<pre class="highlight plaintext"><code>    {
+        "status": "SUCCESS",
+        "message": [
+            "SUCCESS"
+        ],
+        "data": {
+            "cart": [
+                {
+                    "cart_item_id": "2233550",
+                    "product_id": "791",
+                    "product_sku": "301020261",
+                    "stock_status": true,
+                    "product_name": "Hayati, 100 ml",
+                    "product_type": "Spray",
+                    "type": "simple",
+                    "product_regular_price": 420,
+                    "product_price": 420,
+                    "discount_percentage": 0,
+                    "brand": "Spray",
+                    "product_image": "https://media.cdn-arabianoud.com/media/catalog/product/cache/1/thumbnail/600x600/6b9ffbf72458f4fd2d3cb995d92e8889/3/0/301020261-2_5.png",
+                    "product_qty": 1,
+                    "product_max_qty": 10,
+                    "options": [],
+                    "selected_options": [],
+                    "is_gift": false
+                }
+            ],
+            "gift_rules_id": "",
+            "is_cart_change": 1,
+            "fee": {
+                "discount": 0,
+                "discount_percentage": "0%",
+                "grand_total": 420,
+                "sub_total": 420,
+                "sub_total_after_discount": 420,
+                "subtotal_after_discount": 420,
+                "v2": {
+                    "subtotal": 420,
+                    "grand_total": 420
+                },
+                "shipping_hand": 0,
+                "cod_fee": 0,
+                "tax": 0,
+                "coupon_code": "",
+                "is_coupon_applied": false
+            },
+            "shipping_hand": 0,
+            "cod_fee": 0,
+            "items_in_cart": 1,
+            "discount": 0,
+            "discount_percentage": "0%",
+            "coupon_code": "",
+            "is_coupon_applied": false,
+            "subtotal": 420,
+            "sub_total_after_discount": 420,
+            "subtotal_after_discount": 420,
+            "out_of_stock": [],
+            "tax": 0,
+            "grand_total": 420
+        }
+    }
+</code></pre>
+<blockquote>
+<p>Request Body For Configurable Product</p>
+</blockquote>
+<pre class="highlight php tab-php"><code>    $request-&gt;setBody('{
+      "products": [
+        {
+          "product_id": 225617,
+          "product_qty": 1,
+           "options":  [
+                        {
+                            "option_id": "41",
+                            "option_value": "#BB3467",
+                            "option_price": 0,
+                            "option_title": "Color",
+                            "position": "0",
+                            "option_type_id": "93",
+                            "option_type": "single",
+                            "is_required": "YES",
+                            "dependence_option_ids": [
+                                "225618"
+                            ]
+                        },{
+                            "option_id": "347",
+                            "option_value": "1 Tola",
+                            "option_price": 0,
+                            "option_title": "Size",
+                            "position": "0",
+                            "option_type_id": "160",
+                            "option_type": "single",
+                            "is_required": "YES",
+                            "dependence_option_ids": [
+                                "225618"
+                            ]
+                        }
+                    ]
+
+        }
+      ]
+    }');
+</code></pre><pre class="highlight plaintext"><code>    -d '{
+      "products": [
+        {
+          "product_id": 225617,
+          "product_qty": 1,
+           "options":  [
+                        {
+                            "option_id": "41",
+                            "option_value": "#BB3467",
+                            "option_price": 0,
+                            "option_title": "Color",
+                            "position": "0",
+                            "option_type_id": "93",
+                            "option_type": "single",
+                            "is_required": "YES",
+                            "dependence_option_ids": [
+                                "225618"
+                            ]
+                        },{
+                            "option_id": "347",
+                            "option_value": "1 Tola",
+                            "option_price": 0,
+                            "option_title": "Size",
+                            "position": "0",
+                            "option_type_id": "160",
+                            "option_type": "single",
+                            "is_required": "YES",
+                            "dependence_option_ids": [
+                                "225618"
+                            ]
+                        }
+                    ]
+
+        }
+      ]
+    }'
+</code></pre>
+<blockquote>
+<p>Response For Configurable product</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "status": "SUCCESS",
+    "message": [
+        "SUCCESS"
+    ],
+    "data": {
+        "cart": [
+            {
+                "cart_item_id": "32375",
+                "product_id": "225617",
+                "product_sku": "pp-#BB3467-1 Tola",
+                "stock_status": true,
+                "product_name": "Pen Pen",
+                "product_type": "configurable",
+                "product_regular_price": 200,
+                "product_price": 200,
+                "discount_percentage": 0,
+                "brand": " ",
+                "product_image": "http://fanos.ae/media/catalog/product/cache/1/image/600x600/9df78eab33525d08d6e5fb8d27136e95/placeholder/default/Group_4685_2x.png",
+                "product_qty": 1,
+                "product_max_qty": 0,
+                "options": {
+                    "Color": [
+                        {
+                            "option_id": "41",
+                            "option_value": "#BB3467",
+                            "option_price": 0,
+                            "option_title": "Color",
+                            "position": "0",
+                            "option_type_id": "93",
+                            "option_type": "single",
+                            "is_required": "YES",
+                            "dependence_option_ids": [
+                                "225618"
+                            ]
+                        },
+                        {
+                            "option_id": "40",
+                            "option_value": "#BB3499",
+                            "option_price": 0,
+                            "option_title": "Color",
+                            "position": "0",
+                            "option_type_id": "93",
+                            "option_type": "single",
+                            "is_required": "YES",
+                            "dependence_option_ids": [
+                                "225619"
+                            ]
+                        }
+                    ],
+                    "Size": [
+                        {
+                            "option_id": "347",
+                            "option_value": "1 Tola",
+                            "option_price": 0,
+                            "option_title": "Size",
+                            "position": "0",
+                            "option_type_id": "160",
+                            "option_type": "single",
+                            "is_required": "YES",
+                            "dependence_option_ids": [
+                                "225618"
+                            ]
+                        },
+                        {
+                            "option_id": "351",
+                            "option_value": "125 gm",
+                            "option_price": 0,
+                            "option_title": "Size",
+                            "position": "0",
+                            "option_type_id": "160",
+                            "option_type": "single",
+                            "is_required": "YES",
+                            "dependence_option_ids": [
+                                "225619"
+                            ]
+                        }
+                    ]
+                },
+                "selected_options": {
+                    "Color": [
+                        {
+                            "option_id": "41",
+                            "option_value": "#BB3467",
+                            "option_price": 0,
+                            "option_title": "Color",
+                            "position": "0",
+                            "option_type_id": "93",
+                            "option_type": "single",
+                            "is_required": "YES",
+                            "dependence_option_ids": [
+                                "225618"
+                            ]
+                        }
+                    ],
+                    "Size": [
+                        {
+                            "option_id": "347",
+                            "option_value": "1 Tola",
+                            "option_price": 0,
+                            "option_title": "Size",
+                            "position": "0",
+                            "option_type_id": "160",
+                            "option_type": "single",
+                            "is_required": "YES",
+                            "dependence_option_ids": [
+                                "225618"
+                            ]
+                        }
+                    ]
+                },
+                "is_gift": false
+            }
+        ],
+        "fee": {
+            "discount": 0,
+            "discount_percentage": "0%",
+            "grand_total": 200,
+            "sub_total": 200,
+            "sub_total_after_discount": 200,
+            "subtotal_after_discount": 200,
+            "shipping_hand": 0,
+            "cod_fee": 0,
+            "tax": 0,
+            "coupon_code": "",
+            "is_coupon_applied": false
+        },
+        "items_in_cart": 1,
+        "discount": 0,
+        "discount_percentage": "0%",
+        "coupon_code": "",
+        "is_coupon_applied": false,
+        "subtotal": 200,
+        "subtotal_after_discount": 200,
+        "sub_total_after_discount": 200,
+        "cod_fee": 0,
+        "shipping_hand": 0,
+        "tax": 0,
+        "grand_total": 200
+    }
+}
+</code></pre><h2 id='get-cart'>Get Cart</h2>
+<p>This Api is get the list of cart product.If product is out of stock then product move to wishlist.</p>
+
+<p><code class="post">GET</code>
+<span class="prettyprint">http://shop.arabianoud.com/index.php/connector/checkout/get_cart</span></p>
+
+<blockquote>
+<p>Definition</p>
+</blockquote>
+<pre class="highlight plaintext"><code>http://shop.arabianoud.com.com/index.php/connector/checkout/get_cart
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "status": "SUCCESS",
+    "message": [
+        "SUCCESS"
+    ],
+    "data": {
+        "cart": [
+            {
+                "cart_item_id": "1410397",
+                "product_id": "791",
+                "product_sku": "301020261",
+                "stock_status": true,
+                "product_name": "Hayati, 100 ml",
+                "product_type": "Spray",
+                "type": "simple",
+                "product_regular_price": 420,
+                "product_price": 420,
+                "discount_percentage": 0,
+                "brand": "Spray",
+                "product_max_qty": 10,
+                "product_image": "https://dev93.arabianoud.com/media/catalog/product/cache/1/small_image/600x600/6b9ffbf72458f4fd2d3cb995d92e8889/3/0/301020261_5.png",
+                "product_qty": 1,
+                "options": [],
+                "selected_options": [],
+                "is_gift": false
+            }
+        ],
+        "out_of_stock": [],
+        "fee": {
+            "discount": 0,
+            "discount_percentage": "0%",
+            "grand_total": 420,
+            "sub_total": 420,
+            "sub_total_after_discount": 420,
+            "subtotal_after_discount": 420,
+            "v2": {
+                "subtotal": 420,
+                "grand_total": 420
+            },
+            "shipping_hand": 0,
+            "cod_fee": 0,
+            "tax": 0,
+            "coupon_code": "",
+            "is_coupon_applied": false
+        },
+        "shipping_hand": 0,
+        "cod_fee": 0,
+        "items_in_cart": 1,
+        "discount": 0,
+        "discount_percentage": "0%",
+        "coupon_code": "",
+        "is_coupon_applied": false,
+        "sub_total_after_discount": 420,
+        "subtotal_after_discount": 420,
+        "subtotal": 420,
+        "tax": 0,
+        "grand_total": 420
+    }
+}
+</code></pre><h2 id='edit-cart'>Edit Cart</h2>
+<p>This Api is for remove product from cart and update quantity.Set <strong>0</strong> value for remove product from cart in <strong>product_qty</strong> parameter.</p>
+
+<p><code class="post">POST</code>
+<span class="prettyprint">http://shop.arabianoud.com/index.php/connector/checkout/edit_cart</span></p>
+
+<blockquote>
+<p>Definition</p>
+</blockquote>
+<pre class="highlight plaintext"><code>http://shop.arabianoud.com.com/index.php/connector/checkout/edit_cart
+</code></pre>
+<blockquote>
+<p>Request Body</p>
+</blockquote>
+<pre class="highlight php tab-php"><code>$request-&gt;setBody('{
+      "cart_items": [ 
+        {
+          "cart_item_id":"1410397",
+          "product_qty": 0
+      }
+    ]  
+}');
+
+</code></pre><pre class="highlight plaintext"><code>    -d '{
+          "cart_items": [ 
+            {
+              "cart_item_id":"1410397",
+              "product_qty": 0
+          }
+        ]  
+    }'
+</code></pre><h3 id='request-parameters-7'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>DataType</th>
+<th>Length</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>cart_item_id</td>
+<td>Int</td>
+<td>100</td>
+<td>Mandatory</td>
+<td>Set cart item id</td>
+</tr>
+<tr>
+<td>product_qty</td>
+<td>Int</td>
+<td>10</td>
+<td>Mandatory</td>
+<td>Set Quantity <strong>0</strong> for remove product</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight plaintext"><code>    {
+        "status": "SUCCESS",
+        "message": [
+            "SUCCESS"
+        ],
+        "data": {
+            "cart": [],
+            "out_of_stock": [],
+            "fee": {
+                "discount": 0,
+                "discount_percentage": "0%",
+                "grand_total": 0,
+                "sub_total": 0,
+                "sub_total_after_discount": 0,
+                "subtotal_after_discount": 0,
+                "v2": {
+                    "subtotal": 0,
+                    "grand_total": 0
+                },
+                "shipping_hand": 0,
+                "cod_fee": 0,
+                "tax": 0,
+                "coupon_code": "",
+                "is_coupon_applied": false
+            },
+            "shipping_hand": 0,
+            "cod_fee": 0,
+            "items_in_cart": 0,
+            "discount": 0,
+            "discount_percentage": "0%",
+            "coupon_code": "",
+            "is_coupon_applied": false,
+            "sub_total_after_discount": 0,
+            "subtotal_after_discount": 0,
+            "subtotal": 0,
+            "tax": 0,
+            "grand_total": 0
+        }
+    }
+</code></pre><h2 id='get-order-configuration'>Get Order Configuration</h2>
+<p>This api is get all order configuration settings like payment method, shipping method, order line items etc.</p>
+
+<p><code class="post">POST</code>
+<span class="prettyprint">http://shop.arabianoud.com/index.php/connector/checkout/get_order_config</span></p>
+
+<blockquote>
+<p>Definition</p>
+</blockquote>
+<pre class="highlight plaintext"><code>http://shop.arabianoud.com.com/index.php/connector/checkout/get_order_config
+</code></pre>
+<blockquote>
+<p>Request Body</p>
+</blockquote>
+<pre class="highlight php tab-php"><code>$request-&gt;setBody('{
+  "customer_email":"test.ios@test.com",
+  "billingAddress":{
+      "name":"Test Test",
+      "company":"SW",
+      "street":"B-17 Rameshwaram",
+      "city":"Riyadh",
+      "zip":"12222",
+      "country_code":"SA",
+      "phone":"4512000339"
+    },
+  "shippingAddress":{
+      "prefix":"Mrs",
+      "name":"Test Test",
+      "company":"SW",
+      "street":"B-17 Rameshwaram",
+      "city":"Riyadh",
+      "zip":"12222",
+      "country_code":"SA",
+      "email":"test.ios@test.com",
+      "phone":"4512000339"
+    }
+}');
+</code></pre><pre class="highlight plaintext"><code>    -d '{
+      "customer_email":"test.ios@test.com",
+      "billingAddress":{
+          "name":"Test Test",
+          "company":"SW",
+          "street":"B-17 Rameshwaram",
+          "city":"Riyadh",
+          "zip":"12222",
+          "country_code":"SA",
+          "phone":"9712000339"
+        },
+      "shippingAddress":{
+          "prefix":"Mrs",
+          "name":"Test Test",
+          "company":"SW",
+          "street":"B-17 Rameshwaram",
+          "city":"Riyadh",
+          "zip":"12222",
+          "country_code":"SA",
+          "email":"test.ios@test.com",
+          "phone":"9712000339"
+        }
+    }'
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight plaintext"><code>    {
+        "status": "SUCCESS",
+        "message": [
+            "Save Success"
+        ],
+        "data": [
+            {
+                "fee": {
+                    "sub_total": 420,
+                    "grand_total": 441,
+                    "discount": 0,
+                    "tax": 21,
+                    "coupon_code": "",
+                    "discount_percentage": "0%",
+                    "subtotal_after_discount": 420,
+                    "sub_total_after_discount": 420,
+                    "is_coupon_applied": false,
+                    "shipping_hand": 0,
+                    "cod_fee": 0,
+                    "v2": {
+                        "subtotal": 420,
+                        "grand_total": 441,
+                        "tax": 21
+                    },
+                    "cache_data": {
+                        "sub_total": 420,
+                        "grand_total": 441,
+                        "discount": 0,
+                        "tax": 21,
+                        "coupon_code": "",
+                        "discount_percentage": "0%",
+                        "subtotal_after_discount": 420,
+                        "sub_total_after_discount": 420,
+                        "is_coupon_applied": false,
+                        "shipping_hand": 0,
+                        "cod_fee": 0,
+                        "v2": {
+                            "subtotal": 420,
+                            "grand_total": 441,
+                            "tax": 21
+                        },
+                        "condition": []
+                    }
+                },
+                "payment_method_list": [
+                    {
+                        "content": "",
+                        "payment_method": "cashondelivery",
+                        "title": "Cash On Delivery",
+                        "show_type": 0,
+                        "short_description": "",
+                        "description": "",
+                        "icon_payment": "https://dev93.arabianoud.com/focus/payment_icons/cod.png"
+                    },
+                    {
+                        "content": "",
+                        "payment_method": "hyperpay_mobile",
+                        "title": "Credit Card",
+                        "show_type": 0,
+                        "short_description": "",
+                        "description": "",
+                        "icon_payment": "https://dev93.arabianoud.com/focus/payment_icons/visa.png"
+                    }
+                ],
+                "payment_info": [],
+                "order_line_items": [
+                    {
+                        "product_id": "791",
+                        "stock_status": true,
+                        "product_name": "Hayati, 100 ml",
+                        "product_regular_price": 420,
+                        "product_price": 420,
+                        "product_image": "https://dev93.arabianoud.com/media/catalog/product/cache/1/small_image/600x600/6b9ffbf72458f4fd2d3cb995d92e8889/3/0/301020261_5.png",
+                        "product_qty": 1
+                    }
+                ],
+                "gifting_items": [],
+                "shipping_method_list": []
+            }
+        ]
+    }
+</code></pre><h3 id='request-parameters-8'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>DataType</th>
+<th>Length</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>customer_email</td>
+<td>String</td>
+<td>100</td>
+<td>Mandatory</td>
+<td>Set customer email address</td>
+</tr>
+<tr>
+<td>billingAddress</td>
+<td>String</td>
+<td>255</td>
+<td>Mandatory</td>
+<td>Set billing Address json array</td>
+</tr>
+<tr>
+<td>shippingAddress</td>
+<td>String</td>
+<td>255</td>
+<td>Mandatory</td>
+<td>Set Shipping Address json array</td>
+</tr>
+<tr>
+<td>prefix</td>
+<td>String</td>
+<td>10</td>
+<td>Mandatory</td>
+<td>Set name prefix like <strong>Mr.</strong> , <strong>Mrs</strong>, <strong>Miss</strong></td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>20</td>
+<td>Mandatory</td>
+<td>Name of customer</td>
+</tr>
+<tr>
+<td>company</td>
+<td>String</td>
+<td>50</td>
+<td>Optional</td>
+<td>Set company name if company address</td>
+</tr>
+<tr>
+<td>street</td>
+<td>String</td>
+<td>100</td>
+<td>Mandatory</td>
+<td>Set street address</td>
+</tr>
+<tr>
+<td>city</td>
+<td>String</td>
+<td>30</td>
+<td>Mandatory</td>
+<td>Set city name</td>
+</tr>
+<tr>
+<td>zip</td>
+<td>Int</td>
+<td>10</td>
+<td>Mandatory</td>
+<td>Set pin/zip code</td>
+</tr>
+<tr>
+<td>country_code</td>
+<td>String</td>
+<td>10</td>
+<td>Mandatory</td>
+<td>Set country short code</td>
+</tr>
+<tr>
+<td>email</td>
+<td>String</td>
+<td>255</td>
+<td>Mandatory</td>
+<td>Set customer billing/shipping email address</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>Number</td>
+<td>10</td>
+<td>Mandatory</td>
+<td>Set 10 digit phone number like <strong>1234567890</strong></td>
+</tr>
+</tbody></table>
+<h2 id='save-payment-method'>Save Payment Method</h2>
+<p>This Api is set payment method in current order. List of payment method available in <strong>get-order-config</strong> api response.</p>
+
+<p><code class="post">POST</code>
+<span class="prettyprint">http://shop.arabianoud.com/index.php/connector/checkout/save_payment_method</span></p>
+
+<blockquote>
+<p>Definition</p>
+</blockquote>
+<pre class="highlight plaintext"><code>http://shop.arabianoud.com.com/index.php/connector/checkout/save_payment_method
+</code></pre>
+<blockquote>
+<p>Request Body</p>
+</blockquote>
+<pre class="highlight php tab-php"><code>$request-&gt;setBody('{
+ "payment_method":"cashondelivery"
+}');
+</code></pre><pre class="highlight plaintext"><code>    -d '{
+     "payment_method":"cashondelivery"
+    }'
+</code></pre><h3 id='request-parameters-9'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>DataType</th>
+<th>Length</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>payment_method</td>
+<td>String</td>
+<td>100</td>
+<td>Mandatory</td>
+<td>Set current order payment method like <strong>cashondelivery</strong></td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight plaintext"><code>    {
+        "status": "SUCCESS",
+        "message": [
+            "SUCCESS"
+        ],
+        "data": [
+            {
+                "fee": {
+                    "sub_total": 420,
+                    "grand_total": 441,
+                    "discount": 0,
+                    "tax": 21,
+                    "coupon_code": "",
+                    "discount_percentage": "0%",
+                    "sub_total_after_discount": 420,
+                    "subtotal_after_discount": 420,
+                    "is_coupon_applied": false,
+                    "shipping_hand": 0,
+                    "cod_fee": 0,
+                    "v2": {
+                        "subtotal": 420,
+                        "grand_total": 441,
+                        "cod_fee": null,
+                        "tax": 21,
+                        "shipping_hand": 0,
+                        "payment_name": "COD",
+                        "payment_fee": null
+                    }
+                },
+                "payment_info": {
+                }
+            }
+        ]
+    }
+</code></pre><h2 id='place-order'>Place Order</h2>
+<p>This api is place order for current item.</p>
+
+<p><code class="post">POST</code>
+<span class="prettyprint">http://shop.arabianoud.com/index.php/connector/checkout/place_order</span></p>
+
+<blockquote>
+<p>Definition</p>
+</blockquote>
+<pre class="highlight plaintext"><code>http://shop.arabianoud.com.com/index.php/connector/checkout/place_order
+</code></pre>
+<blockquote>
+<p>Request Body</p>
+</blockquote>
+<pre class="highlight php tab-php"><code>$request-&gt;setBody('{   
+  "customer_email":"test.ios@test.com",
+  "payment_method":"cashondelivery"
+}');
+</code></pre><pre class="highlight plaintext"><code>  -d '{   
+  "customer_email":"test.ios@test.com",
+  "payment_method":"cashondelivery"
+}'
+</code></pre><h3 id='request-parameters-10'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>DataType</th>
+<th>Length</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>customer_email</td>
+<td>String</td>
+<td>255</td>
+<td>Mandatory</td>
+<td>Set Current customer email address</td>
+</tr>
+<tr>
+<td>payment_method</td>
+<td>String</td>
+<td>100</td>
+<td>Mandatory</td>
+<td>Set current order payment method like <strong>cashondelivery</strong></td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight plaintext"><code>    {
+        "status": "SUCCESS",
+        "message": [
+            "Thank you for your purchase!"
+        ],
+        "data": {
+            "order_number": "110005955",
+            "billing_phone": "3412000339",
+            "shipping_phone": "3412000339",
+            "payment_method": "cashondelivery",
+            "contact_config": {
+                "email": "support@arabianoud.com",
+                "contact_phone": "8001242030",
+                "whatsapp_contact_phone": "966559774497",
+                "contact_message": "Please fill the contact form for any queries"
+            },
+            "order_status": "Waiting for confirmation"
+        }
+    }
+</code></pre><h1 id='customer'>Customer</h1>
+<p>Customer Api is used for user login, address, order history etc.</p>
+<h2 id='registration'>Registration</h2>
+<p>In this api user can register in Application.</p>
+
+<p><code class="post">POST</code>
+<span class="prettyprint">http://shop.arabianoud.com/index.php/connector/customer/register</span></p>
+
+<blockquote>
+<p>Definition</p>
+</blockquote>
+<pre class="highlight plaintext"><code>http://shop.arabianoud.com.com/index.php/connector/customer/register
+</code></pre>
+<blockquote>
+<p>Request Body</p>
+</blockquote>
+<pre class="highlight php tab-php"><code>$request-&gt;setBody('{
+    "user_prefix": "Mr.",
+    "user_email": "tedev@mail.com",
+    "user_password": "Pass@1234",
+    "user_name": "test dev"
+}');
+</code></pre><pre class="highlight plaintext"><code>  -d '{
+      "user_prefix": "Mr.",
+      "user_email": "tedev@mail.com",
+      "user_password": "Pass@1234",
+      "user_name": "test dev"
+  }'
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "status": "SUCCESS",
+    "message": [
+        "Thank you for registering with English store"
+    ],
+    "data": [
+        {
+            "user_id": "165",
+            "user_prefix": "Mr.",
+            "user_name": "test dev",
+            "first_name": "test",
+            "middle_name": null,
+            "last_name": "dev",
+            "user_email": "tedev@mail.com",
+            "login_type": 2
+        }
+    ]
+}
+</code></pre>
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="shell">cURL</a>
+                <a href="#" data-language-name="php">PHP</a>
           </div>
       </div>
     </div>
