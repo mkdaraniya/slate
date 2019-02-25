@@ -613,3 +613,44 @@ html, body {
 .highlight, .highlight .w {
   background-color: $code-bg;
 }
+.post {
+  border: solid rgba(0,128,0,0.59) 2px;
+  background-color: white;
+  padding: 3px;
+}
+.prettyprint {
+  background-color: #E3F9FA;
+  padding: 7px;
+  border-radius: 3px;
+}
+
+.content table th {
+  padding: 5px 10px;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  vertical-align: bottom;
+  background: #F7F7F7;
+}
+.content table tr:last-child {
+  border-bottom: 1px solid #ccc;
+}
+
+.content table tr {
+  border-left: 1px solid #c0c4c7;
+  border-right: 1px solid #c0c4c7;
+}
+
+.toc-wrapper .logo {
+  margin-left: 20%;
+  margin-top: 20px;
+}
+
+.toc-wrapper .toc-link:hover {
+  background-color: cadetblue;
+  color: #fff;
+}
+
+.toc-wrapper .toc-link.active {
+  background-color: cadetblue;
+  color: #fff;
+}
