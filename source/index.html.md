@@ -2158,6 +2158,16 @@ $request->setBody('{
   }'
 ```
 
+###Request Parameters
+
+Parameter | DataType | Length | Required | Description
+--------- | -------- | ------ | -------- | -----------
+user_prefix | String | 100 | Mandatory | Set prefix like Mr., Miss etc
+user_email | String | 255 | Mandatory | Set Your email address
+user_password | String | 100 | Mandatory | Set your Password
+user_name | String | 255 | Mandatory | Set User name string ex. <first name> <middle name> <last name>
+
+
 >Response
 
 ```
@@ -2181,10 +2191,1260 @@ $request->setBody('{
 }
 ```
 
+##Sign In
+
+This Api is used to customer login.
+
+<code class="post">POST</code>
+<span class="prettyprint">{Base URL}/connector/customer/sign_in</span>
+
+> Definition
+
+```
+{Base URL}/connector/customer/sign_in
+```
+
+>Request Body
+
+```php
+$request->setBody('{
+  "user_email":"test.ios@test.com",
+  "user_password":"Pass@123"
+}');
+```
+
+```curl
+  -d '{
+    "user_email":"test.ios@test.com",
+    "user_password":"password"
+  }'
+```
+
+###Request Parameters
+
+Parameter | DataType | Length | Required | Description
+--------- | -------- | ------ | -------- | -----------
+user_email | String | 255 | Mandatory | Set login email address
+user_password | String | 100 | Mandatory | Set login Password
 
 
+>Response
+
+```
+{
+    "status": "SUCCESS",
+    "message": [
+        "SUCCESS"
+    ],
+    "data": [
+        {
+            "user_id": "12163",
+            "user_email": "test.ios@test.com",
+            "user_name": "Test Test",
+            "user_prefix": "Test Test",
+            "first_name": "Test",
+            "middle_name": null,
+            "last_name": "Test",
+            "login_type": "2",
+            "user_profile": "http://shop.arabianoud.com/focus/customer/1543491946image:13716",
+            "cart_qty": null
+        }
+    ]
+}
+```
+
+##Change User
+
+This Api is used for update user current account detail.
+
+<code class="post">POST</code>
+<span class="prettyprint">{Base URL}/connector/customer/change_user</span>
+
+> Definition
+
+```
+{Base URL}/connector/customer/change_user
+```
+
+>Request Body
+
+```php
+$request->setBody('{
+  "user_name":"Test test",
+  "user_email":"test.ios@test.com",
+  "user_prefix":"Ms"
+}');
+```
+
+```curl
+  -d '{
+    "user_name":"Test12 Dev",
+    "user_email":"test.ios@test.com",
+    "user_prefix":"Ms"
+  }'
+```
+
+###Request Parameters
+
+Parameter | DataType | Length | Required | Description
+--------- | -------- | ------ | -------- | -----------
+user_email | String | 255 | Mandatory | Set login email address
+user_name | String | 100 | Mandatory | Set user name
+user_prefix | String | 20 | Optional | Update prefix
+first_name | String | 100 | Optional | Update First name
+middle_name | String | 100 | Optional | Update Middle Name
+last_name | String | 100 | Optional | Update last name
+phone | int | 20 | Optional | Update phone number
 
 
+>Response
+
+```
+{
+    "status": "SUCCESS",
+    "message": [
+        "The account information has been saved."
+    ],
+    "data": [
+        {
+            "token": "be8892019f3db1cd3523428ea3cf5c8125:wFw96HtSi4HLUu2EVHCS0eTGwtzDz6jv",
+            "user_name": "app1 birds1",
+            "user_prefix": "MS",
+            "first_name": "app1",
+            "middle_name": null,
+            "last_name": "birds1",
+            "phone": "125646767",
+            "user_email": "test.ios@test.com",
+            "user_profile": "http://shop.arabianoud.com/focus/customer/1543491946image:13716",
+            "login_type": "2",
+            "cart_qty": 0
+        }
+    ]
+}
+```
+
+##Get Profile
+
+This Api is used to get current user profile detail.
+
+<code class="post">GET</code>
+<span class="prettyprint">{Base URL}/connector/customer/get_profile</span>
+
+> Definition
+
+```
+{Base URL}/connector/customer/get_profile
+```
+
+>Response
+
+```
+{
+    "status": "SUCCESS",
+    "message": [
+        "SUCCESS"
+    ],
+    "data": [
+        {
+            "user_id": "121612",
+            "user_name": "Test Test",
+            "user_prefix": "MS",
+            "first_name": "Test",
+            "middle_name": null,
+            "phone": "3235646767",
+            "last_name": "birds1",
+            "user_email": "test.ios@test.com",
+            "user_profile": "http://shop.arabianoud.com/focus/customer/1543491946image:13716",
+            "login_type": "2"
+        }
+    ]
+}
+```
+
+##Get User Addresses
+
+This Api is get list of user saved addresses.
+
+<code class="post">GET</code>
+<span class="prettyprint">{Base URL}/connector/customer/get_user_addresses</span>
+
+> Definition
+
+```
+{Base URL}/connector/customer/get_user_addresses
+```
+
+>Response
+
+```
+{
+    "status": "SUCCESS",
+    "message": [
+        "SUCCESS"
+    ],
+    "data": [
+        {
+            "address_id": "26627",
+            "prefix": null,
+            "name": "Test Test",
+            "first_name": "Test",
+            "last_name": "Test",
+            "firstname": "Test",
+            "middlename": null,
+            "lastname": "Test",
+            "street": "New Street",
+            "city": "Riyadh",
+            "state_name": null,
+            "state_id": 0,
+            "state_code": null,
+            "zip": "12222",
+            "country_name": "Saudi Arabia",
+            "country_code": "SA",
+            "country_flag": "http://shop.arabianoud.com/focus/flag/sa.png",
+            "phone": "123456789",
+            "address_city_code": "",
+            "address_country_code": "+966",
+            "country_calling_code": "+966",
+            "is_verified": "0",
+            "latitude": "0.0000",
+            "longitude": "0.0000",
+            "address_type": 1,
+            "email": "test.ios@test.com",
+            "other_title": null
+        },
+        {
+            "address_id": "26713",
+            "prefix": null,
+            "name": "Test Testing",
+            "first_name": "Developers",
+            "last_name": "Testing",
+            "firstname": "Developers",
+            "middlename": null,
+            "lastname": "Testing",
+            "street": "testing",
+            "city": "Makkah",
+            "state_name": null,
+            "state_id": 0,
+            "state_code": null,
+            "zip": null,
+            "country_name": "Saudi Arabia",
+            "country_code": "SA",
+            "country_flag": "http://shop.arabianoud.com/focus/flag/sa.png",
+            "phone": "812265233",
+            "address_city_code": "56",
+            "address_country_code": "+966",
+            "country_calling_code": "+966",
+            "is_verified": "0",
+            "latitude": "0.0000",
+            "longitude": "0.0000",
+            "address_type": 1,
+            "email": "test.ios@test.com",
+            "other_title": null
+        }
+    ]
+}
+```
+
+##Save Address
+
+This api is used to create new address for current login user.
+
+<code class="post">POST</code>
+<span class="prettyprint">{Base URL}/connector/customer/save_address</span>
+
+> Definition
+
+```
+{Base URL}/connector/customer/save_address
+```
+
+>Request Body
+
+```php
+$request->setBody('{"name":"last new","city":"Jeddah","other_title":"test","street":"test new","address_city_code":"50","last_name":"test","country_code":"SA","first_name":"new","address_type":1,"user_prefix":"Ms.","zip":"8966","phone":"+91505555553","address_country_code":"+91","state_name":"","company":""}
+');
+```
+
+```curl
+  -d '{"name":"last new","city":"Jeddah","other_title":"test","street":"test new","address_city_code":"50","last_name":"test","country_code":"SA","first_name":"new","address_type":1,"user_prefix":"Ms.","zip":"8966","phone":"+91505555553","address_country_code":"+91","state_name":"","company":""}
+  '
+```
+
+>Response
+
+```
+{
+    "status": "SUCCESS",
+    "message": [
+        "SUCCESS"
+    ],
+    "data": [
+        {
+            "firstname": "new",
+            "lastname": "test",
+            "company": "",
+            "street": "test new",
+            "city": "Jeddah",
+            "region_id": null,
+            "region": "",
+            "postcode": "8966",
+            "country_id": "SA",
+            "country_name": null,
+            "latitude": null,
+            "longitude": null,
+            "address_type": 1,
+            "telephone": "+91505555553",
+            "address_city_code": "",
+            "country_calling_code": "+91",
+            "fax": "",
+            "taxvat": "",
+            "prefix": "Ms.",
+            "suffix": "",
+            "dob": "",
+            "gender": "1",
+            "month": "",
+            "day": "",
+            "year": "",
+            "email": null,
+            "other_title": "test",
+            "id": null,
+            "first_name": "new",
+            "last_name": "test",
+            "name": "new test",
+            "address_id": "32996",
+            "state_name": "",
+            "state_code": null,
+            "zip": "8966",
+            "country_code": "SA",
+            "phone": "5555553"
+        }
+    ]
+}
+```
+
+
+###Request Parameters
+
+Parameter | DataType | Length | Required | Description
+--------- | -------- | ------ | -------- | -----------
+name | String | 100 | Mandatory | Set username
+city | String | 50 | Mandatory | Set city
+other_title | String | 20 | Mandatory | Set Address Title
+street | String | 100 | Mandatory | Set Street address
+address_city_code | Int | 100 | Mandatory | Set Address city code
+last_name | String | 100 | Mandatory | Update last name
+country_code | Int | 20 | Mandatory | Update Country code
+first_name | String | 100 | Mandatory | Set First name
+address_type | Int | 10 | Mandatory | Set address type **'1'** for default address
+user_prefix | String | 10 | Optional | Set User prefix like Mr., Mrs etc
+zip | Int | 10 | Mandatory | Set zip code
+phone | String | 10 | Mandatory | Set phone number
+address_country_code | String | 10 | Mandatory | Set country code
+state_name | String | 100 | Optional | Set State name
+company | String | 100 | Optional | Set company name
+
+
+##Update Address
+
+This Api is used to update address by address id.
+
+<code class="post">POST</code>
+<span class="prettyprint">{Base URL}/connector/customer/update_address</span>
+
+> Definition
+
+```
+{Base URL}/connector/customer/update_address
+```
+
+>Request Body
+
+```php
+$request->setBody('{
+  "address_id":"27307",
+  "street":"asd Doshi"
+}');
+```
+
+```curl
+ -d '{
+   "address_id":"27307",
+   "street":"asd Doshi"
+ }'
+```
+
+###Request Parameters
+
+Parameter | DataType | Length | Required | Description
+--------- | -------- | ------ | -------- | -----------
+address_id | Int | 10 | Mandatory | Set address id
+first_name | String | 100 | Optional | Update First name
+last_name | String | 100 | Optional | Update last name
+street | String | 255 | Optional | Update Street
+city | String | 100 | Optional | Update City
+country_code | String | 10 | Optional | Update country code
+phone | String | 20 | Optional | Update Phone number
+
+>Response
+
+```
+{
+    "status": "SUCCESS",
+    "message": [
+        "SUCCESS"
+    ],
+    "data": {
+        "address_id": "27307",
+        "prefix": null,
+        "name": "test testing",
+        "first_name": "test",
+        "last_name": "testing",
+        "firstname": "test",
+        "middlename": null,
+        "lastname": "testing",
+        "street": "asd Doshi",
+        "city": "Jeddah",
+        "state_name": null,
+        "state_id": 0,
+        "state_code": null,
+        "zip": null,
+        "country_name": "Saudi Arabia",
+        "country_code": "SA",
+        "country_flag": "http://shop.arabianoud.com/focus/flag/sa.png",
+        "phone": "5252525255",
+        "address_city_code": "",
+        "address_country_code": "+966",
+        "country_calling_code": "+966",
+        "is_verified": "0",
+        "latitude": "0.0000",
+        "longitude": "0.0000",
+        "address_type": 1,
+        "email": "test.ios@test.com",
+        "other_title": null
+    }
+}
+```
+
+##Get Order History
+
+This Api is get list of current user order history.
+
+<code class="post">POST</code>
+<span class="prettyprint">{Base URL}/connector/customer/get_order_history</span>
+
+> Definition
+
+```
+{Base URL}/connector/customer/get_order_history
+```
+
+>Request Body
+
+```php
+$request->setBody('{
+	"offset":0,
+	"limit":10
+}');
+```
+
+```curl
+  -d '{
+  	"offset":0,
+  	"limit":10
+  }'
+```
+
+###Request Parameters
+
+Parameter | DataType | Length | Required | Description
+--------- | -------- | ------ | -------- | -----------
+offset | Int | 10 | Mandatory | Set Default **'0'** offset
+limit | Int | 10 | Mandatory | Set order list limit
+
+>Response
+
+```
+{
+    "status": "SUCCESS",
+    "message": [
+        "SUCCESS"
+    ],
+    "data": [
+        {
+            "order_id": "100001142",
+            "order_status": "Pending",
+            "order_date": "2019-02-27 12:16:33",
+            "order_date_formatted": "Feb 27, 2019 12:16 PM",
+            "order_total": 128.95,
+            "recipient": "Test Test",
+            "order_items": [
+                {
+                    "product_name": "Missha BB Cream 27 Honey Beige",
+                    "product_image": "http://shop.arabianoud.com/media/catalog/product/cache/1/thumbnail/600x600/040ec09b1e35df139433887a97daa66f/7/./7.png",
+                    "product_price": "99.0000",
+                    "brand": "Missha"
+                },
+                {
+                    "product_name": "عطر كرافيت 30 مل",
+                    "product_image": "http://shop.arabianoud.com/media/catalog/product/cache/1/thumbnail/600x600/040ec09b1e35df139433887a97daa66f/s/i/single-cup.png",
+                    "product_price": "0.0000",
+                    "brand": false
+                }
+            ]
+        },
+        {
+            "order_id": "100001138",
+            "order_status": "Pending",
+            "order_date": "2019-02-25 10:27:06",
+            "order_date_formatted": "Feb 25, 2019 10:27 AM",
+            "order_total": 203.5,
+            "recipient": "Test Test",
+            "order_items": [
+                {
+                    "product_name": "Laura Mercier Powder",
+                    "product_image": "http://shop.arabianoud.com/media/catalog/product/cache/1/thumbnail/600x600/040ec09b1e35df139433887a97daa66f/3/3/33.png",
+                    "product_price": "170.0000",
+                    "brand": "Laura mercier"
+                },
+                {
+                    "product_name": "عطر كرافيت 30 مل",
+                    "product_image": "http://shop.arabianoud.com/media/catalog/product/cache/1/thumbnail/600x600/040ec09b1e35df139433887a97daa66f/s/i/single-cup.png",
+                    "product_price": "0.0000",
+                    "brand": false
+                }
+            ]
+        }
+    ]
+}
+```
+
+##Get Order Detail
+
+This Api is get detail of single order by order id.
+
+<code class="post">POST</code>
+<span class="prettyprint">{Base URL}/connector/customer/get_order_detail</span>
+
+> Definition
+
+```
+{Base URL}/connector/customer/get_order_history
+```
+
+>Request Body
+
+```php
+$request->setBody('{
+	"order_id":"100001142"
+}');
+```
+
+```curl
+-d '{
+	"order_id":"100001142"
+}'
+```
+
+###Request Parameters
+
+Parameter | DataType | Length | Required | Description
+--------- | -------- | ------ | -------- | -----------
+order_id | Int | 100 | Mandatory | Set order id
+
+>Response
+
+```
+{
+    "status": "SUCCESS",
+    "message": [
+        "SUCCESS"
+    ],
+    "data": [
+        {
+            "order_id": "100001142",
+            "order_date": "2019-02-27 12:16:33",
+            "order_status": "Pending",
+            "order_date_formatted": "Feb 27, 2019 12:16 PM",
+            "order_code": "100001142",
+            "order_total": 128.95,
+            "order_subtotal": 99,
+            "tax": "4.9500",
+            "s_fee": "25.0000",
+            "order_gift_code": null,
+            "discount": 0,
+            "order_note": null,
+            "order_items": [
+                {
+                    "product_id": "70",
+                    "product_sku": "8806150614485",
+                    "product_name": "Missha BB Cream 27 Honey Beige",
+                    "product_price": "99.0000",
+                    "product_brand": "MISSHA",
+                    "product_image": "http://shop.arabianoud.com/media/catalog/product/cache/1/thumbnail/600x600/040ec09b1e35df139433887a97daa66f/7/./7.png",
+                    "product_qty": 1,
+                    "options": []
+                },
+                {
+                    "product_id": "819",
+                    "product_sku": "3333",
+                    "product_name": "عطر كرافيت 30 مل",
+                    "product_price": "0.0000",
+                    "product_brand": "",
+                    "product_image": "http://shop.arabianoud.com/media/catalog/product/cache/1/thumbnail/600x600/040ec09b1e35df139433887a97daa66f/s/i/single-cup.png",
+                    "product_qty": 1,
+                    "options": []
+                }
+            ],
+            "payment_method": "Cash On Delivery",
+            "shipping_method": "Fetchr - Next Day Delivery",
+            "card_4digits": "",
+            "track_info": [],
+            "shippingAddress": {
+                "name": "Test Test",
+                "street": "B-17 Rameshwaram",
+                "city": "Riyadh",
+                "state_name": null,
+                "state_code": null,
+                "zip": "12222",
+                "country_name": "Saudi Arabia",
+                "country_code": "SA",
+                "country_flag": "http://shop.arabianoud.com/focus/flag/sa.png",
+                "phone": "+966123456789",
+                "email": "test.ios@test.com"
+            },
+            "billingAddress": {
+                "name": "Test Test",
+                "street": "B-17 Rameshwaram",
+                "city": "Riyadh",
+                "state_name": null,
+                "state_code": null,
+                "zip": "12222",
+                "country_name": "Saudi Arabia",
+                "country_code": "SA",
+                "country_flag": "http://shop.arabianoud.com/focus/flag/sa.png",
+                "phone": "+966123456789",
+                "email": "test.ios@test.com"
+            }
+        }
+    ]
+}
+```
+
+#Wishlist
+
+Using bellow api's user can perform actions like:
+</br>
+1) Add To Wishlist Product </br>
+2) Remove Product from wishlist </br>
+3) Product moved Wishlist to cart.
+
+
+##Get Wishlist Products
+
+This api is used to get all product from current login user wishlist.
+
+<code class="post">POST</code>
+<span class="prettyprint">{Base URL}/connector/wishlist/get_wishlist_products</span>
+
+> Definition
+
+```
+{Base URL}/connector/wishlist/get_wishlist_products
+```
+
+>Request Body
+
+```php
+$request->setBody('{
+  "offset":0,
+  "limit":20
+}');
+```
+
+```curl
+  -d '{
+  "offset":0,
+  "limit":20
+}'
+```
+
+###Request Parameters
+
+Parameter | DataType | Length | Required | Description
+--------- | -------- | ------ | -------- | -----------
+offset | Int | 10 | Mandatory | Set Default **'0'**
+limit | Int | 10 | Mandatory | Set product list limit
+
+>Response
+
+```
+{
+    "status": "SUCCESS",
+    "message": [
+        2
+    ],
+    "data": {
+        "wishlist_products": [
+            {
+                "product_id": "791",
+                "product_sku": "6297909444545",
+                "product_name": "لوكسري 30 مل",
+                "product_type": "simple",
+                "product_regular_price": 150,
+                "product_price": 45,
+                "discount_percentage": 70,
+                "product_rate": 0,
+                "stock_status": true,
+                "product_review_number": 0,
+                "product_image": "http://shop.arabianoud.com/media/catalog/product/cache/1/thumbnail/600x600/040ec09b1e35df139433887a97daa66f/placeholder/default/new8_2.png",
+                "manufacturer_name": "",
+                "brand": " ",
+                "is_show_price": true,
+                "wishlist_item_id": "5497",
+                "options": [],
+                "selected_all_required_options": true,
+                "product_qty": "1.0000",
+                "available_quantity": 55,
+                "product_sharing_message": " http://shop.arabianoud.com/index.php/30-1157.html",
+                "product_sharing_url": "http://shop.arabianoud.com/index.php/30-1157.html",
+                "show_price_v2": {
+                    "product_regular_price": 150,
+                    "special_price_label": "Special Price",
+                    "product_price": 45
+                }
+            },
+            {
+                "product_id": "790",
+                "product_sku": "3388714256102",
+                "product_name": "inspir me Gold 100ml",
+                "product_type": "simple",
+                "product_regular_price": 360,
+                "product_price": 108,
+                "discount_percentage": 70,
+                "product_rate": 0,
+                "stock_status": true,
+                "product_review_number": 0,
+                "product_image": "http://shop.arabianoud.com/media/catalog/product/cache/1/thumbnail/600x600/040ec09b1e35df139433887a97daa66f/placeholder/default/new8_2.png",
+                "manufacturer_name": "",
+                "brand": " ",
+                "is_show_price": true,
+                "wishlist_item_id": "5498",
+                "options": [],
+                "selected_all_required_options": true,
+                "product_qty": "1.0000",
+                "available_quantity": 36,
+                "product_sharing_message": " http://shop.arabianoud.com/index.php/100-9726.html",
+                "product_sharing_url": "http://shop.arabianoud.com/index.php/100-9726.html",
+                "show_price_v2": {
+                    "product_regular_price": 360,
+                    "special_price_label": "Special Price",
+                    "product_price": 108
+                }
+            }
+        ],
+        "wishlist_info": [
+            {
+                "wishlist_items_qty": 2,
+                "sharing_message": " http://shop.arabianoud.com/index.php/wishlist/shared/index/code/cfa3f0cfe630657bb9e2eeedf65afc25/",
+                "cart_qty": 1,
+                "sharing_url": "http://shop.arabianoud.com/index.php/wishlist/shared/index/code/cfa3f0cfe630657bb9e2eeedf65afc25/"
+            }
+        ],
+        "other": [
+            {
+                "wishlist_items_qty": 2,
+                "sharing_message": " http://shop.arabianoud.com/index.php/wishlist/shared/index/code/cfa3f0cfe630657bb9e2eeedf65afc25/",
+                "cart_qty": 1,
+                "sharing_url": "http://shop.arabianoud.com/index.php/wishlist/shared/index/code/cfa3f0cfe630657bb9e2eeedf65afc25/"
+            }
+        ]
+    }
+}
+```
+
+##Add Product To Wishlist
+
+This Api is used to add product in wishlist.
+
+<code class="post">POST</code>
+<span class="prettyprint">{Base URL}/connector/wishlist/add_products_to_wishlist</span>
+
+> Definition
+
+```
+{Base URL}/connector/wishlist/add_products_to_wishlist
+```
+
+>Request Body
+
+```php
+$request->setBody('{
+  "products":[
+    {
+      "product_id":790
+    }
+  ]
+}');
+```
+
+```curl
+-d '{
+  "products":[
+    {
+      "product_id":790
+    }
+  ]
+}'
+```
+
+###Request Parameters
+
+Parameter | DataType | Length | Required | Description
+--------- | -------- | ------ | -------- | -----------
+product_id | Int | 10 | Mandatory | Set product id
+
+>Response
+
+```
+    {
+        "status": "SUCCESS",
+        "message": [
+            2
+        ],
+        "data": {
+            "wishlist_products": [
+                {
+                    "product_id": "790",
+                    "product_sku": "3388714256102",
+                    "product_name": "inspir me Gold 100ml",
+                    "product_type": "simple",
+                    "product_regular_price": 360,
+                    "product_price": 108,
+                    "discount_percentage": 70,
+                    "product_rate": 0,
+                    "stock_status": true,
+                    "product_review_number": 0,
+                    "product_image": "http://shop.arabianoud.com/media/catalog/product/cache/1/thumbnail/600x600/040ec09b1e35df139433887a97daa66f/placeholder/default/new8_2.png",
+                    "manufacturer_name": "",
+                    "brand": " ",
+                    "is_show_price": true,
+                    "wishlist_item_id": "5498",
+                    "options": [],
+                    "selected_all_required_options": true,
+                    "product_qty": "2.0000",
+                    "available_quantity": 36,
+                    "product_sharing_message": " http://shop.arabianoud.com/index.php/100-9726.html",
+                    "product_sharing_url": "http://shop.arabianoud.com/index.php/100-9726.html",
+                    "show_price_v2": {
+                        "product_regular_price": 360,
+                        "special_price_label": "Special Price",
+                        "product_price": 108
+                    }
+                }
+            ],
+            "wishlist_info": [
+                {
+                    "wishlist_items_qty": 2,
+                    "sharing_message": " http://shop.arabianoud.com/index.php/wishlist/shared/index/code/cfa3f0cfe630657bb9e2eeedf65afc25/",
+                    "cart_qty": 1,
+                    "sharing_url": "http://shop.arabianoud.com/index.php/wishlist/shared/index/code/cfa3f0cfe630657bb9e2eeedf65afc25/"
+                }
+            ],
+            "other": [
+                {
+                    "wishlist_items_qty": 2,
+                    "sharing_message": " http://shop.arabianoud.com/index.php/wishlist/shared/index/code/cfa3f0cfe630657bb9e2eeedf65afc25/",
+                    "cart_qty": 1,
+                    "sharing_url": "http://shop.arabianoud.com/index.php/wishlist/shared/index/code/cfa3f0cfe630657bb9e2eeedf65afc25/"
+                }
+            ]
+        }
+    }
+```
+
+##Remove Product From Wishlist
+
+This Api is used to remove product from wishlist.
+
+<code class="post">POST</code>
+<span class="prettyprint">{Base URL}/connector/wishlist/remove_product_from_wishlist</span>
+
+> Definition
+
+```
+{Base URL}/connector/wishlist/remove_product_from_wishlist
+```
+
+>Request Body
+
+```php
+$request->setBody('{
+  "wishlist_item_id":"5499"
+}');
+```
+
+```curl
+-d '{
+  "wishlist_item_id":"5499"
+}'
+```
+
+###Request Parameters
+
+Parameter | DataType | Length | Required | Description
+--------- | -------- | ------ | -------- | -----------
+wishlist_item_id | Int | 10 | Mandatory | Set wishlist item id
+
+>Response
+
+```
+    {
+        "status": "SUCCESS",
+        "message": [
+            0
+        ],
+        "data": {
+            "wishlist_products": [],
+            "wishlist_info": [
+                {
+                    "wishlist_items_qty": 0,
+                    "sharing_message": " http://shop.arabianoud.com/index.php/wishlist/shared/index/code/cfa3f0cfe630657bb9e2eeedf65afc25/",
+                    "cart_qty": 1,
+                    "sharing_url": "http://shop.arabianoud.com/index.php/wishlist/shared/index/code/cfa3f0cfe630657bb9e2eeedf65afc25/"
+                }
+            ],
+            "other": [
+                {
+                    "wishlist_items_qty": 0,
+                    "sharing_message": " http://shop.arabianoud.com/index.php/wishlist/shared/index/code/cfa3f0cfe630657bb9e2eeedf65afc25/",
+                    "cart_qty": 1,
+                    "sharing_url": "http://shop.arabianoud.com/index.php/wishlist/shared/index/code/cfa3f0cfe630657bb9e2eeedf65afc25/"
+                }
+            ]
+        }
+    }
+```
+
+##Add Wishlist Product To Cart
+
+This Api is used to add product to cart.
+
+<code class="post">POST</code>
+<span class="prettyprint">{Base URL}/connector/wishlist/add_wishlist_product_to_cart</span>
+
+> Definition
+
+```
+{Base URL}/connector/wishlist/add_wishlist_product_to_cart
+```
+
+>Request Body
+
+```php
+$request->setBody('{
+  "wishlist_item_id":"5500"
+}');
+```
+
+```curl
+-d '{
+  "wishlist_item_id":"5500"
+}'
+```
+
+###Request Parameters
+
+Parameter | DataType | Length | Required | Description
+--------- | -------- | ------ | -------- | -----------
+wishlist_item_id | Int | 10 | Mandatory | Set wishlist item id
+
+```
+{
+    "status": "SUCCESS",
+    "message": [
+        0
+    ],
+    "data": {
+        "wishlist_products": [],
+        "wishlist_info": [
+            {
+                "wishlist_items_qty": 0,
+                "sharing_message": " http://shop.arabianoud.com/index.php/wishlist/shared/index/code/cfa3f0cfe630657bb9e2eeedf65afc25/",
+                "cart_qty": 2,
+                "sharing_url": "http://shop.arabianoud.com/index.php/wishlist/shared/index/code/cfa3f0cfe630657bb9e2eeedf65afc25/"
+            }
+        ],
+        "other": [
+            {
+                "wishlist_items_qty": 0,
+                "sharing_message": " http://shop.arabianoud.com/index.php/wishlist/shared/index/code/cfa3f0cfe630657bb9e2eeedf65afc25/",
+                "cart_qty": 2,
+                "sharing_url": "http://shop.arabianoud.com/index.php/wishlist/shared/index/code/cfa3f0cfe630657bb9e2eeedf65afc25/"
+            }
+        ]
+    }
+}
+```
+
+
+#Fragrance Finder [Use in AO]
+
+Fragrance finder api's are used to find product from different search functionality.
+
+This Fragrance finder api's are used only in **AO**
+
+##Get Refine Fragrance [Use in AO]
+
+This Api is used to get all refine fragrance list.
+
+<code class="post">GET</code>
+<span class="prettyprint">{Base URL}/connector/catalog/get_refine_fragrance</span>
+
+> Definition
+
+```
+{Base URL}/connector/catalog/get_refine_fragrance
+```
+
+>Response
+
+```
+{
+    "status": "SUCCESS",
+    "message": [
+        "SUCCESS"
+    ],
+    "data": [
+        {
+            "id": 1,
+            "backgroundColor": "#C0009A",
+            "title": "SPICES"
+        },
+        {
+            "id": 2,
+            "backgroundColor": "#EFE816",
+            "title": "CITRUS"
+        },
+        {
+            "id": 3,
+            "backgroundColor": "#E8E8E8",
+            "title": "FRESH"
+        },
+        {
+            "id": 4,
+            "backgroundColor": "#FF8181",
+            "title": "FLORAL"
+        },
+        {
+            "id": 5,
+            "backgroundColor": "#FFC859",
+            "title": "FRUITY"
+        },
+        {
+            "id": 6,
+            "backgroundColor": "#00FF97",
+            "title": "GREEN"
+        },
+        {
+            "id": 7,
+            "backgroundColor": "#97FFF1",
+            "title": "MUSK"
+        },
+        {
+            "id": 8,
+            "backgroundColor": "#616161",
+            "title": "WOODY"
+        }
+    ]
+}
+```
+
+##Get Fragrance Note [Use in AO]
+
+This Api is used to get all fragrance note list.
+
+<code class="post">GET</code>
+<span class="prettyprint">{Base URL}/connector/catalog/get_fragrance_notes</span>
+
+> Definition
+
+```
+{Base URL}/connector/catalog/get_fragrance_notes
+```
+
+```
+    {
+        "status": "SUCCESS",
+        "message": [
+            "SUCCESS"
+        ],
+        "data": [
+            {
+                "id": "MEN",
+                "notes": [
+                    {
+                        "id": 1,
+                        "backgroundImage": "https://shop.arabianoud.com/focus/fragrance/images/notes_1.png",
+                        "icon": "https://shop.arabianoud.com/focus/fragrance/images/notes_icon_1.png",
+                        "title": "WOODY"
+                    },
+                    {
+                        "id": 2,
+                        "backgroundImage": "https://shop.arabianoud.com/focus/fragrance/images/notes_2.png",
+                        "icon": "https://shop.arabianoud.com/focus/fragrance/images/notes_icon_2.png",
+                        "title": "FRESH"
+                    },
+                    {
+                        "id": 3,
+                        "backgroundImage": "https://shop.arabianoud.com/focus/fragrance/images/notes_3.png",
+                        "icon": "https://shop.arabianoud.com/focus/fragrance/images/notes_icon_3.png",
+                        "title": "FLORAL"
+                    },
+                    {
+                        "id": 4,
+                        "backgroundImage": "https://shop.arabianoud.com/focus/fragrance/images/notes_4.png",
+                        "icon": "https://shop.arabianoud.com/focus/fragrance/images/notes_icon_4.png",
+                        "title": "ORIENTAL"
+                    }
+                ]
+            },
+            {
+                "id": "WOMEN",
+                "notes": [
+                    {
+                        "id": 1,
+                        "backgroundImage": "https://shop.arabianoud.com/focus/fragrance/images/notes_1.png",
+                        "icon": "https://shop.arabianoud.com/focus/fragrance/images/notes_icon_1.png",
+                        "title": "WOODY"
+                    },
+                    {
+                        "id": 2,
+                        "backgroundImage": "https://shop.arabianoud.com/focus/fragrance/images/notes_2.png",
+                        "icon": "https://shop.arabianoud.com/focus/fragrance/images/notes_icon_2.png",
+                        "title": "FRESH"
+                    },
+                    {
+                        "id": 3,
+                        "backgroundImage": "https://shop.arabianoud.com/focus/fragrance/images/notes_3.png",
+                        "icon": "https://shop.arabianoud.com/focus/fragrance/images/notes_icon_3.png",
+                        "title": "FLORAL"
+                    },
+                    {
+                        "id": 4,
+                        "backgroundImage": "https://shop.arabianoud.com/focus/fragrance/images/notes_4.png",
+                        "icon": "https://shop.arabianoud.com/focus/fragrance/images/notes_icon_4.png",
+                        "title": "ORIENTAL"
+                    }
+                ]
+            },
+            {
+                "id": "UNISEX",
+                "notes": [
+                    {
+                        "id": 1,
+                        "backgroundImage": "https://shop.arabianoud.com/focus/fragrance/images/notes_1.png",
+                        "icon": "https://shop.arabianoud.com/focus/fragrance/images/notes_icon_1.png",
+                        "title": "WOODY"
+                    },
+                    {
+                        "id": 2,
+                        "backgroundImage": "https://shop.arabianoud.com/focus/fragrance/images/notes_2.png",
+                        "icon": "https://shop.arabianoud.com/focus/fragrance/images/notes_icon_2.png",
+                        "title": "FRESH"
+                    },
+                    {
+                        "id": 3,
+                        "backgroundImage": "https://shop.arabianoud.com/focus/fragrance/images/notes_3.png",
+                        "icon": "https://shop.arabianoud.com/focus/fragrance/images/notes_icon_3.png",
+                        "title": "FLORAL"
+                    },
+                    {
+                        "id": 4,
+                        "backgroundImage": "https://shop.arabianoud.com/focus/fragrance/images/notes_4.png",
+                        "icon": "https://shop.arabianoud.com/focus/fragrance/images/notes_icon_4.png",
+                        "title": "ORIENTAL"
+                    }
+                ]
+            }
+        ]
+    }
+```
+
+##Get Fragrance Finder [Use in AO]
+
+This Api is used to find fragrance product.
+
+<code class="post">POST</code>
+<span class="prettyprint">{Base URL}/connector/catalog/get_fragrance_notes</span>
+
+> Definition
+
+```
+{Base URL}/connector/catalog/get_fragrance_notes
+```
+
+>Request Body
+
+```php
+$request->setBody('{ "gender_id":"UNISEX", "fragrance_id":[4], "fragrance_note_id":4 }');
+```
+
+```curl
+-d '{ "gender_id":"UNISEX", "fragrance_id":[4], "fragrance_note_id":4 }'
+```
+
+###Request Parameters
+
+Parameter | DataType | Length | Required | Description
+--------- | -------- | ------ | -------- | -----------
+gender_id | Int | 10 | Mandatory | Set Gender id: 1) UNISEX 2) MEN 3) WOMEN
+fragrance_id | Int | 10 | Mandatory | Set fragrance id using get-refine-fragrance api
+fragrance_note_id | Int | 10 | Mandatory | Set fragrance note id using get-fragrance-note api
+
+>Response
+
+```
+{
+    "status": "SUCCESS",
+    "message": [
+        "SUCCESS"
+    ],
+    "data": [
+        {
+            "product_id": "783",
+            "product_name": "Sehr Al Kalemat, 100 ml",
+            "product_type": "Spray",
+            "type": "simple",
+            "product_regular_price": 440,
+            "product_price": 440,
+            "product_rate": 0,
+            "discount_percentage": 0,
+            "stock_status": true,
+            "product_review_number": 0,
+            "product_image": "https://media.cdn-arabianoud.com/media/catalog/product/cache/1/thumbnail/600x600/040ec09b1e35df139433887a97daa66f/3/0/301020262-2_6.png",
+            "manufacturer_name": "",
+            "brand": ""
+        },
+        {
+            "product_id": "785",
+            "product_name": "Special Nights for Women , 100 ml",
+            "product_type": "Spray",
+            "type": "simple",
+            "product_regular_price": 250,
+            "product_price": 80,
+            "product_rate": 0,
+            "discount_percentage": 68,
+            "stock_status": true,
+            "product_review_number": 0,
+            "product_image": "https://media.cdn-arabianoud.com/media/catalog/product/cache/1/thumbnail/600x600/040ec09b1e35df139433887a97daa66f/3/0/301020148-2_4.png",
+            "manufacturer_name": "",
+            "brand": ""
+        }
+        ]
+        
+    }
+
+```
 
 
 
