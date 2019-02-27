@@ -1,390 +1,83 @@
+---
+title : FOCUS
 
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="shortcut icon" href="../images/Favicon.png">
-    <title>FOCUS</title>
+language_tabs: # must be one of https://git.io/vQNgJ
+  - shell: cURL
+  - php: PHP
 
-    <style>
-      .highlight table td { padding: 5px; }
-.highlight table pre { margin: 0; }
-.highlight .gh {
-  color: #999999;
-}
-.highlight .sr {
-  color: #f6aa11;
-}
-.highlight .go {
-  color: #888888;
-}
-.highlight .gp {
-  color: #555555;
-}
-.highlight .gs {
-}
-.highlight .gu {
-  color: #aaaaaa;
-}
-.highlight .nb {
-  color: #f6aa11;
-}
-.highlight .cm {
-  color: #75715e;
-}
-.highlight .cp {
-  color: #75715e;
-}
-.highlight .c1 {
-  color: #75715e;
-}
-.highlight .cs {
-  color: #75715e;
-}
-.highlight .c, .highlight .cd {
-  color: #75715e;
-}
-.highlight .err {
-  color: #960050;
-}
-.highlight .gr {
-  color: #960050;
-}
-.highlight .gt {
-  color: #960050;
-}
-.highlight .gd {
-  color: #49483e;
-}
-.highlight .gi {
-  color: #49483e;
-}
-.highlight .ge {
-  color: #49483e;
-}
-.highlight .kc {
-  color: #66d9ef;
-}
-.highlight .kd {
-  color: #66d9ef;
-}
-.highlight .kr {
-  color: #66d9ef;
-}
-.highlight .no {
-  color: #66d9ef;
-}
-.highlight .kt {
-  color: #66d9ef;
-}
-.highlight .mf {
-  color: #ae81ff;
-}
-.highlight .mh {
-  color: #ae81ff;
-}
-.highlight .il {
-  color: #ae81ff;
-}
-.highlight .mi {
-  color: #ae81ff;
-}
-.highlight .mo {
-  color: #ae81ff;
-}
-.highlight .m, .highlight .mb, .highlight .mx {
-  color: #ae81ff;
-}
-.highlight .sc {
-  color: #ae81ff;
-}
-.highlight .se {
-  color: #ae81ff;
-}
-.highlight .ss {
-  color: #ae81ff;
-}
-.highlight .sd {
-  color: #e6db74;
-}
-.highlight .s2 {
-  color: #e6db74;
-}
-.highlight .sb {
-  color: #e6db74;
-}
-.highlight .sh {
-  color: #e6db74;
-}
-.highlight .si {
-  color: #e6db74;
-}
-.highlight .sx {
-  color: #e6db74;
-}
-.highlight .s1 {
-  color: #e6db74;
-}
-.highlight .s {
-  color: #e6db74;
-}
-.highlight .na {
-  color: #a6e22e;
-}
-.highlight .nc {
-  color: #a6e22e;
-}
-.highlight .nd {
-  color: #a6e22e;
-}
-.highlight .ne {
-  color: #a6e22e;
-}
-.highlight .nf {
-  color: #a6e22e;
-}
-.highlight .vc {
-  color: #ffffff;
-}
-.highlight .nn {
-  color: #ffffff;
-}
-.highlight .nl {
-  color: #ffffff;
-}
-.highlight .ni {
-  color: #ffffff;
-}
-.highlight .bp {
-  color: #ffffff;
-}
-.highlight .vg {
-  color: #ffffff;
-}
-.highlight .vi {
-  color: #ffffff;
-}
-.highlight .nv {
-  color: #ffffff;
-}
-.highlight .w {
-  color: #ffffff;
-}
-.highlight {
-  color: #ffffff;
-}
-.highlight .n, .highlight .py, .highlight .nx {
-  color: #ffffff;
-}
-.highlight .ow {
-  color: #f92672;
-}
-.highlight .nt {
-  color: #f92672;
-}
-.highlight .k, .highlight .kv {
-  color: #f92672;
-}
-.highlight .kn {
-  color: #f92672;
-}
-.highlight .kp {
-  color: #f92672;
-}
-.highlight .o {
-  color: #f92672;
-}
-    </style>
-    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
-    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all.js"></script>
-  </head>
+search: true
+---
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;php&quot;]">
-    <a href="#" id="nav-button">
-      <span>
-        NAV
-        <img src="images/navbar.png" alt="Navbar" />
-      </span>
-    </a>
-    <div class="toc-wrapper">
-      <img src="images/logo.png" class="logo" alt="Logo" />
-        <div class="lang-selector">
-              <a href="#" data-language-name="shell">cURL</a>
-              <a href="#" data-language-name="php">PHP</a>
-        </div>
-        <div class="search">
-          <input type="text" class="search" id="input-search" placeholder="Search">
-        </div>
-        <ul class="search-results"></ul>
-      <ul id="toc" class="toc-list-h1">
-          <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
-          </li>
-          <li>
-            <a href="#requests" class="toc-h1 toc-link" data-title="Requests">Requests</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#request-headers" class="toc-h2 toc-link" data-title="Request Headers">Request Headers</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
-          </li>
-          <li>
-            <a href="#configuration" class="toc-h1 toc-link" data-title="Configuration">Configuration</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#get-groups" class="toc-h2 toc-link" data-title="Get Groups">Get Groups</a>
-                  </li>
-                  <li>
-                    <a href="#get-store-view" class="toc-h2 toc-link" data-title="get store view">get store view</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#catalog" class="toc-h1 toc-link" data-title="Catalog">Catalog</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#get-home-data" class="toc-h2 toc-link" data-title="Get Home Data">Get Home Data</a>
-                  </li>
-                  <li>
-                    <a href="#get-products" class="toc-h2 toc-link" data-title="Get Products">Get Products</a>
-                  </li>
-                  <li>
-                    <a href="#get-filters" class="toc-h2 toc-link" data-title="Get Filters">Get Filters</a>
-                  </li>
-                  <li>
-                    <a href="#get-product-detail" class="toc-h2 toc-link" data-title="Get Product Detail">Get Product Detail</a>
-                  </li>
-                  <li>
-                    <a href="#get-product-reviews" class="toc-h2 toc-link" data-title="Get Product Reviews">Get Product Reviews</a>
-                  </li>
-                  <li>
-                    <a href="#set-product-review" class="toc-h2 toc-link" data-title="Set Product Review">Set Product Review</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#checkout" class="toc-h1 toc-link" data-title="Checkout">Checkout</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#add-to-cart" class="toc-h2 toc-link" data-title="Add to cart">Add to cart</a>
-                  </li>
-                  <li>
-                    <a href="#get-cart" class="toc-h2 toc-link" data-title="Get Cart">Get Cart</a>
-                  </li>
-                  <li>
-                    <a href="#edit-cart" class="toc-h2 toc-link" data-title="Edit Cart">Edit Cart</a>
-                  </li>
-                  <li>
-                    <a href="#get-order-configuration" class="toc-h2 toc-link" data-title="Get Order Configuration">Get Order Configuration</a>
-                  </li>
-                  <li>
-                    <a href="#save-payment-method" class="toc-h2 toc-link" data-title="Save Payment Method">Save Payment Method</a>
-                  </li>
-                  <li>
-                    <a href="#place-order" class="toc-h2 toc-link" data-title="Place Order">Place Order</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#customer" class="toc-h1 toc-link" data-title="Customer">Customer</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#registration" class="toc-h2 toc-link" data-title="Registration">Registration</a>
-                  </li>
-              </ul>
-          </li>
-      </ul>
-    </div>
-    <div class="page-wrapper">
-      <div class="dark-box"></div>
-      <div class="content">
-        <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Focus API! You can use our API to access Focus API endpoints.</p>
+#Introduction
 
-<p>We have language bindings in Shell, Php! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-<h1 id='requests'>Requests</h1>
-<p>The base URL for all requests to the Arabianoud Web API is :
-http://shop.arabianoud.com/index.php/</p>
+Welcome to the Focus API! You can use our API to access Focus API endpoints.
 
-<p>Our API is REST-based. This means:</p>
+In this section we’ll go over the elements that make up the eCommerce system, and how you can start integrating with the FOCUS API.
 
-<ol>
-<li>It make use of standard HTTP verbs like GET, POST, DELETE.</li>
-<li>The API uses standard HTTP error responses(status codes) to indicate status of your requests – success and error codes.</li>
-<li>Authentication is specified with HTTP Basic Authentication.</li>
-</ol>
-<h3 id='request-headers'>Request Headers</h3>
-<table><thead>
-<tr>
-<th>Header</th>
-<th>Sample Value</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Content-Type</td>
-<td>application/json</td>
-<td>JSON request</td>
-</tr>
-<tr>
-<td>WWW-Authenticate</td>
-<td>fjswe98w9wjkd23jsd23</td>
-<td>Authentication Token</td>
-</tr>
-</tbody></table>
-<h1 id='authentication'>Authentication</h1>
-<p>Focus Api uses Basic Authentication to provide you an authorized access. 
-Please Visit our ( http://efocus.store ) focus website and get the authorize token.</p>
+Our API is REST-based. This means:
 
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<pre class="highlight php tab-php"><code>Token:fjswe98w9wjkd23jsd23
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Token: fjswe98w9wjkd23jsd23"</span>
-</code></pre>
-<blockquote>
-<p>Make sure to replace <code>fjswe98w9wjkd23jsd23</code> with your API token.</p>
-</blockquote>
+1. It make use of standard HTTP verbs like GET, POST, DELETE.
+2. The API uses standard HTTP error responses(status codes) to indicate status of your requests – success and error codes.
+3. Authentication is specified with HTTP Basic Authentication.
 
-<p>Focus uses API keys to allow access to the API. </p>
-<h1 id='configuration'>Configuration</h1>
-<p>Configuration apis use to basic mobile app home, category, search related apis.</p>
-<h2 id='get-groups'>Get Groups</h2>
-<p>This api is get the all groups detail of stores,websites,languages</p>
+#Environment
+Each FOCUS collection will have it's environment set up.
 
-<blockquote>
-<p>Definition</p>
-</blockquote>
-<pre class="highlight php tab-php"><code>
+Each environment has following components</br>
+Base URL - Base URL where the API is hosted</br>
+Authentication Token - A unique Authentication Token for each environment
+
+Set up the below headers exactly for all requests. Only JSON requests will be accepted
+
+### Request Headers
+
+Header     |   Sample Value   |   Description
+--------   |   ------------   |   -----------
+Token | {token} | Authentication Token
+Content-Type | application/json | JSON request
+
+<aside class="notice">
+Note: You must replace <token> with your personal API Token.
+</aside>
+
+
+#Configuration
+
+Configuration apis use to basic mobile app home, category, search related apis.
+
+## Get Groups
+
+Get Groups API is used to fetch list of all Websites, Stores and Languages
+
+> Definition
+
+```php
+
 $request = new HttpRequest();
-$request-&gt;setUrl('http://shop.arabianoud.com/index.php/connector/config/get_groups');
-$request-&gt;setHeaders(array(
-  'Content-Type' =&gt; 'application/json',
-  'Token' =&gt; 'fjswe98w9wjkd23jsd23'
+$request->setUrl('{Base URL}/connector/config/get_groups');
+$request->setHeaders(array(
+  'Content-Type' => 'application/json',
+  'Token' => 'fjswe98w9wjkd23jsd23'
 ));
 
-</code></pre><pre class="highlight shell tab-shell"><code>
-curl -X GET <span class="se">\</span>
-  http://shop.arabianoud.com/index.php/connector/config/get_groups <span class="se">\</span>
-  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'Token: fjswe98w9wjkd23jsd23'</span> <span class="se">\</span>
+```
 
-</code></pre>
-<p>Request :
-<span class="post">GET</span><span class="prettyprint">http://shop.arabianoud.com/index.php/connector/config/get_groups</span></p>
+```shell 
 
-<blockquote>
-<p>Response </p>
-</blockquote>
-<pre class="highlight plaintext"><code>{
+curl -X GET \
+  {Base URL}/connector/config/get_groups \
+  -H 'Content-Type: application/json' \
+  -H 'Token: fjswe98w9wjkd23jsd23' \
+  
+```
+
+Request :
+<span class="post">GET</span><span class="prettyprint">{Base URL}/connector/config/get_groups</span>
+
+> Response 
+
+```
+{
     "status": "SUCCESS",
     "message": [
         "SUCCESS"
@@ -425,31 +118,38 @@ curl -X GET <span class="se">\</span>
         }
     ]
 }
-</code></pre><h2 id='get-store-view'>get store view</h2>
-<p>This api is set the your current selected store like english,arabic etc.</p>
+```
 
-<p>get-groups api gives the list of store-view and set store using this get-store-view api</p>
+## Get store view
 
-<blockquote>
-<p>Definition</p>
-</blockquote>
-<pre class="highlight plaintext"><code>http://shop.arabianoud.com/index.php/connector/config/get_store_view
-</code></pre>
-<blockquote>
-<p>Request Body</p>
-</blockquote>
-<pre class="highlight php tab-php"><code>$request-&gt;setBody('{
+Get Store View is used to Set the store view. For e.g. Set store view as 
+{KSA and English} or {UAE and Arabic}
+
+> Definition
+
+```
+{Base URL}/connector/config/get_store_view
+```
+
+> Request Body
+
+```php
+$request->setBody('{
   "store_id":1
 }');
 
-</code></pre><pre class="highlight plaintext"><code>  -d '{
+```
+
+```curl
+  -d '{
   "store_id":1
 }'
-</code></pre>
-<blockquote>
-<p>Response</p>
-</blockquote>
-<pre class="highlight plaintext"><code>{
+```
+
+>Response
+
+```
+{
     "status": "SUCCESS",
     "message": [
         "SUCCESS"
@@ -499,96 +199,90 @@ curl -X GET <span class="se">\</span>
         }
     ]
 }
-</code></pre><h3 id='request'>Request</h3>
-<p><span class="post">POST</span><span class="prettyprint">http://shop.arabianoud.com/index.php/connector/catalog/get_store_view</span></p>
-<h3 id='request-parameter'>Request Parameter</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Data Type</th>
-<th>Length</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>store_id</td>
-<td>Integer</td>
-<td>32</td>
-<td>Mandatory</td>
-<td>Store id associated with the website.</td>
-</tr>
-</tbody></table>
-<h1 id='catalog'>Catalog</h1>
-<p>List of product apis.</p>
+```
 
-<blockquote>
-<p>Definition</p>
-</blockquote>
-<pre class="highlight plaintext"><code>http://shop.arabianoud.com/index.php/connector/catalog/get_home_dataV2
-</code></pre><h2 id='get-home-data'>Get Home Data</h2>
-<p>This is Mobile App home screen apis. There are 8 types of home screen data.</p>
+###Request
+<span class="post">POST</span><span class="prettyprint">{Base URL}/connector/config/get_store_view</span>
 
-<p>List of Home Screen Data :</p>
+###Request Parameter
 
-<p>1) Header Banner </p>
+Parameter | Data Type | Length | Required | Description
+--------- | --------- | ------ | -------- | -----------
+store_id | Integer | 32 | Mandatory | Store id associated with the website. 
+ 
+ 
+#Catalog
 
-<p>2) Trending category</p>
+List of product apis.
 
-<p>3) Home Category</p>
+> Definition
 
-<p>4) Seasonal products</p>
+```
+{Base URL}/connector/config/get_home_dataV2
+```
 
-<p>5) Trending products</p>
+##Get Home Data
+ 
+Get Home Data is an independent API which renders the content for Home page. Home page has many different sections and the data for all these are segregated into pre-defined components.
+Based on the request, the content of these components is just merged and provided in this API
 
-<p>6) Best Seller products</p>
+For e.g. a Home screen can have components like:
 
-<p>7) banner</p>
+1) Header Banner </br>
+2) Trending category</br>
+3) Category List</br>
+4) Seasonal products</br>
+5) Trending products</br>
+6) Best Seller products</br>
 
-<blockquote>
-<p>Request</p>
-</blockquote>
-<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+> Request
 
-<span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+```php
+<?php
 
-<span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
-  <span class="nx">CURLOPT_URL</span> <span class="o">=&gt;</span> <span class="s2">"http://shop.arabianoud.com/index.php/connector/catalog/get_home_dataV2"</span><span class="p">,</span>
-  <span class="nx">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="nx">CURLOPT_ENCODING</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
-  <span class="nx">CURLOPT_MAXREDIRS</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
-  <span class="nx">CURLOPT_TIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
-  <span class="nx">CURLOPT_HTTP_VERSION</span> <span class="o">=&gt;</span> <span class="nx">CURL_HTTP_VERSION_1_1</span><span class="p">,</span>
-  <span class="nx">CURLOPT_CUSTOMREQUEST</span> <span class="o">=&gt;</span> <span class="s2">"POST"</span><span class="p">,</span>
-  <span class="nx">CURLOPT_POSTFIELDS</span> <span class="o">=&gt;</span> <span class="s2">"{ </span><span class="se">\"</span><span class="s2">limit</span><span class="se">\"</span><span class="s2">:7, </span><span class="se">\"</span><span class="s2">offset</span><span class="se">\"</span><span class="s2">:0, </span><span class="se">\"</span><span class="s2">store_id</span><span class="se">\"</span><span class="s2">:1 }"</span><span class="p">,</span>
-  <span class="nx">CURLOPT_HTTPHEADER</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s2">"Content-Type: application/json"</span><span class="p">,</span>
-    <span class="s2">"Token: fjswe98w9wjkd23jsd23"</span><span class="p">,</span>
-  <span class="p">),</span>
-<span class="p">));</span>
+$curl = curl_init();
 
-<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
-<span class="nv">$err</span> <span class="o">=</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "{Base URL}/connector/config/get_home_dataV2",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_http_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "POST",
+  CURLOPT_POSTFIELDS => "{ \"limit\":7, \"offset\":0, \"store_id\":1 }",
+  CURLOPT_HTTPHEADER => array(
+    "Content-Type: application/json",
+    "Token: fjswe98w9wjkd23jsd23",
+  ),
+));
 
-<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+$response = curl_exec($curl);
+$err = curl_error($curl);
 
-<span class="k">if</span> <span class="p">(</span><span class="nv">$err</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">echo</span> <span class="s2">"cURL Error #:"</span> <span class="o">.</span> <span class="nv">$err</span><span class="p">;</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-  <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
-<span class="p">}</span>
+curl_close($curl);
 
-</code></pre><pre class="highlight plaintext"><code>   curl -X POST \
-     http://shop.arabianoud.com/index.php/connector/catalog/get_home_dataV2 \
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}
+
+```
+
+```curl
+   curl -X POST \
+     {Base URL}/connector/config/get_home_dataV2 \
      -H 'Content-Type: application/json' \
      -H 'Token: fjswe98w9wjkd23jsd23' \
      -d '{ "limit":7, "offset":0, "store_id":1 }'
 }'
-</code></pre>
-<blockquote>
-<p>Response</p>
-</blockquote>
-<pre class="highlight plaintext"><code>{
+```
+
+>Response
+
+```
+{
     "status": "SUCCESS",
     "message": [
         "SUCCESS"
@@ -638,14 +332,6 @@ curl -X GET <span class="se">\</span>
                         "image_thumbnail": "http://52.77.143.184/media/catalog/category/oud.png",
                         "children": [],
                         "products": []
-                    },
-                    {
-                        "category_name": null,
-                        "category_id": "89",
-                        "category_image": null,
-                        "image_thumbnail": null,
-                        "children": [],
-                        "products": []
                     }
                 ]
             }
@@ -672,22 +358,6 @@ curl -X GET <span class="se">\</span>
                                 "image_thumbnail": null,
                                 "children": null,
                                 "products": []
-                            },
-                            {
-                                "category_name": "عطور للنساء",
-                                "category_id": "26",
-                                "category_image": "http://52.77.143.184/media/catalog/category/Artboard_74.png",
-                                "image_thumbnail": null,
-                                "children": null,
-                                "products": []
-                            },
-                            {
-                                "category_name": "عطور للجنسين",
-                                "category_id": "28",
-                                "category_image": "http://52.77.143.184/media/catalog/category/Artboard_75.png",
-                                "image_thumbnail": null,
-                                "children": null,
-                                "products": []
                             }
                         ]
                     },
@@ -701,22 +371,6 @@ curl -X GET <span class="se">\</span>
                                 "category_name": "العود",
                                 "category_id": "36",
                                 "category_image": "http://52.77.143.184/media/catalog/category/Artboard_81.png",
-                                "image_thumbnail": null,
-                                "children": null,
-                                "products": []
-                            },
-                            {
-                                "category_name": "أنواع المعجون ",
-                                "category_id": "37",
-                                "category_image": "http://52.77.143.184/media/catalog/category/Artboard_82.png",
-                                "image_thumbnail": null,
-                                "children": null,
-                                "products": []
-                            },
-                            {
-                                "category_name": "المبثوث الفاخر",
-                                "category_id": "38",
-                                "category_image": "http://52.77.143.184/media/catalog/category/Artboard_83.png",
                                 "image_thumbnail": null,
                                 "children": null,
                                 "products": []
@@ -740,22 +394,6 @@ curl -X GET <span class="se">\</span>
                                 "category_name": "دهن العود ",
                                 "category_id": "7",
                                 "category_image": "http://52.77.143.184/media/catalog/category/Artboard_88.png",
-                                "image_thumbnail": null,
-                                "children": null,
-                                "products": []
-                            },
-                            {
-                                "category_name": "مخلطات العربية",
-                                "category_id": "24",
-                                "category_image": "http://52.77.143.184/media/catalog/category/Artboard_89.png",
-                                "image_thumbnail": null,
-                                "children": null,
-                                "products": []
-                            },
-                            {
-                                "category_name": "زيوت عطرية",
-                                "category_id": "50",
-                                "category_image": "http://52.77.143.184/media/catalog/category/Artboard_90.png",
                                 "image_thumbnail": null,
                                 "children": null,
                                 "products": []
@@ -929,77 +567,69 @@ curl -X GET <span class="se">\</span>
         }
     ]
 }
-</code></pre><h3 id='request-2'>Request</h3>
-<p><span class="post">POST</span><span class="prettyprint">http://shop.arabianoud.com/index.php/connector/catalog/get_home_dataV2</span></p>
-<h3 id='request-parameters'>Request Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>DataType</th>
-<th>Length</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>limit</td>
-<td>Int</td>
-<td>0-7</td>
-<td>Mandatory</td>
-<td>0-7 types of screen data</td>
-</tr>
-<tr>
-<td>offset</td>
-<td>Int</td>
-<td>0-6</td>
-<td>Mandatory</td>
-<td>Set first Screen example : Trending product you display first then you set &quot;offset&quot;:1</td>
-</tr>
-<tr>
-<td>store_id</td>
-<td>Int</td>
-<td>2</td>
-<td>Mandatory</td>
-<td>Set store id</td>
-</tr>
-</tbody></table>
-<h2 id='get-products'>Get Products</h2>
-<p>This Api is use to get Product list.
-Get product list using category-id Or key-word parameter.</p>
+```
 
-<p>In this api multiple filter apply. </p>
+###Request
 
-<blockquote>
-<p>Definition</p>
-</blockquote>
-<pre class="highlight plaintext"><code>http://shop.arabianoud.com/index.php/connector/catalog/get_all_productsV2
-</code></pre><h3 id='request-3'>Request</h3>
-<p><span class="post">POST</span><span class="prettyprint">http://shop.arabianoud.com/index.php/connector/catalog/get_all_productsV2</span></p>
+<span class="post">POST</span><span class="prettyprint">{Base URL}/connector/config/get_home_dataV2</span>
 
-<blockquote>
-<p>Request Body Without Filter</p>
-</blockquote>
-<pre class="highlight php tab-php"><code>    $request-&gt;setBody('{
-      "category_id":4,
+ 
+###Request Parameters
+ 
+Parameter | DataType | Length | Required | Description
+--------- | -------- | ------ | -------- | -----------
+limit | Int | 0-7 | Mandatory | 0-7 types of screen data
+offset | Int | 0-6 | Mandatory | Set first Screen example : Trending product you display first then you set "offset":1
+store_id | Int | 2 | Mandatory | Set store id
+ 
+
+##Get Products
+
+This is one of the most important and most used API's
+It is a multipurpose api as it performs:</br></br>
+1> Fetches all products for a particular category</br>
+2> Fetches all products based on a search keyword</br>
+3> Apply sort on the requested products</br>
+4> Apply Filter on the requested products</br>
+
+> Definition
+
+```
+{Base URL}/connector/catalog/get_all_productsV2
+```
+
+###Request
+
+<span class="post">POST</span><span class="prettyprint">{Base URL}/connector/catalog/get_all_productsV2</span>
+
+> Request Body Without Filter
+
+```php
+    $request->setBody('{
+      "category_id":32,
       "offset":0,
       "limit":10,
       "filter":[] ,
       "width":110,
       "height":110
     }');
-</code></pre><pre class="highlight plaintext"><code>     -d '{
-     "category_id":4,
+```
+
+```curl
+     -d '{
+     "category_id":32,
      "offset":0,
      "limit":10,
      "filter":[] ,
      "width":110,
      "height":110
    }'
-</code></pre>
-<blockquote>
-<p>Response Without Filter</p>
-</blockquote>
-<pre class="highlight plaintext"><code>    "status": "SUCCESS",
+```
+
+> Response Without Filter
+
+```
+    "status": "SUCCESS",
         "message": [
             40
         ],
@@ -1045,71 +675,26 @@ Get product list using category-id Or key-word parameter.</p>
         },
         "applied_filters": []
     }
-</code></pre><h3 id='request-parameters-2'>Request Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>DataType</th>
-<th>Length</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>category_id</td>
-<td>Int</td>
-<td>100</td>
-<td>Optional</td>
-<td>If Set category id then remove key-word parameter</td>
-</tr>
-<tr>
-<td>key_word</td>
-<td>String</td>
-<td>100</td>
-<td>Optional</td>
-<td>If set key_word parameter then remove category_id</td>
-</tr>
-<tr>
-<td>offset</td>
-<td>Int</td>
-<td>100</td>
-<td>Mandatory</td>
-<td>default &#39;0&#39; , Set product start position</td>
-</tr>
-<tr>
-<td>limit</td>
-<td>Int</td>
-<td>2</td>
-<td>Mandatory</td>
-<td>Set the product list limit 10 to 100</td>
-</tr>
-<tr>
-<td>filter</td>
-<td>String</td>
-<td>255</td>
-<td>Optional</td>
-<td>get-filter api gives list of filters. Set product Filter like price, category etc.</td>
-</tr>
-<tr>
-<td>width</td>
-<td>Int</td>
-<td>100</td>
-<td>Mandatory</td>
-<td>Set product image width</td>
-</tr>
-<tr>
-<td>height</td>
-<td>Int</td>
-<td>100</td>
-<td>Mandatory</td>
-<td>Set product image height</td>
-</tr>
-</tbody></table>
+```
+ 
+###Request Parameters
+ 
+Parameter | DataType | Length | Required | Description
+--------- | -------- | ------ | -------- | -----------
+category_id | Int | 100 | Optional | If Set category id then remove key-word parameter
+key_word | String | 100 | Optional | If set key_word parameter then remove category_id
+offset | Int | 100 | Mandatory | default '0' , Set product start position
+limit | Int | 2 | Mandatory | Set the product list limit 10 to 100
+filter | String | 255 | Optional | get-filter api gives list of filters. Set product Filter like price, category etc.
+width | Int | 100 | Mandatory | Set product image width
+height | Int | 100 | Mandatory | Set product image height
 
-<blockquote>
-<p>Request Body With Filter</p>
-</blockquote>
-<pre class="highlight php tab-php"><code>$request-&gt;setBody('{
+
+
+> Request Body With Filter
+
+```php
+$request->setBody('{
   "category_id":11,
   "offset":0,
   "limit":10,
@@ -1117,7 +702,10 @@ Get product list using category-id Or key-word parameter.</p>
   "width":110,
   "height":110
 }');
-</code></pre><pre class="highlight plaintext"><code>  -d '{
+```
+
+```curl
+  -d '{
   "category_id":11,
   "offset":0,
   "limit":10,
@@ -1125,11 +713,12 @@ Get product list using category-id Or key-word parameter.</p>
   "width":110,
   "height":110
 }'
-</code></pre>
-<blockquote>
-<p>Response With Filter</p>
-</blockquote>
-<pre class="highlight plaintext"><code>    {
+```
+
+>Response With Filter
+
+```
+    {
         "status": "SUCCESS",
         "message": [
             2
@@ -1187,20 +776,29 @@ Get product list using category-id Or key-word parameter.</p>
             }
         ]
     }
-</code></pre><h2 id='get-filters'>Get Filters</h2>
-<p>This Api Gives list of product filters.</p>
+```
 
-<blockquote>
-<p>Definition</p>
-</blockquote>
-<pre class="highlight plaintext"><code>http://shop.arabianoud.com.com/index.php/connector/catalog/get_all_filters
-</code></pre><h3 id='request-4'>Request</h3>
-<p><span class="post">POST</span><span class="prettyprint">http://shop.arabianoud.com/index.php/connector/catalog/get_all_filters</span></p>
 
-<blockquote>
-<p>Request Body</p>
-</blockquote>
-<pre class="highlight php tab-php"><code>    $request-&gt;setBody('{
+##Get Filters
+
+This Api Gives list of product filters for a specific product collection.
+Request for this api is same as the one for previous API - <a href="#get-products">Get All Products</a>.
+
+> Definition
+
+```
+{Base URL}/connector/catalog/get_all_filters
+```
+
+###Request
+
+<span class="post">POST</span><span class="prettyprint">{Base URL}/connector/catalog/get_all_filters</span>
+
+
+> Request Body
+
+```php
+    $request->setBody('{
       "category_id":4,
       "offset":0,
       "limit":10,
@@ -1208,7 +806,10 @@ Get product list using category-id Or key-word parameter.</p>
       "width":110,
       "height":110
     }');
-</code></pre><pre class="highlight plaintext"><code>     -d '{
+```
+
+```curl
+     -d '{
      "category_id":4,
      "offset":0,
      "limit":10,
@@ -1216,11 +817,11 @@ Get product list using category-id Or key-word parameter.</p>
      "width":110,
      "height":110
    }'
-</code></pre>
-<blockquote>
-<p>Response</p>
-</blockquote>
-<pre class="highlight plaintext"><code>{
+```
+> Response
+
+```
+{
     "status": "SUCCESS",
     "message": [
         "SUCCESS"
@@ -1253,7 +854,7 @@ Get product list using category-id Or key-word parameter.</p>
                 "value": [
                     {
                         "image": "https://shop.arabianoud.com/focus/images/origin1.png",
-                        "label": "Mix (Oriental &amp; Western)",
+                        "label": "Mix (Oriental & Western)",
                         "id": "24"
                     },
                     {
@@ -1375,109 +976,63 @@ Get product list using category-id Or key-word parameter.</p>
         ]
     }
 }
-</code></pre><h3 id='request-parameters-3'>Request Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>DataType</th>
-<th>Length</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>category_id</td>
-<td>Int</td>
-<td>100</td>
-<td>Optional</td>
-<td>If Set category id then remove key-word parameter</td>
-</tr>
-<tr>
-<td>key_word</td>
-<td>String</td>
-<td>100</td>
-<td>Optional</td>
-<td>If set key_word parameter then remove category_id</td>
-</tr>
-<tr>
-<td>offset</td>
-<td>Int</td>
-<td>100</td>
-<td>Mandatory</td>
-<td>default &#39;0&#39; , Set product start position</td>
-</tr>
-<tr>
-<td>limit</td>
-<td>Int</td>
-<td>2</td>
-<td>Mandatory</td>
-<td>Set the product list limit 10 to 100</td>
-</tr>
-<tr>
-<td>filter</td>
-<td>String</td>
-<td>255</td>
-<td>Optional</td>
-<td>get-filter api gives list of filters. Set product Filter like price, category etc.</td>
-</tr>
-<tr>
-<td>width</td>
-<td>Int</td>
-<td>100</td>
-<td>Mandatory</td>
-<td>Set product image width</td>
-</tr>
-<tr>
-<td>height</td>
-<td>Int</td>
-<td>100</td>
-<td>Mandatory</td>
-<td>Set product image height</td>
-</tr>
-</tbody></table>
-<h2 id='get-product-detail'>Get Product Detail</h2>
-<p>This Api is user to get product full detail.</p>
-<h3 id='request-5'>Request</h3>
-<p><code class="post">POST</code>
-<span class="prettyprint">http://shop.arabianoud.com/index.php/connector/catalog/get_product_detail</span></p>
+```
 
-<blockquote>
-<p>Definition</p>
-</blockquote>
-<pre class="highlight plaintext"><code>http://shop.arabianoud.com.com/index.php/connector/catalog/get_product_detail
-</code></pre>
-<blockquote>
-<p>Request Body</p>
-</blockquote>
-<pre class="highlight php tab-php"><code>    $request-&gt;setBody('{
+###Request Parameters
+ 
+Parameter | DataType | Length | Required | Description
+--------- | -------- | ------ | -------- | -----------
+category_id | Int | 100 | Optional | If Set category id then remove key-word parameter
+key_word | String | 100 | Optional | If set key_word parameter then remove category_id
+offset | Int | 100 | Mandatory | default '0' , Set product start position
+limit | Int | 2 | Mandatory | Set the product list limit 10 to 100
+filter | String | 255 | Optional | get-filter api gives list of filters. Set product Filter like price, category etc.
+width | Int | 100 | Mandatory | Set product image width
+height | Int | 100 | Mandatory | Set product image height
+
+
+##Get Product Detail
+
+This Api is user to get all details for a specific product. 
+It provides all images, meta data, prices and stock for a product.
+
+For a configurable product, it also provides all data for it's associated products
+
+###Request
+
+<code class="post">POST</code>
+<span class="prettyprint">{Base URL}/connector/catalog/get_product_detail</span>
+
+> Definition
+
+```
+{Base URL}/connector/catalog/get_product_detail
+```
+
+> Request Body
+
+```php
+    $request->setBody('{
       "product_id":789
     }');
-</code></pre><pre class="highlight plaintext"><code>    -d '{
+```
+
+```curl
+    -d '{
       "product_id":789
     }'
-</code></pre><h3 id='request-parameters-4'>Request Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>DataType</th>
-<th>Length</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>product_id</td>
-<td>Int</td>
-<td>100</td>
-<td>Mandatory</td>
-<td>Set product id</td>
-</tr>
-</tbody></table>
+```
+ 
+###Request Parameters
 
-<blockquote>
-<p>Response</p>
-</blockquote>
-<pre class="highlight plaintext"><code>{
+Parameter | DataType | Length | Required | Description
+--------- | -------- | ------ | -------- | -----------
+product_id | Int | 100 | Mandatory | Set product id
+
+> Response
+
+```
+{
     "status": "SUCCESS",
     "message": [
         "SUCCESS"
@@ -1492,8 +1047,8 @@ Get product list using category-id Or key-word parameter.</p>
             "product_price": 200,
             "special_price_start_date": "2017-09-22 00:00:00",
             "special_price_end_date": "",
-            "product_description": "&lt;p&gt;\r\nLara by Arabian Oud is a Floral fragrance for unisex. A new and distinct language in the world of perfumes that represents you in an elegant and wonderful way. \r\nOnce you apply Lara by Arabian Oud you will notice a lingering quality of warmer and softer hints that hide an essence of elegant and calming feelings.\r\nWith the unique mixture of the floral fresh flowers, Lilies of the valley, Musk, Chocolate and Litchi&lt;br/&gt; \r\n&lt;/p&gt;",
-            "product_short_description": "&lt;p&gt;\r\nLara by Arabian Oud is a Floral fragrance for unisex. A new and distinct language in the world of perfumes that represents you in an elegant and wonderful way. \r\nOnce you apply Lara by Arabian Oud you will notice a lingering quality of warmer and softer hints that hide an essence of elegant and calming feelings.\r\nWith the unique mixture of the floral fresh flowers, Lilies of the valley, Musk, Chocolate and Litchi&lt;br/&gt; \r\n&lt;/p&gt;",
+            "product_description": "<p>\r\nLara by Arabian Oud is a Floral fragrance for unisex. A new and distinct language in the world of perfumes that represents you in an elegant and wonderful way. \r\nOnce you apply Lara by Arabian Oud you will notice a lingering quality of warmer and softer hints that hide an essence of elegant and calming feelings.\r\nWith the unique mixture of the floral fresh flowers, Lilies of the valley, Musk, Chocolate and Litchi<br/> \r\n</p>",
+            "product_short_description": "<p>\r\nLara by Arabian Oud is a Floral fragrance for unisex. A new and distinct language in the world of perfumes that represents you in an elegant and wonderful way. \r\nOnce you apply Lara by Arabian Oud you will notice a lingering quality of warmer and softer hints that hide an essence of elegant and calming feelings.\r\nWith the unique mixture of the floral fresh flowers, Lilies of the valley, Musk, Chocolate and Litchi<br/> \r\n</p>",
             "product_sku": "301020107",
             "discount_percentage": 0,
             "max_qty": 10,
@@ -1548,7 +1103,7 @@ Get product list using category-id Or key-word parameter.</p>
                 },
                 {
                     "title": "Origins",
-                    "value": "Mix (Oriental &amp; Western)"
+                    "value": "Mix (Oriental & Western)"
                 },
                 {
                     "title": "Fragrance",
@@ -1585,77 +1140,58 @@ Get product list using category-id Or key-word parameter.</p>
         }
     ]
 }
-</code></pre><h2 id='get-product-reviews'>Get Product Reviews</h2>
-<p>This Api get reviews of product.Get the list of current product reviews like rate, comment, name etc.</p>
-<h3 id='request-6'>Request</h3>
-<p><code class="post">POST</code>
-<span class="prettyprint">http://shop.arabianoud.com/index.php/connector/catalog/get_product_review</span></p>
+```
 
-<blockquote>
-<p>Definition</p>
-</blockquote>
-<pre class="highlight plaintext"><code>http://shop.arabianoud.com.com/index.php/connector/catalog/get_product_review
-</code></pre>
-<blockquote>
-<p>Request Body</p>
-</blockquote>
-<pre class="highlight php tab-php"><code>    $request-&gt;setBody('{
+##Get Product Reviews
+
+This Api is used to get reviews of product. 
+Get the list of current product reviews like rate, comment, name etc.
+
+###Request
+
+<code class="post">POST</code>
+<span class="prettyprint">{Base URL}/connector/catalog/get_product_review</span>
+
+> Definition
+
+```
+{Base URL}/connector/catalog/get_product_review
+```
+
+> Request Body
+
+```php
+    $request->setBody('{
       "product_id":789,
       "star":0,
       "offset":0,
       "limit":10
     }');
 
-</code></pre><pre class="highlight plaintext"><code>    -d '{
+```
+
+```curl
+    -d '{
       "product_id":789,
       "star":0,
       "offset":0,
       "limit":10
     }'
-</code></pre><h3 id='request-parameters-5'>Request Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>DataType</th>
-<th>Length</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>product_id</td>
-<td>Int</td>
-<td>100</td>
-<td>Mandatory</td>
-<td>Set product id</td>
-</tr>
-<tr>
-<td>star</td>
-<td>Int</td>
-<td>0-5</td>
-<td>Optional</td>
-<td>Default &#39;0&#39;, Get specific rate reviews</td>
-</tr>
-<tr>
-<td>offset</td>
-<td>Int</td>
-<td>100</td>
-<td>Optional</td>
-<td>Default &#39;0&#39;, Set start review number</td>
-</tr>
-<tr>
-<td>limit</td>
-<td>Int</td>
-<td>100</td>
-<td>Mandatory</td>
-<td>set list of reviews 10 to 100</td>
-</tr>
-</tbody></table>
+```
+ 
+###Request Parameters
 
-<blockquote>
-<p>Response</p>
-</blockquote>
-<pre class="highlight plaintext"><code>{
+Parameter | DataType | Length | Required | Description
+--------- | -------- | ------ | -------- | -----------
+product_id | Int | 100 | Mandatory | Set product id
+star | Int | 0-5 | Optional | Default '0', Get specific rate reviews
+offset | Int | 100 | Optional | Default '0', Set start review number
+limit | Int | 100 | Mandatory | set list of reviews 10 to 100
+
+>Response
+
+```
+{
     "status": "SUCCESS",
     "message": [
         "SUCCESS"
@@ -1696,21 +1232,27 @@ Get product list using category-id Or key-word parameter.</p>
         }
     }
 }
-</code></pre><h2 id='set-product-review'>Set Product Review</h2>
-<p>This Api set the product review like comment,rate etc.</p>
+```
 
-<p><code class="post">POST</code>
-<span class="prettyprint">http://shop.arabianoud.com/index.php/connector/catalog/set_product_rate</span></p>
 
-<blockquote>
-<p>Definition</p>
-</blockquote>
-<pre class="highlight plaintext"><code>http://shop.arabianoud.com.com/index.php/connector/catalog/set_product_rate
-</code></pre>
-<blockquote>
-<p>Request Body</p>
-</blockquote>
-<pre class="highlight php tab-php"><code>    $request-&gt;setBody('{
+##Set Product Review
+
+This Api is used to set the product review like comment,rate etc.
+
+<code class="post">POST</code>
+<span class="prettyprint">{Base URL}/connector/catalog/set_product_rate</span>
+
+> Definition
+
+```
+{Base URL}/connector/catalog/set_product_rate
+```
+
+
+> Request Body
+
+```php
+    $request->setBody('{
       "product_id":677,
       "title":"Great Product now",
       "description":"This best product for me",
@@ -1719,7 +1261,10 @@ Get product list using category-id Or key-word parameter.</p>
       "type":"price"
     }');
 
-</code></pre><pre class="highlight plaintext"><code>    -d '{
+```
+
+```curl
+    -d '{
       "product_id":677,
       "title":"Great Product now",
       "description":"This is best product for me",
@@ -1727,87 +1272,56 @@ Get product list using category-id Or key-word parameter.</p>
       "ratting_star":4,
       "type":"price"
     }'
-</code></pre><h3 id='request-parameters-6'>Request Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>DataType</th>
-<th>Length</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>product_id</td>
-<td>Int</td>
-<td>100</td>
-<td>Mandatory</td>
-<td>Set product id</td>
-</tr>
-<tr>
-<td>title</td>
-<td>String</td>
-<td>100</td>
-<td>Mandatory</td>
-<td>Set review title</td>
-</tr>
-<tr>
-<td>description</td>
-<td>String</td>
-<td>255</td>
-<td>Mandatory</td>
-<td>Add product review in detail</td>
-</tr>
-<tr>
-<td>nickname</td>
-<td>Int</td>
-<td>100</td>
-<td>Mandatory</td>
-<td>Add name of reviewer</td>
-</tr>
-<tr>
-<td>ratting_star</td>
-<td>Int</td>
-<td>1-5</td>
-<td>Mandatory</td>
-<td>Set 1 to 5 Ratting Star</td>
-</tr>
-<tr>
-<td>type</td>
-<td>String</td>
-<td>20</td>
-<td>Mandatory</td>
-<td>Set review type this : &quot;price&quot;, &quot;quality&quot;, &quot;quantity&quot;</td>
-</tr>
-</tbody></table>
+```
 
-<blockquote>
-<p>Response</p>
-</blockquote>
-<pre class="highlight plaintext"><code>{
+###Request Parameters
+
+Parameter | DataType | Length | Required | Description
+--------- | -------- | ------ | -------- | -----------
+product_id | Int | 100 | Mandatory | Set product id
+title | String | 100 | Mandatory | Set review title
+description | String | 255 | Mandatory | Add product review in detail
+nickname | Int | 100 | Mandatory | Add name of reviewer
+ratting_star | Int | 1-5 |  Mandatory | Set 1 to 5 Ratting Star
+type | String | 20 | Mandatory | Set review type this : "price", "quality", "quantity"
+
+
+>Response
+
+```
+{
     "status": "SUCCESS",
     "message": [
         "Your review has been accepted for moderation."
     ],
     "data": []
 }
-</code></pre><h1 id='checkout'>Checkout</h1>
-<p>Checkout is main part of Application. In this part apis use to place order on website.</p>
-<h2 id='add-to-cart'>Add to cart</h2>
-<p>This api is product add to cart. Multiple product add to cart using single request. In this api 2 different request: 1) Simple Product 2) Configurable product</p>
+```
 
-<p><code class="post">POST</code>
-<span class="prettyprint">http://shop.arabianoud.com/index.php/connector/checkout/add_to_cart_bulk</span></p>
+#Checkout
 
-<blockquote>
-<p>Definition</p>
-</blockquote>
-<pre class="highlight plaintext"><code>http://shop.arabianoud.com.com/index.php/connector/checkout/add_to_cart_bulk
-</code></pre>
-<blockquote>
-<p>Request Body For Simple Product</p>
-</blockquote>
-<pre class="highlight php tab-php"><code>    $request-&gt;setBody('{
+Checkout is a collection of API's use to place order on website.
+
+##Add to cart
+
+This api adds one or more products to cart. 
+In this api 2 different request: </br>
+1) Simple Product </br>
+2) Configurable product
+
+<code class="post">POST</code>
+<span class="prettyprint">{Base URL}/connector/checkout/add_to_cart_bulk</span>
+
+> Definition
+
+```
+{Base URL}/connector/checkout/add_to_cart_bulk
+```
+
+> Request Body For Simple Product
+
+```php
+    $request->setBody('{
       "products": [
         {
           "product_id": 791,
@@ -1815,7 +1329,10 @@ Get product list using category-id Or key-word parameter.</p>
         }
       ]
     }');
-</code></pre><pre class="highlight plaintext"><code>    -d '{
+```
+
+```curl
+    -d '{
       "products": [
         {
           "product_id": 791,
@@ -1823,36 +1340,20 @@ Get product list using category-id Or key-word parameter.</p>
         }
       ]
     }'
-</code></pre><h3 id='request-parameters-for-simple-product'>Request Parameters For Simple Product</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>DataType</th>
-<th>Length</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>product_id</td>
-<td>Int</td>
-<td>100</td>
-<td>Mandatory</td>
-<td>Set product id</td>
-</tr>
-<tr>
-<td>product_qty</td>
-<td>Int</td>
-<td>10</td>
-<td>Mandatory</td>
-<td>Set Quantity minimum 1 quantity Required</td>
-</tr>
-</tbody></table>
+```
 
-<blockquote>
-<p>Response Body For Simple Product</p>
-</blockquote>
-<pre class="highlight plaintext"><code>    {
+###Request Parameters For Simple Product
+
+Parameter | DataType | Length | Required | Description
+--------- | -------- | ------ | -------- | -----------
+product_id | Int | 100 | Mandatory | Set product id
+product_qty | Int | 10 | Mandatory | Set Quantity minimum 1 quantity Required
+
+
+>Response Body For Simple Product
+
+```
+    {
         "status": "SUCCESS",
         "message": [
             "SUCCESS"
@@ -1913,11 +1414,12 @@ Get product list using category-id Or key-word parameter.</p>
             "grand_total": 420
         }
     }
-</code></pre>
-<blockquote>
-<p>Request Body For Configurable Product</p>
-</blockquote>
-<pre class="highlight php tab-php"><code>    $request-&gt;setBody('{
+```
+
+>Request Body For Configurable Product
+
+```php
+    $request->setBody('{
       "products": [
         {
           "product_id": 225617,
@@ -1949,11 +1451,14 @@ Get product list using category-id Or key-word parameter.</p>
                             ]
                         }
                     ]
-
+                
         }
       ]
     }');
-</code></pre><pre class="highlight plaintext"><code>    -d '{
+```
+
+```curl
+    -d '{
       "products": [
         {
           "product_id": 225617,
@@ -1985,15 +1490,16 @@ Get product list using category-id Or key-word parameter.</p>
                             ]
                         }
                     ]
-
+                
         }
       ]
     }'
-</code></pre>
-<blockquote>
-<p>Response For Configurable product</p>
-</blockquote>
-<pre class="highlight plaintext"><code>{
+```
+
+>Response For Configurable product
+
+```
+{
     "status": "SUCCESS",
     "message": [
         "SUCCESS"
@@ -2134,21 +1640,27 @@ Get product list using category-id Or key-word parameter.</p>
         "grand_total": 200
     }
 }
-</code></pre><h2 id='get-cart'>Get Cart</h2>
-<p>This Api is get the list of cart product.If product is out of stock then product move to wishlist.</p>
+```
 
-<p><code class="post">GET</code>
-<span class="prettyprint">http://shop.arabianoud.com/index.php/connector/checkout/get_cart</span></p>
 
-<blockquote>
-<p>Definition</p>
-</blockquote>
-<pre class="highlight plaintext"><code>http://shop.arabianoud.com.com/index.php/connector/checkout/get_cart
-</code></pre>
-<blockquote>
-<p>Response</p>
-</blockquote>
-<pre class="highlight plaintext"><code>{
+##Get Cart
+
+This Api is used to get the list of cart products.
+If product is out of stock then product moved to wishlist.
+
+<code class="post">GET</code>
+<span class="prettyprint">{Base URL}/connector/customer/get_cart</span>
+
+> Definition
+
+```
+{Base URL}/connector/customer/get_cart
+```
+
+>Response
+
+```
+{
     "status": "SUCCESS",
     "message": [
         "SUCCESS"
@@ -2207,21 +1719,26 @@ Get product list using category-id Or key-word parameter.</p>
         "grand_total": 420
     }
 }
-</code></pre><h2 id='edit-cart'>Edit Cart</h2>
-<p>This Api is for remove product from cart and update quantity.Set <strong>0</strong> value for remove product from cart in <strong>product_qty</strong> parameter.</p>
+```
 
-<p><code class="post">POST</code>
-<span class="prettyprint">http://shop.arabianoud.com/index.php/connector/checkout/edit_cart</span></p>
+##Edit Cart [Not in Use]
 
-<blockquote>
-<p>Definition</p>
-</blockquote>
-<pre class="highlight plaintext"><code>http://shop.arabianoud.com.com/index.php/connector/checkout/edit_cart
-</code></pre>
-<blockquote>
-<p>Request Body</p>
-</blockquote>
-<pre class="highlight php tab-php"><code>$request-&gt;setBody('{
+This Api is for remove product from cart and update quantity.Set **0** value for remove product from cart in **product_qty** parameter.
+
+<code class="post">POST</code>
+<span class="prettyprint">{Base URL}/connector/checkout/edit_cart</span>
+
+> Definition
+
+```
+{Base URL}/connector/checkout/edit_cart
+```
+
+>Request Body
+
+
+```php
+$request->setBody('{
       "cart_items": [ 
         {
           "cart_item_id":"1410397",
@@ -2230,7 +1747,10 @@ Get product list using category-id Or key-word parameter.</p>
     ]  
 }');
 
-</code></pre><pre class="highlight plaintext"><code>    -d '{
+```
+
+```curl
+    -d '{
           "cart_items": [ 
             {
               "cart_item_id":"1410397",
@@ -2238,36 +1758,20 @@ Get product list using category-id Or key-word parameter.</p>
           }
         ]  
     }'
-</code></pre><h3 id='request-parameters-7'>Request Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>DataType</th>
-<th>Length</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>cart_item_id</td>
-<td>Int</td>
-<td>100</td>
-<td>Mandatory</td>
-<td>Set cart item id</td>
-</tr>
-<tr>
-<td>product_qty</td>
-<td>Int</td>
-<td>10</td>
-<td>Mandatory</td>
-<td>Set Quantity <strong>0</strong> for remove product</td>
-</tr>
-</tbody></table>
+```
 
-<blockquote>
-<p>Response</p>
-</blockquote>
-<pre class="highlight plaintext"><code>    {
+###Request Parameters
+
+Parameter | DataType | Length | Required | Description
+--------- | -------- | ------ | -------- | -----------
+cart_item_id | Int | 100 | Mandatory | Set cart item id
+product_qty | Int | 10 | Mandatory | Set Quantity **0** for remove product
+
+
+>Response
+
+```
+    {
         "status": "SUCCESS",
         "message": [
             "SUCCESS"
@@ -2306,26 +1810,32 @@ Get product list using category-id Or key-word parameter.</p>
             "grand_total": 0
         }
     }
-</code></pre><h2 id='get-order-configuration'>Get Order Configuration</h2>
-<p>This api is get all order configuration settings like payment method, shipping method, order line items etc.</p>
+```
 
-<p><code class="post">POST</code>
-<span class="prettyprint">http://shop.arabianoud.com/index.php/connector/checkout/get_order_config</span></p>
 
-<blockquote>
-<p>Definition</p>
-</blockquote>
-<pre class="highlight plaintext"><code>http://shop.arabianoud.com.com/index.php/connector/checkout/get_order_config
-</code></pre>
-<blockquote>
-<p>Request Body</p>
-</blockquote>
-<pre class="highlight php tab-php"><code>$request-&gt;setBody('{
+##Get Order Configuration
+
+This api is used to get all order configuration settings like payment method, shipping method, order line items etc.
+
+<code class="post">POST</code>
+<span class="prettyprint">{Base URL}/connector/checkout/get_order_config</span>
+
+> Definition
+
+```
+{Base URL}/connector/checkout/get_order_config
+```
+
+>Request Body
+
+
+```php
+$request->setBody('{
   "customer_email":"test.ios@test.com",
   "billingAddress":{
       "name":"Test Test",
       "company":"SW",
-      "street":"B-17 Rameshwaram",
+      "street":"Test Street",
       "city":"Riyadh",
       "zip":"12222",
       "country_code":"SA",
@@ -2335,7 +1845,7 @@ Get product list using category-id Or key-word parameter.</p>
       "prefix":"Mrs",
       "name":"Test Test",
       "company":"SW",
-      "street":"B-17 Rameshwaram",
+      "street":"Test Street",
       "city":"Riyadh",
       "zip":"12222",
       "country_code":"SA",
@@ -2343,34 +1853,38 @@ Get product list using category-id Or key-word parameter.</p>
       "phone":"4512000339"
     }
 }');
-</code></pre><pre class="highlight plaintext"><code>    -d '{
+```
+
+```curl
+    -d '{
       "customer_email":"test.ios@test.com",
       "billingAddress":{
           "name":"Test Test",
           "company":"SW",
-          "street":"B-17 Rameshwaram",
+          "street":"Test Street",
           "city":"Riyadh",
           "zip":"12222",
           "country_code":"SA",
-          "phone":"9712000339"
+          "phone":"4512000339"
         },
       "shippingAddress":{
           "prefix":"Mrs",
           "name":"Test Test",
           "company":"SW",
-          "street":"B-17 Rameshwaram",
+          "street":"Test Street",
           "city":"Riyadh",
           "zip":"12222",
           "country_code":"SA",
           "email":"test.ios@test.com",
-          "phone":"9712000339"
+          "phone":"4512000339"
         }
     }'
-</code></pre>
-<blockquote>
-<p>Response</p>
-</blockquote>
-<pre class="highlight plaintext"><code>    {
+```
+
+>Response
+
+```
+    {
         "status": "SUCCESS",
         "message": [
             "Save Success"
@@ -2451,144 +1965,64 @@ Get product list using category-id Or key-word parameter.</p>
             }
         ]
     }
-</code></pre><h3 id='request-parameters-8'>Request Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>DataType</th>
-<th>Length</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>customer_email</td>
-<td>String</td>
-<td>100</td>
-<td>Mandatory</td>
-<td>Set customer email address</td>
-</tr>
-<tr>
-<td>billingAddress</td>
-<td>String</td>
-<td>255</td>
-<td>Mandatory</td>
-<td>Set billing Address json array</td>
-</tr>
-<tr>
-<td>shippingAddress</td>
-<td>String</td>
-<td>255</td>
-<td>Mandatory</td>
-<td>Set Shipping Address json array</td>
-</tr>
-<tr>
-<td>prefix</td>
-<td>String</td>
-<td>10</td>
-<td>Mandatory</td>
-<td>Set name prefix like <strong>Mr.</strong> , <strong>Mrs</strong>, <strong>Miss</strong></td>
-</tr>
-<tr>
-<td>name</td>
-<td>String</td>
-<td>20</td>
-<td>Mandatory</td>
-<td>Name of customer</td>
-</tr>
-<tr>
-<td>company</td>
-<td>String</td>
-<td>50</td>
-<td>Optional</td>
-<td>Set company name if company address</td>
-</tr>
-<tr>
-<td>street</td>
-<td>String</td>
-<td>100</td>
-<td>Mandatory</td>
-<td>Set street address</td>
-</tr>
-<tr>
-<td>city</td>
-<td>String</td>
-<td>30</td>
-<td>Mandatory</td>
-<td>Set city name</td>
-</tr>
-<tr>
-<td>zip</td>
-<td>Int</td>
-<td>10</td>
-<td>Mandatory</td>
-<td>Set pin/zip code</td>
-</tr>
-<tr>
-<td>country_code</td>
-<td>String</td>
-<td>10</td>
-<td>Mandatory</td>
-<td>Set country short code</td>
-</tr>
-<tr>
-<td>email</td>
-<td>String</td>
-<td>255</td>
-<td>Mandatory</td>
-<td>Set customer billing/shipping email address</td>
-</tr>
-<tr>
-<td>phone</td>
-<td>Number</td>
-<td>10</td>
-<td>Mandatory</td>
-<td>Set 10 digit phone number like <strong>1234567890</strong></td>
-</tr>
-</tbody></table>
-<h2 id='save-payment-method'>Save Payment Method</h2>
-<p>This Api is set payment method in current order. List of payment method available in <strong>get-order-config</strong> api response.</p>
+```
 
-<p><code class="post">POST</code>
-<span class="prettyprint">http://shop.arabianoud.com/index.php/connector/checkout/save_payment_method</span></p>
 
-<blockquote>
-<p>Definition</p>
-</blockquote>
-<pre class="highlight plaintext"><code>http://shop.arabianoud.com.com/index.php/connector/checkout/save_payment_method
-</code></pre>
-<blockquote>
-<p>Request Body</p>
-</blockquote>
-<pre class="highlight php tab-php"><code>$request-&gt;setBody('{
+
+###Request Parameters
+
+Parameter | DataType | Length | Required | Description
+--------- | -------- | ------ | -------- | -----------
+customer_email | String | 100 | Mandatory | Set customer email address
+billingAddress | String | 255 | Mandatory | Set billing Address json array
+shippingAddress | String | 255 | Mandatory | Set Shipping Address json array
+prefix | String | 10 | Mandatory | Set name prefix like **Mr.** , **Mrs**, **Miss**
+name | String | 20 | Mandatory | Name of customer
+company | String | 50 | Optional | Set company name if company address
+street | String | 100 | Mandatory | Set street address
+city | String | 30 | Mandatory | Set city name
+zip | Int | 10 | Mandatory | Set pin/zip code 
+country_code | String | 10 | Mandatory | Set country short code
+email | String | 255 | Mandatory | Set customer billing/shipping email address
+phone | Number | 10 | Mandatory | Set 10 digit phone number like **1234567890**
+
+##Save Payment Method
+
+This Api is set payment method in current order. List of payment method available in **get-order-config** api response.
+
+<code class="post">POST</code>
+<span class="prettyprint">{Base URL}/connector/checkout/save_payment_method</span>
+
+> Definition
+
+```
+{Base URL}/connector/checkout/save_payment_method
+```
+
+>Request Body
+
+```php
+$request->setBody('{
  "payment_method":"cashondelivery"
 }');
-</code></pre><pre class="highlight plaintext"><code>    -d '{
+```
+
+```curl
+    -d '{
      "payment_method":"cashondelivery"
     }'
-</code></pre><h3 id='request-parameters-9'>Request Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>DataType</th>
-<th>Length</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>payment_method</td>
-<td>String</td>
-<td>100</td>
-<td>Mandatory</td>
-<td>Set current order payment method like <strong>cashondelivery</strong></td>
-</tr>
-</tbody></table>
+```
 
-<blockquote>
-<p>Response</p>
-</blockquote>
-<pre class="highlight plaintext"><code>    {
+###Request Parameters
+
+Parameter | DataType | Length | Required | Description
+--------- | -------- | ------ | -------- | -----------
+payment_method | String | 100 | Mandatory | Set current order payment method like **cashondelivery**
+
+>Response
+
+```
+    {
         "status": "SUCCESS",
         "message": [
             "SUCCESS"
@@ -2622,58 +2056,50 @@ Get product list using category-id Or key-word parameter.</p>
             }
         ]
     }
-</code></pre><h2 id='place-order'>Place Order</h2>
-<p>This api is place order for current item.</p>
+```
 
-<p><code class="post">POST</code>
-<span class="prettyprint">http://shop.arabianoud.com/index.php/connector/checkout/place_order</span></p>
 
-<blockquote>
-<p>Definition</p>
-</blockquote>
-<pre class="highlight plaintext"><code>http://shop.arabianoud.com.com/index.php/connector/checkout/place_order
-</code></pre>
-<blockquote>
-<p>Request Body</p>
-</blockquote>
-<pre class="highlight php tab-php"><code>$request-&gt;setBody('{   
+##Place Order
+
+This api is used to place final order with all details.
+
+<code class="post">POST</code>
+<span class="prettyprint">{Base URL}/connector/checkout/place_order</span>
+
+> Definition
+
+```
+{Base URL}/connector/checkout/place_order
+```
+
+>Request Body
+
+```php
+$request->setBody('{   
   "customer_email":"test.ios@test.com",
   "payment_method":"cashondelivery"
 }');
-</code></pre><pre class="highlight plaintext"><code>  -d '{   
+```
+
+```curl
+  -d '{   
   "customer_email":"test.ios@test.com",
   "payment_method":"cashondelivery"
 }'
-</code></pre><h3 id='request-parameters-10'>Request Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>DataType</th>
-<th>Length</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>customer_email</td>
-<td>String</td>
-<td>255</td>
-<td>Mandatory</td>
-<td>Set Current customer email address</td>
-</tr>
-<tr>
-<td>payment_method</td>
-<td>String</td>
-<td>100</td>
-<td>Mandatory</td>
-<td>Set current order payment method like <strong>cashondelivery</strong></td>
-</tr>
-</tbody></table>
+```
 
-<blockquote>
-<p>Response</p>
-</blockquote>
-<pre class="highlight plaintext"><code>    {
+###Request Parameters
+
+Parameter | DataType | Length | Required | Description
+--------- | -------- | ------ | -------- | -----------
+customer_email | String | 255 | Mandatory | Set Current customer email address
+payment_method | String | 100 | Mandatory | Set current order payment method like **cashondelivery**
+
+
+>Response
+
+```
+    {
         "status": "SUCCESS",
         "message": [
             "Thank you for your purchase!"
@@ -2692,39 +2118,50 @@ Get product list using category-id Or key-word parameter.</p>
             "order_status": "Waiting for confirmation"
         }
     }
-</code></pre><h1 id='customer'>Customer</h1>
-<p>Customer Api is used for user login, address, order history etc.</p>
-<h2 id='registration'>Registration</h2>
-<p>In this api user can register in Application.</p>
+```
 
-<p><code class="post">POST</code>
-<span class="prettyprint">http://shop.arabianoud.com/index.php/connector/customer/register</span></p>
 
-<blockquote>
-<p>Definition</p>
-</blockquote>
-<pre class="highlight plaintext"><code>http://shop.arabianoud.com.com/index.php/connector/customer/register
-</code></pre>
-<blockquote>
-<p>Request Body</p>
-</blockquote>
-<pre class="highlight php tab-php"><code>$request-&gt;setBody('{
+#Customer
+
+Customer Api's are used for user login, address, order history etc.
+
+##Registration
+
+API used for user registration
+
+<code class="post">POST</code>
+<span class="prettyprint">{Base URL}/connector/customer/register</span>
+
+> Definition
+
+```
+{Base URL}/connector/customer/register
+```
+
+>Request Body
+
+```php
+$request->setBody('{
     "user_prefix": "Mr.",
     "user_email": "tedev@mail.com",
     "user_password": "Pass@1234",
     "user_name": "test dev"
 }');
-</code></pre><pre class="highlight plaintext"><code>  -d '{
+```
+
+```curl
+  -d '{
       "user_prefix": "Mr.",
       "user_email": "tedev@mail.com",
       "user_password": "Pass@1234",
       "user_name": "test dev"
   }'
-</code></pre>
-<blockquote>
-<p>Response</p>
-</blockquote>
-<pre class="highlight plaintext"><code>{
+```
+
+>Response
+
+```
+{
     "status": "SUCCESS",
     "message": [
         "Thank you for registering with English store"
@@ -2742,14 +2179,20 @@ Get product list using category-id Or key-word parameter.</p>
         }
     ]
 }
-</code></pre>
-      </div>
-      <div class="dark-box">
-          <div class="lang-selector">
-                <a href="#" data-language-name="shell">cURL</a>
-                <a href="#" data-language-name="php">PHP</a>
-          </div>
-      </div>
-    </div>
-  </body>
-</html>
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
