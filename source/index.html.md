@@ -3446,6 +3446,3162 @@ fragrance_note_id | Int | 10 | Mandatory | Set fragrance note id using get-fragr
 
 ```
 
+#FOCUS Dashboard API [Use in Focus]
+
+This api is used to get theme and setting parameter.
+
+##Get Theme
+
+This Api is used to get theme, language and feature setting.
+
+<code class="post">GET</code>
+<span class="prettyprint">{Base URL}design/get-theme</span>
+
+> Definition
+
+```
+{Base URL}design/get-theme
+```
+
+>Response
+
+```
+    {
+        "status": "SUCCESS",
+        "message": [
+            "Success"
+        ],
+        "data": {
+            "app_id": 46,
+            "user_id": 63,
+            "token_key": "<Token>",
+            "store_url": "http://52.221.104.94/index.php/",
+            "app_name": "fanos",
+            "app_logo": "http://efocus.store/uploads/users/63/logo.png",
+            "app_icon": "http://efocus.store/uploads/users/63/icon.png",
+            "loading_icon": "http://efocus.store/uploads/users/63/loading.gif",
+            "splash_screen_image": "http://efocus.store/uploads/users/63/splash.png",
+            "splash_screen_color": "#5c957e",
+            "home_layout": "default",
+            "theme": "dark",
+            "key_color": "#f3d481",
+            "menu_icon_color": "#000000",
+            "search_trending_text_color": "#868a8d",
+            "search_history_text_color": "#000000",
+            "search_product_label_in_search": "#000000",
+            "price_color": "#bbbbbb",
+            "section_header_color": "#f2f2f4",
+            "section_text_color": "#000000",
+            "big_button_color": "#000000",
+            "big_button_text_color": "#ffffff",
+            "small_button_color": "#000000",
+            "small_button_text_color": "#ffffff",
+            "special_discount_icon_color": "#6850ad",
+            "app_background": "#ffffff",
+            "loading_color": "#000000",
+            "status_bar_background": "#000000",
+            "status_bar_text": "#ffffff",
+            "reset_menu_icon_color": "#ffffff",
+            "bottom_bar_menu_color": "#000000",
+            "version": 326,
+            "created_at": "2018-06-06 07:37:33",
+            "modified_at": "2019-02-25 08:14:42",
+            "onesignal_auth_key": null,
+            "onesignal_app_id": null,
+            "bottom_bar_color": "#6850ad",
+            "special_price_color": "#282f36",
+            "top_bar_color": "#ffffff",
+            "twillio_sid": null,
+            "twillio_token": null,
+            "twillio_number": null,
+            "out_of_stock": null,
+            "android_itcan_link": "https://itcan.ae/en/?utm_source=app&utm_medium=Fanoos_android",
+            "ios_itcan_link": "https://itcan.ae/en/?utm_source=app&utm_medium=Fanoos_iOS",
+            "languages": "http://efocus.store/design/languages/63",
+            "features": {
+                "UserLoginModule": true,
+                "Wishlist": true,
+                "GoogleSignupLogin": true,
+                "FacebookSignupLogin": true,
+                "BestSellingProducts": true,
+                "ProductReview": false,
+                "RelatedProducts": true,
+                "StoreLocator": false,
+                "GuestCheckout": true,
+                "MobileVerfifcationAfterCheckout": true,
+                "discount_tag": true,
+                "LiveChat": false,
+                "FastDelivery": true,
+                "DayExchange": true,
+                "ItcanTag": false,
+                "Telephone": true,
+                "Whatsapp": true,
+                "PhoneNumberVerification": false,
+                "ProductStockLeft": false,
+                "ProductSaleTimer": false,
+                "AutoSuggestSearchApi": false,
+                "AlgoliaSearch": false
+            }
+        }
+    }
+```
+
+
+##Get Version
+
+This Api is used to get theme version.
+
+<code class="post">GET</code>
+<span class="prettyprint">{Base URL}design/get-version</span>
+
+>Definition
+
+```
+{Base URL}design/get-version
+```
+
+```
+{
+    "status": "SUCCESS",
+    "message": [
+        "Success"
+    ],
+    "data": {
+        "version": 1326
+    }
+}
+```
+
+#Catalog [ Internal Use Api's]
+
+This Api is create,update and delete product.
+
+##Create Product
+
+This Api is for create product on web using Api.
+
+<code class="post">POST</code>
+<span class="prettyprint">{Base URL}webhook/web/create_productV2</span>
+
+> Definition
+
+```
+{Base URL}webhook/web/create_productV2
+```
+
+>Request Body
+
+```php
+$request->setBody('{
+  "ksa_ar": {
+    "store_id": "2",
+    "entity_id": "1319",
+    "type_id": "simple",
+    "sku": "call-you",
+    "created_at": "2018-06-14T11:24:19+00:00",
+    "updated_at": "2018-06-14 12:36:12",
+    "name": "call you",
+    "meta_title": null,
+    "meta_description": null,
+    "price": "544.0000",
+    "special_price": "34.0000",
+    "weight": "834.0000",
+    "status": "1",
+    "visibility": "4",
+    "description": "call you",
+    "short_description": "call you",
+    "special_from_date": "2018-06-14 00:00:00",
+    "special_to_date": null,
+    "news_from_date": null,
+    "news_to_date": null,
+    "group_price": "544.0000",
+    "stock_status": true,
+    "stock_inventory": {
+      "qty": "321",
+      "min_qty": "0.0000",
+      "use_config_min_qty": "1",
+      "is_qty_decimal": "0",
+      "min_sale_qty": "1.0000",
+      "use_config_min_sale_qty": "1",
+      "max_sale_qty": "0.0000",
+      "use_config_max_sale_qty": "1",
+      "is_in_stock": true
+    },
+    "tax_class_id": "2",
+    "categories": {
+      "61": "Exclusives"
+    },
+    "attributes": [
+      {
+        "title": "Size",
+        "code": "size",
+        "value": "No"
+      },
+      {
+        "title": "Origins",
+        "code": "origins",
+        "value": "Oriental"
+      },
+      {
+        "title": "Fragrance",
+        "code": "fragrance",
+        "value": "For Kids"
+      },
+      {
+        "title": "Type",
+        "code": "type",
+        "value": "Mix (Spray & Oil)"
+      }
+    ],
+    "options": [
+      
+    ]
+  },
+  "ksa_en": {
+    "store_id": "1",
+    "entity_id": "1319",
+    "type_id": "simple",
+    "sku": "call-you",
+    "created_at": "2018-06-14T11:24:19+00:00",
+    "updated_at": "2018-06-14 12:36:12",
+    "name": "call you",
+    "meta_title": null,
+    "meta_description": null,
+    "price": "544.0000",
+    "special_price": "34.0000",
+    "weight": "834.0000",
+    "status": "1",
+    "visibility": "4",
+    "description": "call you",
+    "short_description": "call you",
+    "special_from_date": "2018-06-14 00:00:00",
+    "special_to_date": null,
+    "news_from_date": null,
+    "news_to_date": null,
+    "group_price": "544.0000",
+    "stock_status": true,
+    "stock_inventory": {
+      "qty": "321",
+      "min_qty": "0.0000",
+      "use_config_min_qty": "1",
+      "is_qty_decimal": "0",
+      "min_sale_qty": "1.0000",
+      "use_config_min_sale_qty": "1",
+      "max_sale_qty": "0.0000",
+      "use_config_max_sale_qty": "1",
+      "is_in_stock": true
+    },
+    "tax_class_id": "2",
+    "categories": {
+      "61": "Exclusives"
+    },
+    "attributes": [
+      {
+        "title": "Size",
+        "code": "size",
+        "value": "No"
+      },
+      {
+        "title": "Origins",
+        "code": "origins",
+        "value": "Oriental"
+      },
+      {
+        "title": "Fragrance",
+        "code": "fragrance",
+        "value": "For Kids"
+      },
+      {
+        "title": "Type",
+        "code": "type",
+        "value": "Mix (Spray & Oil)"
+      }
+    ],
+    "options": [
+      
+    ]
+  }
+}');
+```
+
+```curl
+-d '{
+  "ksa_ar": {
+    "store_id": "2",
+    "entity_id": "1319",
+    "type_id": "simple",
+    "sku": "call-you",
+    "created_at": "2018-06-14T11:24:19+00:00",
+    "updated_at": "2018-06-14 12:36:12",
+    "name": "call you",
+    "meta_title": null,
+    "meta_description": null,
+    "price": "544.0000",
+    "special_price": "34.0000",
+    "weight": "834.0000",
+    "status": "1",
+    "visibility": "4",
+    "description": "call you",
+    "short_description": "call you",
+    "special_from_date": "2018-06-14 00:00:00",
+    "special_to_date": null,
+    "news_from_date": null,
+    "news_to_date": null,
+    "group_price": "544.0000",
+    "stock_status": true,
+    "stock_inventory": {
+      "qty": "321",
+      "min_qty": "0.0000",
+      "use_config_min_qty": "1",
+      "is_qty_decimal": "0",
+      "min_sale_qty": "1.0000",
+      "use_config_min_sale_qty": "1",
+      "max_sale_qty": "0.0000",
+      "use_config_max_sale_qty": "1",
+      "is_in_stock": true
+    },
+    "tax_class_id": "2",
+    "categories": {
+      "61": "Exclusives"
+    },
+    "attributes": [
+      {
+        "title": "Size",
+        "code": "size",
+        "value": "No"
+      },
+      {
+        "title": "Origins",
+        "code": "origins",
+        "value": "Oriental"
+      },
+      {
+        "title": "Fragrance",
+        "code": "fragrance",
+        "value": "For Kids"
+      },
+      {
+        "title": "Type",
+        "code": "type",
+        "value": "Mix (Spray & Oil)"
+      }
+    ],
+    "options": [
+      
+    ]
+  },
+  "ksa_en": {
+    "store_id": "1",
+    "entity_id": "1319",
+    "type_id": "simple",
+    "sku": "call-you",
+    "created_at": "2018-06-14T11:24:19+00:00",
+    "updated_at": "2018-06-14 12:36:12",
+    "name": "call you",
+    "meta_title": null,
+    "meta_description": null,
+    "price": "544.0000",
+    "special_price": "34.0000",
+    "weight": "834.0000",
+    "status": "1",
+    "visibility": "4",
+    "description": "call you",
+    "short_description": "call you",
+    "special_from_date": "2018-06-14 00:00:00",
+    "special_to_date": null,
+    "news_from_date": null,
+    "news_to_date": null,
+    "group_price": "544.0000",
+    "stock_status": true,
+    "stock_inventory": {
+      "qty": "321",
+      "min_qty": "0.0000",
+      "use_config_min_qty": "1",
+      "is_qty_decimal": "0",
+      "min_sale_qty": "1.0000",
+      "use_config_min_sale_qty": "1",
+      "max_sale_qty": "0.0000",
+      "use_config_max_sale_qty": "1",
+      "is_in_stock": true
+    },
+    "tax_class_id": "2",
+    "categories": {
+      "61": "Exclusives"
+    },
+    "attributes": [
+      {
+        "title": "Size",
+        "code": "size",
+        "value": "No"
+      },
+      {
+        "title": "Origins",
+        "code": "origins",
+        "value": "Oriental"
+      },
+      {
+        "title": "Fragrance",
+        "code": "fragrance",
+        "value": "For Kids"
+      },
+      {
+        "title": "Type",
+        "code": "type",
+        "value": "Mix (Spray & Oil)"
+      }
+    ],
+    "options": [
+      
+    ]
+  }
+}'
+```
+
+###Request Parameters
+
+Parameter | DataType | Length | Required | Description
+--------- | -------- | ------ | -------- | -----------
+store_id | Int | 10 | Mandatory | Set store id
+entity_id | Int | 10 | Mandatory | Set entity id
+type_id | String | 10 | Mandatory | Set product type id
+sku | String | 10 | Mandatory | Set Product Sku
+name | String | 100 | Mandatory | Set product name
+price | Int | 10 | Mandatory | Set product price
+special_price | Int | 10 | Optional | Set product special price
+weight | Int | 10 | Mandatory | set product weight
+status | Boolean | 0-1 | Mandatory | Set product status enable/disable
+visibility | Int | 0-4 | Mandatory | set product visibility
+description | Text | 1000 | Mandatory | add product description
+short_description | Text | 1000 | Mandatory | Add product short description
+special_from_date | Date | - | Optional | Set product special from date
+special_to_date | Date | - | Optional | Set product special to date
+stock_status | Boolean | 0-1 | Mandatory | Set stock status enable/disable
+stock_inventory | String | 255 | Mandatory | Set stock inventory Array
+qty | Int | 10 | Mandatory | Set product Quantity
+min_qty | Int | 10 | Optional | Set minimum quantity
+use_config_min_qty | Boolean | 0-1 | Optional | Min-qty setting enable/disable 
+is_qty_decimal | Boolean | 0-1 | Optional | Quantity in decimal enable/disable
+min_sale_qty | Int | 10 | Optional | Set minimum sell quantity
+max_sale_qty | Int | 10 | Optional | Set maximum sell quantity
+is_in_stock | Boolean | 0-1 | Mandatory | Set stock status enable/disable
+tax_class_id | Int | 10 | Mandatory | Set tax class id
+categories | String | 100 |  Optional | Set categories
+attributes | String | 255 | Optional | Set attributes arrays
+title | String | 100 | Optional | Set attribute title 
+code | String | 100 | Optional | Set attribute code
+value | String | 100 | Optional | Set attribute value
+options | String | 255 | Optional | Set attribute options
+
+>Response
+
+```
+    [
+        {
+            "id": "2597",
+            "name": "call you",
+            "Message": "Product was successfully created",
+            "result": true
+        },
+        {
+            "id": "2597",
+            "name": "call you",
+            "Message": "Product was successfully updated",
+            "result": true
+        }
+    ]
+```
+
+##Update Product
+
+This Api is for update product on web using Api.
+
+<code class="post">POST</code>
+<span class="prettyprint">{Base URL}webhook/web/update_productV2</span>
+
+> Definition
+
+```
+{Base URL}webhook/web/update_productV2
+```
+
+>Request Body
+
+```php
+$request->setBody('{
+  "ksa_ar": {
+    "store_id": "2",
+    "entity_id": "1319",
+    "type_id": "simple",
+    "sku": "call-you",
+    "created_at": "2018-06-14T11:24:19+00:00",
+    "updated_at": "2018-06-14 12:36:12",
+    "name": "call you",
+    "meta_title": null,
+    "meta_description": null,
+    "price": "544.0000",
+    "special_price": "34.0000",
+    "weight": "834.0000",
+    "status": "1",
+    "visibility": "4",
+    "description": "call you",
+    "short_description": "call you",
+    "special_from_date": "2018-06-14 00:00:00",
+    "special_to_date": null,
+    "news_from_date": null,
+    "news_to_date": null,
+    "group_price": "544.0000",
+    "stock_status": true,
+    "stock_inventory": {
+      "qty": "321",
+      "min_qty": "0.0000",
+      "use_config_min_qty": "1",
+      "is_qty_decimal": "0",
+      "min_sale_qty": "1.0000",
+      "use_config_min_sale_qty": "1",
+      "max_sale_qty": "0.0000",
+      "use_config_max_sale_qty": "1",
+      "is_in_stock": true
+    },
+    "tax_class_id": "2",
+    "categories": {
+      "61": "Exclusives"
+    },
+    "attributes": [
+      {
+        "title": "Size",
+        "code": "size",
+        "value": "No"
+      },
+      {
+        "title": "Origins",
+        "code": "origins",
+        "value": "Oriental"
+      },
+      {
+        "title": "Fragrance",
+        "code": "fragrance",
+        "value": "For Kids"
+      },
+      {
+        "title": "Type",
+        "code": "type",
+        "value": "Mix (Spray & Oil)"
+      }
+    ],
+    "options": [
+      
+    ]
+  },
+  "ksa_en": {
+    "store_id": "1",
+    "entity_id": "1319",
+    "type_id": "simple",
+    "sku": "call-you",
+    "created_at": "2018-06-14T11:24:19+00:00",
+    "updated_at": "2018-06-14 12:36:12",
+    "name": "call you",
+    "meta_title": null,
+    "meta_description": null,
+    "price": "544.0000",
+    "special_price": "34.0000",
+    "weight": "834.0000",
+    "status": "1",
+    "visibility": "4",
+    "description": "call you",
+    "short_description": "call you",
+    "special_from_date": "2018-06-14 00:00:00",
+    "special_to_date": null,
+    "news_from_date": null,
+    "news_to_date": null,
+    "group_price": "544.0000",
+    "stock_status": true,
+    "stock_inventory": {
+      "qty": "321",
+      "min_qty": "0.0000",
+      "use_config_min_qty": "1",
+      "is_qty_decimal": "0",
+      "min_sale_qty": "1.0000",
+      "use_config_min_sale_qty": "1",
+      "max_sale_qty": "0.0000",
+      "use_config_max_sale_qty": "1",
+      "is_in_stock": true
+    },
+    "tax_class_id": "2",
+    "categories": {
+      "61": "Exclusives"
+    },
+    "attributes": [
+      {
+        "title": "Size",
+        "code": "size",
+        "value": "No"
+      },
+      {
+        "title": "Origins",
+        "code": "origins",
+        "value": "Oriental"
+      },
+      {
+        "title": "Fragrance",
+        "code": "fragrance",
+        "value": "For Kids"
+      },
+      {
+        "title": "Type",
+        "code": "type",
+        "value": "Mix (Spray & Oil)"
+      }
+    ],
+    "options": [
+      
+    ]
+  }
+}');
+```
+
+```curl
+-d '{
+  "ksa_ar": {
+    "store_id": "2",
+    "entity_id": "1319",
+    "type_id": "simple",
+    "sku": "call-you",
+    "created_at": "2018-06-14T11:24:19+00:00",
+    "updated_at": "2018-06-14 12:36:12",
+    "name": "call you",
+    "meta_title": null,
+    "meta_description": null,
+    "price": "544.0000",
+    "special_price": "34.0000",
+    "weight": "834.0000",
+    "status": "1",
+    "visibility": "4",
+    "description": "call you",
+    "short_description": "call you",
+    "special_from_date": "2018-06-14 00:00:00",
+    "special_to_date": null,
+    "news_from_date": null,
+    "news_to_date": null,
+    "group_price": "544.0000",
+    "stock_status": true,
+    "stock_inventory": {
+      "qty": "321",
+      "min_qty": "0.0000",
+      "use_config_min_qty": "1",
+      "is_qty_decimal": "0",
+      "min_sale_qty": "1.0000",
+      "use_config_min_sale_qty": "1",
+      "max_sale_qty": "0.0000",
+      "use_config_max_sale_qty": "1",
+      "is_in_stock": true
+    },
+    "tax_class_id": "2",
+    "categories": {
+      "61": "Exclusives"
+    },
+    "attributes": [
+      {
+        "title": "Size",
+        "code": "size",
+        "value": "No"
+      },
+      {
+        "title": "Origins",
+        "code": "origins",
+        "value": "Oriental"
+      },
+      {
+        "title": "Fragrance",
+        "code": "fragrance",
+        "value": "For Kids"
+      },
+      {
+        "title": "Type",
+        "code": "type",
+        "value": "Mix (Spray & Oil)"
+      }
+    ],
+    "options": [
+      
+    ]
+  },
+  "ksa_en": {
+    "store_id": "1",
+    "entity_id": "1319",
+    "type_id": "simple",
+    "sku": "call-you",
+    "created_at": "2018-06-14T11:24:19+00:00",
+    "updated_at": "2018-06-14 12:36:12",
+    "name": "call you",
+    "meta_title": null,
+    "meta_description": null,
+    "price": "544.0000",
+    "special_price": "34.0000",
+    "weight": "834.0000",
+    "status": "1",
+    "visibility": "4",
+    "description": "call you",
+    "short_description": "call you",
+    "special_from_date": "2018-06-14 00:00:00",
+    "special_to_date": null,
+    "news_from_date": null,
+    "news_to_date": null,
+    "group_price": "544.0000",
+    "stock_status": true,
+    "stock_inventory": {
+      "qty": "321",
+      "min_qty": "0.0000",
+      "use_config_min_qty": "1",
+      "is_qty_decimal": "0",
+      "min_sale_qty": "1.0000",
+      "use_config_min_sale_qty": "1",
+      "max_sale_qty": "0.0000",
+      "use_config_max_sale_qty": "1",
+      "is_in_stock": true
+    },
+    "tax_class_id": "2",
+    "categories": {
+      "61": "Exclusives"
+    },
+    "attributes": [
+      {
+        "title": "Size",
+        "code": "size",
+        "value": "No"
+      },
+      {
+        "title": "Origins",
+        "code": "origins",
+        "value": "Oriental"
+      },
+      {
+        "title": "Fragrance",
+        "code": "fragrance",
+        "value": "For Kids"
+      },
+      {
+        "title": "Type",
+        "code": "type",
+        "value": "Mix (Spray & Oil)"
+      }
+    ],
+    "options": [
+      
+    ]
+  }
+}'
+```
+
+###Request Parameters
+
+Parameter | DataType | Length | Required | Description
+--------- | -------- | ------ | -------- | -----------
+store_id | Int | 10 | Mandatory | Set store id
+entity_id | Int | 10 | Mandatory | Set entity id
+type_id | String | 10 | Mandatory | Set product type id
+sku | String | 10 | Mandatory | Set Product Sku
+name | String | 100 | Mandatory | Set product name
+price | Int | 10 | Mandatory | Set product price
+special_price | Int | 10 | Optional | Set product special price
+weight | Int | 10 | Mandatory | set product weight
+status | Boolean | 0-1 | Mandatory | Set product status enable/disable
+visibility | Int | 0-4 | Mandatory | set product visibility
+description | Text | 1000 | Mandatory | add product description
+short_description | Text | 1000 | Mandatory | Add product short description
+special_from_date | Date | - | Optional | Set product special from date
+special_to_date | Date | - | Optional | Set product special to date
+stock_status | Boolean | 0-1 | Mandatory | Set stock status enable/disable
+stock_inventory | String | 255 | Mandatory | Set stock inventory Array
+qty | Int | 10 | Mandatory | Set product Quantity
+min_qty | Int | 10 | Optional | Set minimum quantity
+use_config_min_qty | Boolean | 0-1 | Optional | Min-qty setting enable/disable 
+is_qty_decimal | Boolean | 0-1 | Optional | Quantity in decimal enable/disable
+min_sale_qty | Int | 10 | Optional | Set minimum sell quantity
+max_sale_qty | Int | 10 | Optional | Set maximum sell quantity
+is_in_stock | Boolean | 0-1 | Mandatory | Set stock status enable/disable
+tax_class_id | Int | 10 | Mandatory | Set tax class id
+categories | String | 100 |  Optional | Set categories
+attributes | String | 255 | Optional | Set attributes arrays
+title | String | 100 | Optional | Set attribute title 
+code | String | 100 | Optional | Set attribute code
+value | String | 100 | Optional | Set attribute value
+options | String | 255 | Optional | Set attribute options
+
+>Response
+
+```
+{
+    "result": true,
+    "message": "product updated"
+}
+```
+
+##Delete Product
+
+This Api is used to delete product on web.
+
+<code class="post">POST</code>
+<span class="prettyprint">{Base URL}webhook/web/delete_productV2</span>
+
+> Definition
+
+```
+{Base URL}webhook/web/delete_productV2
+```
+
+>Request Body
+
+```
+{
+  "sku":"call-you"
+}
+```
+
+###Request Parameters
+
+Parameter | DataType | Length | Required | Description
+--------- | -------- | ------ | -------- | -----------
+sku | String | 10 | Mandatory | Set Product Sku
+
+>Response
+
+```
+{
+    "result": true,
+    "message": "product successfully deleted"
+}
+```
+
+
+#Catalog V2 [Use In Fanos ]
+
+This Api is new version of all catalog api's.
+
+##Get Home Data
+
+This api used to get home page detail like banner, category, products etc.
+
+###Request
+
+<code class="post">POST</code>
+<span class="prettyprint">{Base URL}connector/config/get_home_dataV2</span>
+
+> Definition
+
+```
+{Base URL}connector/config/get_home_dataV2
+```
+
+>Request Body
+
+```php
+$request->setBody('{
+    "limit": 7,
+    "offset": 0,
+    "store_id": 1
+}');
+```
+
+```curl
+    -d '{
+        "limit": 7,
+        "offset": 0,
+        "store_id": 1
+    }'
+```
+
+###Request Parameters
+
+Parameter | DataType | Length | Required | Description
+--------- | -------- | ------ | -------- | -----------
+store_id | Int | 10 | Mandatory | Set store id
+limit | Int | 0-7 | Mandatory | Set limit
+offset | Int | 0-6 | Mandatory | Set Offset
+
+>Response
+
+```
+{
+    "status": "SUCCESS",
+    "message": [
+        "SUCCESS"
+    ],
+    "data": [
+        {
+            "category_id": "11",
+            "category_name": "Men",
+            "data": [
+                {
+                    "type": "banners",
+                    "data": {
+                        "aspectRatio": 1.13,
+                        "title": "Header Banners",
+                        "NumberernalItemAspectratio": 1,
+                        "welcomeImage": "",
+                        "type": "fullwidth",
+                        "items": [
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.43.01_AM.png",
+                                "redirection_url": "://products?category_id=11"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "banners",
+                    "data": {
+                        "aspectRatio": 0.8,
+                        "title": "Header Banners",
+                        "NumberernalItemAspectratio": 1,
+                        "welcomeImage": "",
+                        "type": "fullwidth",
+                        "items": [
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.43.17_AM.png",
+                                "redirection_url": "://products?category_id=11"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "products",
+                    "data": {
+                        "aspectRatio": 1.13,
+                        "title": "Recommended for you",
+                        "NumberernalItemAspectratio": 1,
+                        "welcomeImage": "",
+                        "type": "horizontallist",
+                        "items": [
+                            {
+                                "product_id": "232911",
+                                "product_sku": "test-product",
+                                "product_name": "Test Product",
+                                "product_type": false,
+                                "product_regular_price": 200,
+                                "product_price": 200,
+                                "discount_percentage": 0,
+                                "product_rate": 0,
+                                "stock_status": true,
+                                "product_review_number": 0,
+                                "product_image": "http://3.1.117.187/media/catalog/product/no_selection",
+                                "manufacturer_name": "Itcan",
+                                "brand": " "
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "productgrid",
+                    "data": {
+                        "aspectRatio": 1.13,
+                        "title": "Trending",
+                        "NumberernalItemAspectratio": 1,
+                        "welcomeImage": "",
+                        "type": "horizontallistofsixitemgrid",
+                        "items": [
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.43.29_AM.png",
+                                "redirection_url": null,
+                                "products": [
+                                    {
+                                        "product_id": "232911",
+                                        "product_sku": "test-product",
+                                        "product_name": "Test Product",
+                                        "product_type": false,
+                                        "product_regular_price": 200,
+                                        "product_price": 200,
+                                        "discount_percentage": 0,
+                                        "product_rate": 0,
+                                        "stock_status": true,
+                                        "product_review_number": 0,
+                                        "product_image": "http://3.1.117.187/media/catalog/product/no_selection",
+                                        "manufacturer_name": "Itcan",
+                                        "brand": " "
+                                    }
+                                ]
+                            },
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.43.29_AM.png",
+                                "redirection_url": null,
+                                "products": [
+                                    {
+                                        "product_id": "232914",
+                                        "product_sku": "test-product-#BB3499-0-3M",
+                                        "product_name": "Test Product-#BB3499-0-3M",
+                                        "product_type": false,
+                                        "product_regular_price": 200,
+                                        "product_price": 200,
+                                        "discount_percentage": 0,
+                                        "product_rate": 0,
+                                        "stock_status": true,
+                                        "product_review_number": 0,
+                                        "product_image": "http://3.1.117.187/media/catalog/product/no_selection",
+                                        "manufacturer_name": "Itcan",
+                                        "brand": " "
+                                    }
+                                ]
+                            },
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.43.29_AM.png",
+                                "redirection_url": null,
+                                "products": [
+                                    {
+                                        "product_id": "232914",
+                                        "product_sku": "test-product-#BB3499-0-3M",
+                                        "product_name": "Test Product-#BB3499-0-3M",
+                                        "product_type": false,
+                                        "product_regular_price": 200,
+                                        "product_price": 200,
+                                        "discount_percentage": 0,
+                                        "product_rate": 0,
+                                        "stock_status": true,
+                                        "product_review_number": 0,
+                                        "product_image": "http://3.1.117.187/media/catalog/product/no_selection",
+                                        "manufacturer_name": "Itcan",
+                                        "brand": " "
+                                    }
+                                ]
+                            },
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.43.29_AM.png",
+                                "redirection_url": null,
+                                "products": [
+                                    {
+                                        "product_id": "232911",
+                                        "product_sku": "test-product",
+                                        "product_name": "Test Product",
+                                        "product_type": false,
+                                        "product_regular_price": 200,
+                                        "product_price": 200,
+                                        "discount_percentage": 0,
+                                        "product_rate": 0,
+                                        "stock_status": true,
+                                        "product_review_number": 0,
+                                        "product_image": "http://3.1.117.187/media/catalog/product/no_selection",
+                                        "manufacturer_name": "Itcan",
+                                        "brand": " "
+                                    }
+                                ]
+                            },
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.43.29_AM.png",
+                                "redirection_url": null,
+                                "products": [
+                                    {
+                                        "product_id": "232914",
+                                        "product_sku": "test-product-#BB3499-0-3M",
+                                        "product_name": "Test Product-#BB3499-0-3M",
+                                        "product_type": false,
+                                        "product_regular_price": 200,
+                                        "product_price": 200,
+                                        "discount_percentage": 0,
+                                        "product_rate": 0,
+                                        "stock_status": true,
+                                        "product_review_number": 0,
+                                        "product_image": "http://3.1.117.187/media/catalog/product/no_selection",
+                                        "manufacturer_name": "Itcan",
+                                        "brand": " "
+                                    }
+                                ]
+                            },
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.43.29_AM.png",
+                                "redirection_url": null,
+                                "products": [
+                                    {
+                                        "product_id": "232914",
+                                        "product_sku": "test-product-#BB3499-0-3M",
+                                        "product_name": "Test Product-#BB3499-0-3M",
+                                        "product_type": false,
+                                        "product_regular_price": 200,
+                                        "product_price": 200,
+                                        "discount_percentage": 0,
+                                        "product_rate": 0,
+                                        "stock_status": true,
+                                        "product_review_number": 0,
+                                        "product_image": "http://3.1.117.187/media/catalog/product/no_selection",
+                                        "manufacturer_name": "Itcan",
+                                        "brand": " "
+                                    }
+                                ]
+                            },
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.43.29_AM.png",
+                                "redirection_url": null,
+                                "products": [
+                                    {
+                                        "product_id": "232911",
+                                        "product_sku": "test-product",
+                                        "product_name": "Test Product",
+                                        "product_type": false,
+                                        "product_regular_price": 200,
+                                        "product_price": 200,
+                                        "discount_percentage": 0,
+                                        "product_rate": 0,
+                                        "stock_status": true,
+                                        "product_review_number": 0,
+                                        "product_image": "http://3.1.117.187/media/catalog/product/no_selection",
+                                        "manufacturer_name": "Itcan",
+                                        "brand": " "
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "products",
+                    "data": {
+                        "aspectRatio": 1.13,
+                        "title": "Most Selling",
+                        "NumberernalItemAspectratio": 1,
+                        "welcomeImage": "http://3.1.117.187/focus/home/images/Screen_Shot_2019-03-01_at_11.43.45_AM.png",
+                        "type": "horizontallistwithbanner",
+                        "items": [
+                            {
+                                "product_id": "232911",
+                                "product_sku": "test-product",
+                                "product_name": "Test Product",
+                                "product_type": false,
+                                "product_regular_price": 200,
+                                "product_price": 200,
+                                "discount_percentage": 0,
+                                "product_rate": 0,
+                                "stock_status": true,
+                                "product_review_number": 0,
+                                "product_image": "http://3.1.117.187/media/catalog/product/no_selection",
+                                "manufacturer_name": "Itcan",
+                                "brand": " "
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "products",
+                    "data": {
+                        "aspectRatio": 1.13,
+                        "title": "Featured Products",
+                        "NumberernalItemAspectratio": 1,
+                        "welcomeImage": "http://3.1.117.187/focus/home/images/Screen_Shot_2019-03-01_at_11.43.55_AM.png",
+                        "type": "horizontallistwithbanner",
+                        "items": [
+                            {
+                                "product_id": "232911",
+                                "product_sku": "test-product",
+                                "product_name": "Test Product",
+                                "product_type": false,
+                                "product_regular_price": 200,
+                                "product_price": 200,
+                                "discount_percentage": 0,
+                                "product_rate": 0,
+                                "stock_status": true,
+                                "product_review_number": 0,
+                                "product_image": "http://3.1.117.187/media/catalog/product/no_selection",
+                                "manufacturer_name": "Itcan",
+                                "brand": " "
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "banners",
+                    "data": {
+                        "aspectRatio": 1.13,
+                        "title": "Sales of the month",
+                        "NumberernalItemAspectratio": 1,
+                        "welcomeImage": "",
+                        "type": "horizontallist",
+                        "items": [
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.44.09_AM.png",
+                                "redirection_url": null
+                            },
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.44.14_AM.png",
+                                "redirection_url": null
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "category_id": "12",
+            "category_name": "Women",
+            "data": [
+                {
+                    "type": "banners",
+                    "data": {
+                        "aspectRatio": 1.13,
+                        "title": "Header Banners",
+                        "NumberernalItemAspectratio": 1,
+                        "welcomeImage": "",
+                        "type": "fullwidth",
+                        "items": [
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.43.01_AM.png",
+                                "redirection_url": "://products?category_id=12"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "banners",
+                    "data": {
+                        "aspectRatio": 0.8,
+                        "title": "Header Banners",
+                        "NumberernalItemAspectratio": 1,
+                        "welcomeImage": "",
+                        "type": "fullwidth",
+                        "items": [
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.43.17_AM.png",
+                                "redirection_url": null
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "products",
+                    "data": {
+                        "aspectRatio": 1.13,
+                        "title": "Recommended for you",
+                        "NumberernalItemAspectratio": 1,
+                        "welcomeImage": "",
+                        "type": "horizontallist",
+                        "items": [
+                            {
+                                "product_id": "232914",
+                                "product_sku": "test-product-#BB3499-0-3M",
+                                "product_name": "Test Product-#BB3499-0-3M",
+                                "product_type": false,
+                                "product_regular_price": 200,
+                                "product_price": 200,
+                                "discount_percentage": 0,
+                                "product_rate": 0,
+                                "stock_status": true,
+                                "product_review_number": 0,
+                                "product_image": "http://3.1.117.187/media/catalog/product/no_selection",
+                                "manufacturer_name": "Itcan",
+                                "brand": " "
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "productgrid",
+                    "data": {
+                        "aspectRatio": 1.13,
+                        "title": "Trending",
+                        "NumberernalItemAspectratio": 1,
+                        "welcomeImage": "",
+                        "type": "horizontallistofsixitemgrid",
+                        "items": [
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.43.29_AM.png",
+                                "redirection_url": null,
+                                "products": [
+                                    {
+                                        "product_id": "232911",
+                                        "product_sku": "test-product",
+                                        "product_name": "Test Product",
+                                        "product_type": false,
+                                        "product_regular_price": 200,
+                                        "product_price": 200,
+                                        "discount_percentage": 0,
+                                        "product_rate": 0,
+                                        "stock_status": true,
+                                        "product_review_number": 0,
+                                        "product_image": "http://3.1.117.187/media/catalog/product/no_selection",
+                                        "manufacturer_name": "Itcan",
+                                        "brand": " "
+                                    }
+                                ]
+                            },
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.43.29_AM.png",
+                                "redirection_url": null,
+                                "products": [
+                                    {
+                                        "product_id": "232914",
+                                        "product_sku": "test-product-#BB3499-0-3M",
+                                        "product_name": "Test Product-#BB3499-0-3M",
+                                        "product_type": false,
+                                        "product_regular_price": 200,
+                                        "product_price": 200,
+                                        "discount_percentage": 0,
+                                        "product_rate": 0,
+                                        "stock_status": true,
+                                        "product_review_number": 0,
+                                        "product_image": "http://3.1.117.187/media/catalog/product/no_selection",
+                                        "manufacturer_name": "Itcan",
+                                        "brand": " "
+                                    }
+                                ]
+                            },
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.43.29_AM.png",
+                                "redirection_url": null,
+                                "products": [
+                                    {
+                                        "product_id": "232914",
+                                        "product_sku": "test-product-#BB3499-0-3M",
+                                        "product_name": "Test Product-#BB3499-0-3M",
+                                        "product_type": false,
+                                        "product_regular_price": 200,
+                                        "product_price": 200,
+                                        "discount_percentage": 0,
+                                        "product_rate": 0,
+                                        "stock_status": true,
+                                        "product_review_number": 0,
+                                        "product_image": "http://3.1.117.187/media/catalog/product/no_selection",
+                                        "manufacturer_name": "Itcan",
+                                        "brand": " "
+                                    }
+                                ]
+                            },
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.43.29_AM.png",
+                                "redirection_url": null,
+                                "products": [
+                                    {
+                                        "product_id": "232911",
+                                        "product_sku": "test-product",
+                                        "product_name": "Test Product",
+                                        "product_type": false,
+                                        "product_regular_price": 200,
+                                        "product_price": 200,
+                                        "discount_percentage": 0,
+                                        "product_rate": 0,
+                                        "stock_status": true,
+                                        "product_review_number": 0,
+                                        "product_image": "http://3.1.117.187/media/catalog/product/no_selection",
+                                        "manufacturer_name": "Itcan",
+                                        "brand": " "
+                                    }
+                                ]
+                            },
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.43.29_AM.png",
+                                "redirection_url": null,
+                                "products": [
+                                    {
+                                        "product_id": "232914",
+                                        "product_sku": "test-product-#BB3499-0-3M",
+                                        "product_name": "Test Product-#BB3499-0-3M",
+                                        "product_type": false,
+                                        "product_regular_price": 200,
+                                        "product_price": 200,
+                                        "discount_percentage": 0,
+                                        "product_rate": 0,
+                                        "stock_status": true,
+                                        "product_review_number": 0,
+                                        "product_image": "http://3.1.117.187/media/catalog/product/no_selection",
+                                        "manufacturer_name": "Itcan",
+                                        "brand": " "
+                                    }
+                                ]
+                            },
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.43.29_AM.png",
+                                "redirection_url": null,
+                                "products": [
+                                    {
+                                        "product_id": "232914",
+                                        "product_sku": "test-product-#BB3499-0-3M",
+                                        "product_name": "Test Product-#BB3499-0-3M",
+                                        "product_type": false,
+                                        "product_regular_price": 200,
+                                        "product_price": 200,
+                                        "discount_percentage": 0,
+                                        "product_rate": 0,
+                                        "stock_status": true,
+                                        "product_review_number": 0,
+                                        "product_image": "http://3.1.117.187/media/catalog/product/no_selection",
+                                        "manufacturer_name": "Itcan",
+                                        "brand": " "
+                                    }
+                                ]
+                            },
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.43.29_AM.png",
+                                "redirection_url": null,
+                                "products": [
+                                    {
+                                        "product_id": "232911",
+                                        "product_sku": "test-product",
+                                        "product_name": "Test Product",
+                                        "product_type": false,
+                                        "product_regular_price": 200,
+                                        "product_price": 200,
+                                        "discount_percentage": 0,
+                                        "product_rate": 0,
+                                        "stock_status": true,
+                                        "product_review_number": 0,
+                                        "product_image": "http://3.1.117.187/media/catalog/product/no_selection",
+                                        "manufacturer_name": "Itcan",
+                                        "brand": " "
+                                    }
+                                ]
+                            },
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.43.29_AM.png",
+                                "redirection_url": null,
+                                "products": [
+                                    {
+                                        "product_id": "232914",
+                                        "product_sku": "test-product-#BB3499-0-3M",
+                                        "product_name": "Test Product-#BB3499-0-3M",
+                                        "product_type": false,
+                                        "product_regular_price": 200,
+                                        "product_price": 200,
+                                        "discount_percentage": 0,
+                                        "product_rate": 0,
+                                        "stock_status": true,
+                                        "product_review_number": 0,
+                                        "product_image": "http://3.1.117.187/media/catalog/product/no_selection",
+                                        "manufacturer_name": "Itcan",
+                                        "brand": " "
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "products",
+                    "data": {
+                        "aspectRatio": 1.13,
+                        "title": "Most Selling",
+                        "NumberernalItemAspectratio": 1,
+                        "welcomeImage": "",
+                        "type": "horizontallistwithbanner",
+                        "items": [
+                            {
+                                "product_id": "232914",
+                                "product_sku": "test-product-#BB3499-0-3M",
+                                "product_name": "Test Product-#BB3499-0-3M",
+                                "product_type": false,
+                                "product_regular_price": 200,
+                                "product_price": 200,
+                                "discount_percentage": 0,
+                                "product_rate": 0,
+                                "stock_status": true,
+                                "product_review_number": 0,
+                                "product_image": "http://3.1.117.187/media/catalog/product/no_selection",
+                                "manufacturer_name": "Itcan",
+                                "brand": " "
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "products",
+                    "data": {
+                        "aspectRatio": 1.13,
+                        "title": "Featured Products",
+                        "NumberernalItemAspectratio": 1,
+                        "welcomeImage": "http://3.1.117.187/focus/home/images/Screen_Shot_2019-03-01_at_11.43.55_AM.png",
+                        "type": "horizontallistwithbanner",
+                        "items": [
+                            {
+                                "product_id": "232914",
+                                "product_sku": "test-product-#BB3499-0-3M",
+                                "product_name": "Test Product-#BB3499-0-3M",
+                                "product_type": false,
+                                "product_regular_price": 200,
+                                "product_price": 200,
+                                "discount_percentage": 0,
+                                "product_rate": 0,
+                                "stock_status": true,
+                                "product_review_number": 0,
+                                "product_image": "http://3.1.117.187/media/catalog/product/no_selection",
+                                "manufacturer_name": "Itcan",
+                                "brand": " "
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "banners",
+                    "data": {
+                        "aspectRatio": 1.13,
+                        "title": "Sales of the month",
+                        "NumberernalItemAspectratio": 1,
+                        "welcomeImage": "",
+                        "type": "horizontallist",
+                        "items": [
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.44.09_AM.png",
+                                "redirection_url": null
+                            },
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.44.14_AM.png",
+                                "redirection_url": null
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "category_id": "196",
+            "category_name": "Kids",
+            "data": [
+                {
+                    "type": "banners",
+                    "data": {
+                        "aspectRatio": 1.13,
+                        "title": "Header Banners",
+                        "NumberernalItemAspectratio": 1,
+                        "welcomeImage": "",
+                        "type": "fullwidth",
+                        "items": [
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.43.01_AM.png",
+                                "redirection_url": "://products?category_id=196"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "banners",
+                    "data": {
+                        "aspectRatio": 0.8,
+                        "title": "Header Banners",
+                        "NumberernalItemAspectratio": 1,
+                        "welcomeImage": "",
+                        "type": "fullwidth",
+                        "items": [
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.43.17_AM.png",
+                                "redirection_url": "://products?category_id=196"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "products",
+                    "data": {
+                        "aspectRatio": 1.13,
+                        "title": "Recommended for you",
+                        "NumberernalItemAspectratio": 1,
+                        "welcomeImage": "",
+                        "type": "horizontallist",
+                        "items": [
+                            {
+                                "product_id": "232914",
+                                "product_sku": "test-product-#BB3499-0-3M",
+                                "product_name": "Test Product-#BB3499-0-3M",
+                                "product_type": false,
+                                "product_regular_price": 200,
+                                "product_price": 200,
+                                "discount_percentage": 0,
+                                "product_rate": 0,
+                                "stock_status": true,
+                                "product_review_number": 0,
+                                "product_image": "http://3.1.117.187/media/catalog/product/no_selection",
+                                "manufacturer_name": "Itcan",
+                                "brand": " "
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "productgrid",
+                    "data": {
+                        "aspectRatio": 1.13,
+                        "title": "Trending",
+                        "NumberernalItemAspectratio": 1,
+                        "welcomeImage": "",
+                        "type": "horizontallistofsixitemgrid",
+                        "items": [
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.43.29_AM.png",
+                                "redirection_url": null,
+                                "products": [
+                                    {
+                                        "product_id": "232911",
+                                        "product_sku": "test-product",
+                                        "product_name": "Test Product",
+                                        "product_type": false,
+                                        "product_regular_price": 200,
+                                        "product_price": 200,
+                                        "discount_percentage": 0,
+                                        "product_rate": 0,
+                                        "stock_status": true,
+                                        "product_review_number": 0,
+                                        "product_image": "http://3.1.117.187/media/catalog/product/no_selection",
+                                        "manufacturer_name": "Itcan",
+                                        "brand": " "
+                                    }
+                                ]
+                            },
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.43.29_AM.png",
+                                "redirection_url": null,
+                                "products": [
+                                    {
+                                        "product_id": "232914",
+                                        "product_sku": "test-product-#BB3499-0-3M",
+                                        "product_name": "Test Product-#BB3499-0-3M",
+                                        "product_type": false,
+                                        "product_regular_price": 200,
+                                        "product_price": 200,
+                                        "discount_percentage": 0,
+                                        "product_rate": 0,
+                                        "stock_status": true,
+                                        "product_review_number": 0,
+                                        "product_image": "http://3.1.117.187/media/catalog/product/no_selection",
+                                        "manufacturer_name": "Itcan",
+                                        "brand": " "
+                                    }
+                                ]
+                            },
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.43.29_AM.png",
+                                "redirection_url": null,
+                                "products": [
+                                    {
+                                        "product_id": "232914",
+                                        "product_sku": "test-product-#BB3499-0-3M",
+                                        "product_name": "Test Product-#BB3499-0-3M",
+                                        "product_type": false,
+                                        "product_regular_price": 200,
+                                        "product_price": 200,
+                                        "discount_percentage": 0,
+                                        "product_rate": 0,
+                                        "stock_status": true,
+                                        "product_review_number": 0,
+                                        "product_image": "http://3.1.117.187/media/catalog/product/no_selection",
+                                        "manufacturer_name": "Itcan",
+                                        "brand": " "
+                                    }
+                                ]
+                            },
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.43.29_AM.png",
+                                "redirection_url": null,
+                                "products": [
+                                    {
+                                        "product_id": "232911",
+                                        "product_sku": "test-product",
+                                        "product_name": "Test Product",
+                                        "product_type": false,
+                                        "product_regular_price": 200,
+                                        "product_price": 200,
+                                        "discount_percentage": 0,
+                                        "product_rate": 0,
+                                        "stock_status": true,
+                                        "product_review_number": 0,
+                                        "product_image": "http://3.1.117.187/media/catalog/product/no_selection",
+                                        "manufacturer_name": "Itcan",
+                                        "brand": " "
+                                    }
+                                ]
+                            },
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.43.29_AM.png",
+                                "redirection_url": null,
+                                "products": [
+                                    {
+                                        "product_id": "232914",
+                                        "product_sku": "test-product-#BB3499-0-3M",
+                                        "product_name": "Test Product-#BB3499-0-3M",
+                                        "product_type": false,
+                                        "product_regular_price": 200,
+                                        "product_price": 200,
+                                        "discount_percentage": 0,
+                                        "product_rate": 0,
+                                        "stock_status": true,
+                                        "product_review_number": 0,
+                                        "product_image": "http://3.1.117.187/media/catalog/product/no_selection",
+                                        "manufacturer_name": "Itcan",
+                                        "brand": " "
+                                    }
+                                ]
+                            },
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.43.29_AM.png",
+                                "redirection_url": null,
+                                "products": [
+                                    {
+                                        "product_id": "232914",
+                                        "product_sku": "test-product-#BB3499-0-3M",
+                                        "product_name": "Test Product-#BB3499-0-3M",
+                                        "product_type": false,
+                                        "product_regular_price": 200,
+                                        "product_price": 200,
+                                        "discount_percentage": 0,
+                                        "product_rate": 0,
+                                        "stock_status": true,
+                                        "product_review_number": 0,
+                                        "product_image": "http://3.1.117.187/media/catalog/product/no_selection",
+                                        "manufacturer_name": "Itcan",
+                                        "brand": " "
+                                    }
+                                ]
+                            },
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.43.29_AM.png",
+                                "redirection_url": null,
+                                "products": [
+                                    {
+                                        "product_id": "232911",
+                                        "product_sku": "test-product",
+                                        "product_name": "Test Product",
+                                        "product_type": false,
+                                        "product_regular_price": 200,
+                                        "product_price": 200,
+                                        "discount_percentage": 0,
+                                        "product_rate": 0,
+                                        "stock_status": true,
+                                        "product_review_number": 0,
+                                        "product_image": "http://3.1.117.187/media/catalog/product/no_selection",
+                                        "manufacturer_name": "Itcan",
+                                        "brand": " "
+                                    }
+                                ]
+                            },
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.43.29_AM.png",
+                                "redirection_url": null,
+                                "products": [
+                                    {
+                                        "product_id": "232914",
+                                        "product_sku": "test-product-#BB3499-0-3M",
+                                        "product_name": "Test Product-#BB3499-0-3M",
+                                        "product_type": false,
+                                        "product_regular_price": 200,
+                                        "product_price": 200,
+                                        "discount_percentage": 0,
+                                        "product_rate": 0,
+                                        "stock_status": true,
+                                        "product_review_number": 0,
+                                        "product_image": "http://3.1.117.187/media/catalog/product/no_selection",
+                                        "manufacturer_name": "Itcan",
+                                        "brand": " "
+                                    }
+                                ]
+                            },
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.43.29_AM.png",
+                                "redirection_url": null,
+                                "products": [
+                                    {
+                                        "product_id": "232914",
+                                        "product_sku": "test-product-#BB3499-0-3M",
+                                        "product_name": "Test Product-#BB3499-0-3M",
+                                        "product_type": false,
+                                        "product_regular_price": 200,
+                                        "product_price": 200,
+                                        "discount_percentage": 0,
+                                        "product_rate": 0,
+                                        "stock_status": true,
+                                        "product_review_number": 0,
+                                        "product_image": "http://3.1.117.187/media/catalog/product/no_selection",
+                                        "manufacturer_name": "Itcan",
+                                        "brand": " "
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "products",
+                    "data": {
+                        "aspectRatio": 1.13,
+                        "title": "Most Selling",
+                        "NumberernalItemAspectratio": 1,
+                        "welcomeImage": "",
+                        "type": "horizontallistwithbanner",
+                        "items": [
+                            {
+                                "product_id": "232914",
+                                "product_sku": "test-product-#BB3499-0-3M",
+                                "product_name": "Test Product-#BB3499-0-3M",
+                                "product_type": false,
+                                "product_regular_price": 200,
+                                "product_price": 200,
+                                "discount_percentage": 0,
+                                "product_rate": 0,
+                                "stock_status": true,
+                                "product_review_number": 0,
+                                "product_image": "http://3.1.117.187/media/catalog/product/no_selection",
+                                "manufacturer_name": "Itcan",
+                                "brand": " "
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "products",
+                    "data": {
+                        "aspectRatio": 1.13,
+                        "title": "Featured Products",
+                        "NumberernalItemAspectratio": 1,
+                        "welcomeImage": "",
+                        "type": "horizontallistwithbanner",
+                        "items": [
+                            {
+                                "product_id": "232914",
+                                "product_sku": "test-product-#BB3499-0-3M",
+                                "product_name": "Test Product-#BB3499-0-3M",
+                                "product_type": false,
+                                "product_regular_price": 200,
+                                "product_price": 200,
+                                "discount_percentage": 0,
+                                "product_rate": 0,
+                                "stock_status": true,
+                                "product_review_number": 0,
+                                "product_image": "http://3.1.117.187/media/catalog/product/no_selection",
+                                "manufacturer_name": "Itcan",
+                                "brand": " "
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "banners",
+                    "data": {
+                        "aspectRatio": 1.13,
+                        "title": "Sales of the month",
+                        "NumberernalItemAspectratio": 1,
+                        "welcomeImage": "",
+                        "type": "horizontallist",
+                        "items": [
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.44.09_AM.png",
+                                "redirection_url": null
+                            },
+                            {
+                                "image_url": "http://3.1.117.187/media/media/focus/focus/banner/0/Screen_Shot_2019-03-01_at_11.44.14_AM.png",
+                                "redirection_url": null
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}
+```
+
+##Get Product Detail
+
+This Api is user to get all details for a specific product. 
+It provides all images, meta data, prices and stock for a product.
+
+For a configurable product, it also provides all data for it's associated products
+
+###Request
+
+<code class="post">POST</code>
+<span class="prettyprint">{Base URL}/connector/catalog/get_product_detailV2</span>
+
+> Definition
+
+```
+{Base URL}/connector/catalog/get_product_detailV2
+```
+
+>Request Body
+
+```php
+$request->setBody('{
+  "product_id":691
+}');
+```
+
+```curl
+     -d '{
+      "product_id":691
+    }'
+```
+
+###Request Parameters
+
+Parameter | DataType | Length | Required | Description
+--------- | -------- | ------ | -------- | -----------
+product_id | Int | 10 | Mandatory | Set product id
+
+>Response
+
+```
+{
+    "status": "SUCCESS",
+    "message": [
+        "SUCCESS"
+    ],
+    "data": [
+        {
+            "product_id": 377329,
+            "product_name": "Demo",
+            "product_type": "",
+            "type": "simple",
+            "product_regular_price": 200,
+            "product_price": 200,
+            "special_price_start_date": "",
+            "special_price_end_date": "",
+            "product_description": "Consumers shop on their own time, in their preferred channels and compare across stores and prices. Here’s everything you need to know from demographic shopping habits to how folks in the cities versus rural areas differ. \r\n",
+            "product_short_description": "HOW MODERN CONSUMERS SHOP ACROSS CHANNELS\r\n",
+            "product_sku": "demo",
+            "discount_percentage": 0,
+            "max_qty": 10,
+            "product_rate": 0,
+            "product_images": [
+                "http://3.1.117.187/media/catalog/product/cache/1/thumbnail/600x600/040ec09b1e35df139433887a97daa66f/v/e/velvet_touch_3.png"
+            ],
+            "product_image": "http://3.1.117.187/media/catalog/product/cache/1/thumbnail/600x600/040ec09b1e35df139433887a97daa66f/v/e/velvet_touch_3.png",
+            "manufacturer_name": "",
+            "brand": "878",
+            "product_review_number": 0,
+            "star_number_5": 0,
+            "star_number_4": 0,
+            "star_number_3": 0,
+            "star_number_2": 0,
+            "star_number_1": 0,
+            "stock_status": true,
+            "configurable_attribute": "",
+            "options": null,
+            "review": [],
+            "product_attributes": [
+                {
+                    "title": "SKU",
+                    "value": "demo"
+                },
+                {
+                    "title": "BRAND",
+                    "value": "BLOOMING"
+                },
+                {
+                    "title": "SIZE",
+                    "value": "18 ml"
+                }
+            ],
+            "related_products": [
+                {
+                    "product_id": "377326",
+                    "product_name": "Second Test Product",
+                    "brand": "",
+                    "product_image": "http://3.1.117.187/media/catalog/product/cache/1/thumbnail/600x600/040ec09b1e35df139433887a97daa66f/images/catalog/product/placeholder/thumbnail.jpg",
+                    "product_regular_price": 234,
+                    "product_price": 230,
+                    "discount_percentage": 2,
+                    "stock_status": true
+                }
+            ],
+            "gift_products": []
+        }
+    ]
+}
+```
+
+##Search Trending Product
+
+This api is used to get trending products.
+
+###Request
+
+<code class="post">POST</code>
+<span class="prettyprint">{Base URL}/connector/catalog/get_search_trendingV2</span>
+
+> Definition
+
+```
+{Base URL}/connector/catalog/get_search_trendingV2
+```
+
+>Request Body
+
+```php
+$request->setBody('{
+  "store_id":"1"
+}');
+
+```
+
+```curl
+     -d '{
+      "store_id":"1"
+    }'
+```
+
+###Request Parameters
+
+Parameter | DataType | Length | Required | Description
+--------- | -------- | ------ | -------- | -----------
+store_id | Int | 10 | Mandatory | Set store id
+
+>Response
+
+```
+{
+    "status": "SUCCESS",
+    "message": [
+        "SUCCESS"
+    ],
+    "data": {
+        "sliders": [
+            {
+                "header": "Most View",
+                "title": "Most View",
+                "type": "most_view",
+                "products": [
+                    {
+                        "product_id": "232911",
+                        "product_sku": "test-product",
+                        "product_name": "Test Product",
+                        "product_type": "configurable",
+                        "product_regular_price": 200,
+                        "product_price": 200,
+                        "discount_percentage": 0,
+                        "product_rate": 0,
+                        "stock_status": true,
+                        "product_review_number": 0,
+                        "product_image": "http://3.1.117.187/media/catalog/product/cache/1/image/600x600/9df78eab33525d08d6e5fb8d27136e95/images/catalog/product/placeholder/image.jpg",
+                        "manufacturer_name": "Itcan",
+                        "brand": " "
+                    }
+                ]
+            },
+            {
+                "header": "Recently Viewed",
+                "title": "Recently Viewed",
+                "type": "recent_view",
+                "products": []
+            }
+        ],
+        "search_terms": [
+            "Test",
+            "becca",
+            "moonstone",
+            "configurable test",
+            "Perfume",
+            "brij"
+        ]
+    }
+}
+```
+
+##Get All Category
+
+This api is used to get all category with subcategory.
+
+###Request
+
+<code class="post">POST</code>
+<span class="prettyprint">{Base URL}/connector/catalog/get_all_category</span>
+
+> Definition
+
+```
+{Base URL}/connector/catalog/get_all_category
+```
+
+>Response
+
+```
+{
+    "status": "SUCCESS",
+    "message": [
+        "SUCCESS"
+    ],
+    "data": {
+        "categories": [
+            {
+                "category_name": "MEN",
+                "category_id": "11",
+                "category_image": "http://3.1.117.187/media/catalog/category/Men_3_2x_5.png",
+                "image_thumbnail": null,
+                "children": [
+                    {
+                        "category_name": "Clothing",
+                        "category_id": "205",
+                        "category_image": "http://3.1.117.187/media/catalog/category/Clothing_7_2x_1.png",
+                        "image_thumbnail": null,
+                        "children": [
+                            {
+                                "category_name": "Jeans",
+                                "category_id": "215",
+                                "category_image": null,
+                                "image_thumbnail": null,
+                                "children": null,
+                                "products": [],
+                                "products_count": 6,
+                                "reviews": 0
+                            }
+                        ],
+                        "products": [],
+                        "products_count": 7,
+                        "reviews": 0
+                    },
+                    {
+                        "category_name": "Accessories",
+                        "category_id": "227",
+                        "category_image": "http://3.1.117.187/media/catalog/category/Accessories_8_2x_1.png",
+                        "image_thumbnail": null,
+                        "children": null,
+                        "products": [],
+                        "products_count": 3,
+                        "reviews": 0
+                    }
+                ],
+                "products": []
+            },
+            {
+                "category_name": "WOMEN",
+                "category_id": "12",
+                "category_image": "http://3.1.117.187/media/catalog/category/Women_3_2x_3.png",
+                "image_thumbnail": null,
+                "children": [
+                    {
+                        "category_name": "Clothing",
+                        "category_id": "206",
+                        "category_image": "http://3.1.117.187/media/catalog/category/Clothing_8_2x_1.png",
+                        "image_thumbnail": null,
+                        "children": [
+                            {
+                                "category_name": "Abaya",
+                                "category_id": "209",
+                                "category_image": null,
+                                "image_thumbnail": null,
+                                "children": null,
+                                "products": [],
+                                "products_count": 3,
+                                "reviews": 0
+                            }
+                        ],
+                        "products": [],
+                        "products_count": 5,
+                        "reviews": 0
+                    },
+                    {
+                        "category_name": "Bags",
+                        "category_id": "207",
+                        "category_image": "http://3.1.117.187/media/catalog/category/Bags_3_2x_1.png",
+                        "image_thumbnail": null,
+                        "children": null,
+                        "products": [],
+                        "products_count": 2,
+                        "reviews": 0
+                    },
+                    {
+                        "category_name": "Accessories",
+                        "category_id": "208",
+                        "category_image": "http://3.1.117.187/media/catalog/category/Accessories_9_2x_1.png",
+                        "image_thumbnail": null,
+                        "children": null,
+                        "products": [],
+                        "products_count": 2,
+                        "reviews": 0
+                    }
+                ],
+                "products": []
+            },
+            {
+                "category_name": "KIDS",
+                "category_id": "196",
+                "category_image": "http://3.1.117.187/media/catalog/category/Kids_3_2x_3.png",
+                "image_thumbnail": null,
+                "children": [
+                    {
+                        "category_name": "Bottle Feeding",
+                        "category_id": "197",
+                        "category_image": "http://3.1.117.187/media/catalog/category/baby_shower_1_2x_1.png",
+                        "image_thumbnail": null,
+                        "children": null,
+                        "products": [],
+                        "products_count": 3,
+                        "reviews": 0
+                    },
+                    {
+                        "category_name": "Diapers & Wipes",
+                        "category_id": "198",
+                        "category_image": "http://3.1.117.187/media/catalog/category/diapers_wipes_3_2x_1.png",
+                        "image_thumbnail": null,
+                        "children": null,
+                        "products": [],
+                        "products_count": 3,
+                        "reviews": 0
+                    }
+                    {
+                        "category_name": "Clothing",
+                        "category_id": "229",
+                        "category_image": "http://3.1.117.187/media/catalog/category/clothing_5_2x.png",
+                        "image_thumbnail": null,
+                        "children": [
+                            {
+                                "category_name": "Girls",
+                                "category_id": "230",
+                                "category_image": null,
+                                "image_thumbnail": null,
+                                "children": null,
+                                "products": [],
+                                "products_count": 2,
+                                "reviews": 0
+                            },
+                            {
+                                "category_name": "Boys",
+                                "category_id": "231",
+                                "category_image": null,
+                                "image_thumbnail": null,
+                                "children": null,
+                                "products": [],
+                                "products_count": 2,
+                                "reviews": 0
+                            },
+                            {
+                                "category_name": "Shoes",
+                                "category_id": "232",
+                                "category_image": null,
+                                "image_thumbnail": null,
+                                "children": [
+                                    {
+                                        "category_name": "Girls",
+                                        "category_id": "233",
+                                        "category_image": null,
+                                        "image_thumbnail": null,
+                                        "children": null,
+                                        "products": [],
+                                        "products_count": 2,
+                                        "reviews": 0
+                                    },
+                                    {
+                                        "category_name": "Boys",
+                                        "category_id": "234",
+                                        "category_image": null,
+                                        "image_thumbnail": null,
+                                        "children": null,
+                                        "products": [],
+                                        "products_count": 2,
+                                        "reviews": 0
+                                    }
+                                ],
+                                "products": [],
+                                "products_count": 2,
+                                "reviews": 0
+                            }
+                        ],
+                        "products": [],
+                        "products_count": 3,
+                        "reviews": 0
+                    }
+                ],
+                "products": []
+            }
+        ]
+    }
+}
+```
+
+##Get Category With Product
+
+This api is used to get 1 level category with 5 product.
+
+###Request
+
+<code class="post">POST</code>
+<span class="prettyprint">{Base URL}/connector/catalog/get_category_with_product</span>
+
+> Definition
+
+```
+{Base URL}/connector/catalog/get_category_with_product
+```
+
+>Request Body
+
+```php
+$request->setBody('{
+	"category_id":11
+}');
+```
+
+```curl
+    -d '{
+   	"category_id":11
+   }'
+```
+
+###Request Parameters
+
+Parameter | DataType | Length | Required | Description
+--------- | -------- | ------ | -------- | -----------
+category_id | Int | 10 | Mandatory | Set category id
+
+>Response
+
+```
+{
+    "status": "SUCCESS",
+    "message": [
+        "SUCCESS"
+    ],
+    "data": {
+        "categories": [
+            {
+                "category_name": "CLOTHING",
+                "category_id": "205",
+                "category_image": "http://3.1.117.187/media/catalog/category/Clothing_7_2x_1.png",
+                "image_thumbnail": null,
+                "children": [],
+                "products": [
+                    {
+                        "product_id": "377325",
+                        "product_sku": "first-test-product",
+                        "product_name": "First Test Product",
+                        "product_type": "simple",
+                        "product_regular_price": 123,
+                        "product_price": 120,
+                        "stock_status": true,
+                        "product_image": "http://3.1.117.187/media/catalog/product/cache/1/thumbnail/600x600/040ec09b1e35df139433887a97daa66f/1/3/133.png"
+                    }
+                ]
+            },
+            {
+                "category_name": "ACCESSORIES",
+                "category_id": "227",
+                "category_image": "http://3.1.117.187/media/catalog/category/Accessories_8_2x_1.png",
+                "image_thumbnail": null,
+                "children": [],
+                "products": [
+                    {
+                        "product_id": "377327",
+                        "product_sku": "third-test-product",
+                        "product_name": "Third Test product",
+                        "product_type": "simple",
+                        "product_regular_price": 345,
+                        "product_price": 340,
+                        "stock_status": true,
+                        "product_image": "http://3.1.117.187/media/catalog/product/cache/1/thumbnail/600x600/040ec09b1e35df139433887a97daa66f/images/catalog/product/placeholder/thumbnail.jpg"
+                    }
+                ]
+            }
+        ]
+    }
+}
+```
+
+
+#Checkout V2 [Use In Fanos]
+
+This api is new version of checkout api
+
+##Add To Cart
+
+This api is new version of add to cart api. Configurable product option data available into <a href="get-product-detail-2" >get_product_detailV2</a> api response.
+
+This api adds one or more products to cart. 
+In this api 2 different request: </br>
+1) Simple Product </br>
+2) Configurable product
+
+###Request
+
+<code class="post">POST</code>
+<span class="prettyprint">{Base URL}/connector/catalog/add_to_cart_bulkV2</span>
+
+> Definition
+
+```
+{Base URL}/connector/catalog/add_to_cart_bulkV2
+```
+
+>Request Body For Simple Product
+
+```php
+$request->setBody('{
+  "products": [
+    {
+      "product_id": 377329,
+      "product_qty": 1
+    }
+  ]
+}');
+```
+
+```curl
+  -d '{
+  "products": [
+    {
+      "product_id": 377329,
+      "product_qty": 1
+    }
+  ]
+}'
+```
+
+>Response For Simple Product
+
+```
+{
+    "status": "SUCCESS",
+    "message": [
+        "SUCCESS"
+    ],
+    "data": {
+        "cart": [
+            {
+                "cart_item_id": "23908",
+                "product_id": "377329",
+                "product_sku": "demo",
+                "stock_status": true,
+                "product_name": "Demo",
+                "product_type": "simple",
+                "product_regular_price": 200,
+                "product_price": 200,
+                "discount_percentage": 0,
+                "brand": "BLOOMING",
+                "product_image": "http://3.1.117.187/media/catalog/product/cache/1/image/600x600/9df78eab33525d08d6e5fb8d27136e95/v/e/velvet_touch_3.png",
+                "product_qty": 1,
+                "product_max_qty": 10,
+                "options": {},
+                "selected_options": {},
+                "is_gift": false
+            }
+        ],
+        "gift_rules_id": "",
+        "fee": {
+            "discount": 0,
+            "discount_percentage": "0%",
+            "grand_total": 200,
+            "sub_total": 200,
+            "sub_total_after_discount": 200,
+            "subtotal_after_discount": 200,
+            "shipping_hand": 0,
+            "cod_fee": 0,
+            "tax": 0,
+            "coupon_code": "",
+            "is_coupon_applied": false
+        },
+        "items_in_cart": 1,
+        "discount": 0,
+        "discount_percentage": "0%",
+        "coupon_code": "",
+        "is_coupon_applied": false,
+        "subtotal": 200,
+        "subtotal_after_discount": 200,
+        "sub_total_after_discount": 200,
+        "cod_fee": 0,
+        "shipping_hand": 0,
+        "tax": 0,
+        "grand_total": 200
+    }
+}
+```
+
+###Request Parameters
+
+Parameter | DataType | Length | Required | Description
+--------- | -------- | ------ | -------- | -----------
+product_id | Int | 10 | Mandatory | Set product id
+product_qty | Int | 10 | Mandatory | Set Product quantity
+Options | String | 255 | Mandatory | Set Product options
+id | Int | 10 | Mandatory | Set attribute id
+option_id | Int | 10 | Set Option id
+option_value | String | 100 | Set Option Value
+option_price | Int | 10 | Set Option Price
+option_title | String | 30 | Set option title
+position | Int | 10 | Set option position
+option_type_id | Int | 10 | Set option type id
+option_type | String | 100 | Set option type
+is_required | tinyint | 10 | Set "Yes" Or "No"
+dependence_option_ids | String | 255 | Set array of dependence option ids
+dependence_options | String | 255 | Set Dependence options array
+stock_status | boolean | 2 | Set stock status **'true'** Or **'false'**
+
+>Request Body For Configurable Product
+
+```php
+$request->setBody('{
+	    "products": [
+	        {
+	            "product_id": 232911,
+	            "product_qty": 1,
+	            "options": [
+	                {
+	                    "id": "Color",
+	                    "options": [
+	                        {
+	                            "option_id": "41",
+	                            "option_value": "#BB3467",
+	                            "option_price": 0,
+	                            "option_title": "Color",
+	                            "position": "0",
+	                            "option_type_id": "93",
+	                            "option_type": "single",
+	                            "is_required": "YES",
+	                            "dependence_option_ids": [
+	                                "232912",
+	                                "232913"
+	                            ],
+	                            "dependence_options": [
+	                                {
+	                                    "id": 1202,
+	                                    "stock_status": true
+	                                },
+	                                {
+	                                    "id": 1204,
+	                                    "stock_status": true
+	                                }
+	                            ]
+	                        }
+	                    ]
+	                },
+	                {
+	                    "id": "Size",
+	                    "options": [
+	                        {
+	                            "option_id": "1202",
+	                            "option_value": "0-3M",
+	                            "option_price": 0,
+	                            "option_title": "Size",
+	                            "position": "0",
+	                            "option_type_id": "160",
+	                            "option_type": "single",
+	                            "is_required": "YES",
+	                            "dependence_option_ids": [
+	                                "232912",
+	                                "232914"
+	                            ],
+	                            "dependence_options": [
+	                                {
+	                                    "id": 41,
+	                                    "stock_status": true
+	                                },
+	                                {
+	                                    "id": 40,
+	                                    "stock_status": true
+	                                }
+	                            ]
+	                        }
+	                    ]
+	                }
+	            ]
+	        }
+	    ]
+	}');
+```
+
+```curl
+  -d '{
+      "products": [
+          {
+              "product_id": 232911,
+              "product_qty": 1,
+              "options": [
+                  {
+                      "id": "Color",
+                      "options": [
+                          {
+                              "option_id": "41",
+                              "option_value": "#BB3467",
+                              "option_price": 0,
+                              "option_title": "Color",
+                              "position": "0",
+                              "option_type_id": "93",
+                              "option_type": "single",
+                              "is_required": "YES",
+                              "dependence_option_ids": [
+                                  "232912",
+                                  "232913"
+                              ],
+                              "dependence_options": [
+                                  {
+                                      "id": 1202,
+                                      "stock_status": true
+                                  },
+                                  {
+                                      "id": 1204,
+                                      "stock_status": true
+                                  }
+                              ]
+                          }
+                      ]
+                  },
+                  {
+                      "id": "Size",
+                      "options": [
+                          {
+                              "option_id": "1202",
+                              "option_value": "0-3M",
+                              "option_price": 0,
+                              "option_title": "Size",
+                              "position": "0",
+                              "option_type_id": "160",
+                              "option_type": "single",
+                              "is_required": "YES",
+                              "dependence_option_ids": [
+                                  "232912",
+                                  "232914"
+                              ],
+                              "dependence_options": [
+                                  {
+                                      "id": 41,
+                                      "stock_status": true
+                                  },
+                                  {
+                                      "id": 40,
+                                      "stock_status": true
+                                  }
+                              ]
+                          }
+                      ]
+                  }
+              ]
+          }
+      ]
+  }'
+```
+
+>Response
+
+```
+    {
+        "status": "SUCCESS",
+        "message": [
+            "SUCCESS"
+        ],
+        "data": {
+            "cart": [
+                {
+                    "cart_item_id": "23910",
+                    "product_id": "232911",
+                    "product_sku": "test-product-#BB3467-0-3M",
+                    "stock_status": true,
+                    "product_name": "Test Product",
+                    "product_type": "configurable",
+                    "product_regular_price": 200,
+                    "product_price": 200,
+                    "discount_percentage": 0,
+                    "brand": " ",
+                    "product_image": "http://3.1.117.187/media/catalog/product/cache/1/image/600x600/9df78eab33525d08d6e5fb8d27136e95/images/catalog/product/placeholder/image.jpg",
+                    "product_qty": 1,
+                    "product_max_qty": 0,
+                    "options": [
+                        {
+                            "id": "Color",
+                            "options": [
+                                {
+                                    "option_id": "41",
+                                    "option_value": "#BB3467",
+                                    "option_price": 0,
+                                    "option_title": "Color",
+                                    "position": "0",
+                                    "option_type_id": "93",
+                                    "option_type": "single",
+                                    "is_required": "YES",
+                                    "dependence_option_ids": [
+                                        "232912",
+                                        "232913"
+                                    ],
+                                    "dependence_options": [
+                                        {
+                                            "id": 1202,
+                                            "stock_status": true
+                                        },
+                                        {
+                                            "id": 1204,
+                                            "stock_status": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "option_id": "40",
+                                    "option_value": "#BB3499",
+                                    "option_price": 0,
+                                    "option_title": "Color",
+                                    "position": "0",
+                                    "option_type_id": "93",
+                                    "option_type": "single",
+                                    "is_required": "YES",
+                                    "dependence_option_ids": [
+                                        "232914"
+                                    ],
+                                    "dependence_options": [
+                                        {
+                                            "id": 1202,
+                                            "stock_status": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "Size",
+                            "options": [
+                                {
+                                    "option_id": "1202",
+                                    "option_value": "0-3M",
+                                    "option_price": 0,
+                                    "option_title": "Size",
+                                    "position": "0",
+                                    "option_type_id": "160",
+                                    "option_type": "single",
+                                    "is_required": "YES",
+                                    "dependence_option_ids": [
+                                        "232912",
+                                        "232914"
+                                    ],
+                                    "dependence_options": [
+                                        {
+                                            "id": 41,
+                                            "stock_status": true
+                                        },
+                                        {
+                                            "id": 40,
+                                            "stock_status": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "option_id": "1204",
+                                    "option_value": "0-6M",
+                                    "option_price": 0,
+                                    "option_title": "Size",
+                                    "position": "0",
+                                    "option_type_id": "160",
+                                    "option_type": "single",
+                                    "is_required": "YES",
+                                    "dependence_option_ids": [
+                                        "232913"
+                                    ],
+                                    "dependence_options": [
+                                        {
+                                            "id": 41,
+                                            "stock_status": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "selected_options": [
+                        {
+                            "id": "Color",
+                            "options": [
+                                {
+                                    "option_id": "41",
+                                    "option_value": "#BB3467",
+                                    "option_price": 0,
+                                    "option_title": "Color",
+                                    "position": "0",
+                                    "option_type_id": "93",
+                                    "option_type": "single",
+                                    "is_required": "YES",
+                                    "dependence_option_ids": [
+                                        "232912",
+                                        "232913"
+                                    ],
+                                    "dependence_options": [
+                                        {
+                                            "id": 1202,
+                                            "stock_status": true
+                                        },
+                                        {
+                                            "id": 1204,
+                                            "stock_status": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "Size",
+                            "options": [
+                                {
+                                    "option_id": "1202",
+                                    "option_value": "0-3M",
+                                    "option_price": 0,
+                                    "option_title": "Size",
+                                    "position": "0",
+                                    "option_type_id": "160",
+                                    "option_type": "single",
+                                    "is_required": "YES",
+                                    "dependence_option_ids": [
+                                        "232912",
+                                        "232914"
+                                    ],
+                                    "dependence_options": [
+                                        {
+                                            "id": 41,
+                                            "stock_status": true
+                                        },
+                                        {
+                                            "id": 40,
+                                            "stock_status": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "is_gift": false
+                }
+            ],
+            "gift_rules_id": "",
+            "fee": {
+                "discount": 0,
+                "discount_percentage": "0%",
+                "grand_total": 200,
+                "sub_total": 200,
+                "sub_total_after_discount": 200,
+                "subtotal_after_discount": 200,
+                "shipping_hand": 0,
+                "cod_fee": 0,
+                "tax": 0,
+                "coupon_code": "",
+                "is_coupon_applied": false
+            },
+            "items_in_cart": 1,
+            "discount": 0,
+            "discount_percentage": "0%",
+            "coupon_code": "",
+            "is_coupon_applied": false,
+            "subtotal": 200,
+            "subtotal_after_discount": 200,
+            "sub_total_after_discount": 200,
+            "cod_fee": 0,
+            "shipping_hand": 0,
+            "tax": 0,
+            "grand_total": 200
+        }
+    }
+```
+
+##Get Cart
+
+This Api is used to get the list of cart products.
+If product is out of stock then product moved to wishlist.
+
+###Request
+<code class="post">GET</code>
+<span class="prettyprint">{Base URL}/connector/customer/get_cartV2</span>
+
+> Definition
+
+```
+{Base URL}/connector/customer/get_cartV2
+```
+
+>Response
+
+```
+{
+    "status": "SUCCESS",
+    "message": [
+        "SUCCESS"
+    ],
+    "data": {
+        "cart": [
+            {
+                "cart_item_id": "23910",
+                "product_id": "232911",
+                "product_sku": "test-product-#BB3467-0-3M",
+                "product_max_qty": 0,
+                "stock_status": true,
+                "product_name": "Test Product",
+                "product_type": "",
+                "product_regular_price": 200,
+                "product_price": 200,
+                "discount_percentage": 0,
+                "brand": " ",
+                "product_image": "http://3.1.117.187/media/catalog/product/cache/1/small_image/600x600/040ec09b1e35df139433887a97daa66f/images/catalog/product/placeholder/small_image.jpg",
+                "product_qty": 1,
+                "options": [
+                    {
+                        "id": "Color",
+                        "options": [
+                            {
+                                "option_id": "41",
+                                "option_value": "#BB3467",
+                                "option_price": 0,
+                                "option_title": "Color",
+                                "position": "0",
+                                "option_type_id": "93",
+                                "option_type": "single",
+                                "is_required": "YES",
+                                "dependence_option_ids": [
+                                    "232912",
+                                    "232913"
+                                ],
+                                "dependence_options": [
+                                    {
+                                        "id": 1202,
+                                        "stock_status": true
+                                    },
+                                    {
+                                        "id": 1204,
+                                        "stock_status": true
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "Size",
+                        "options": [
+                            {
+                                "option_id": "1202",
+                                "option_value": "0-3M",
+                                "option_price": 0,
+                                "option_title": "Size",
+                                "position": "0",
+                                "option_type_id": "160",
+                                "option_type": "single",
+                                "is_required": "YES",
+                                "dependence_option_ids": [
+                                    "232912",
+                                    "232914"
+                                ],
+                                "dependence_options": [
+                                    {
+                                        "id": 41,
+                                        "stock_status": true
+                                    },
+                                    {
+                                        "id": 40,
+                                        "stock_status": true
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "items_in_cart": 1,
+        "subtotal": 200,
+        "tax": 0,
+        "grand_total": 400
+    }
+}
+```
+
+##Get Order Config
+
+This api is used to get all order configuration settings like payment method, shipping method, order line items etc.
+
+###Request
+
+<code class="post">POST</code>
+<span class="prettyprint">{Base URL}/connector/checkout/get_order_configV2</span>
+
+> Definition
+
+```
+{Base URL}/connector/checkout/get_order_configV2
+```
+
+>Request Body
+
+
+```php
+$request->setBody('{
+  "customer_email":"test.ios@test.com",
+  "billingAddress":{
+      "name":"Test Test",
+      "company":"SW",
+      "street":"Test Street",
+      "city":"Riyadh",
+      "zip":"12222",
+      "country_code":"SA",
+      "phone":"4512000339"
+    },
+  "shippingAddress":{
+      "prefix":"Mrs",
+      "name":"Test Test",
+      "company":"SW",
+      "street":"Test Street",
+      "city":"Riyadh",
+      "zip":"12222",
+      "country_code":"SA",
+      "email":"test.ios@test.com",
+      "phone":"4512000339"
+    }
+}');
+```
+
+```curl
+    -d '{
+      "customer_email":"test.ios@test.com",
+      "billingAddress":{
+          "name":"Test Test",
+          "company":"SW",
+          "street":"Test Street",
+          "city":"Riyadh",
+          "zip":"12222",
+          "country_code":"SA",
+          "phone":"4512000339"
+        },
+      "shippingAddress":{
+          "prefix":"Mrs",
+          "name":"Test Test",
+          "company":"SW",
+          "street":"Test Street",
+          "city":"Riyadh",
+          "zip":"12222",
+          "country_code":"SA",
+          "email":"test.ios@test.com",
+          "phone":"4512000339"
+        }
+    }'
+```
+
+>Response
+
+```
+{
+    "status": "SUCCESS",
+    "message": [
+        "Save Success"
+    ],
+    "data": [
+        {
+            "fee": {
+                "sub_total": 200,
+                "discount_percentage": "0%",
+                "grand_total": 200,
+                "subtotal_after_discount": 200,
+                "sub_total_after_discount": 200,
+                "discount": 0,
+                "tax": 0,
+                "coupon_code": "",
+                "is_coupon_applied": false,
+                "shipping_hand": 0,
+                "cod_fee": 0,
+                "v2": {
+                    "subtotal": 200,
+                    "grand_total_excl_tax": 200,
+                    "grand_total_incl_tax": 200
+                }
+            },
+            "payment_method_list": [
+                {
+                    "content": "",
+                    "payment_method": "cashondelivery",
+                    "title": "Cash On Delivery",
+                    "show_type": 0,
+                    "short_description": "",
+                    "description": "",
+                    "icon_payment": "http://3.1.117.187//focus/payment_icons/cod.png"
+                }
+            ],
+            "shipping_method_list": [
+                {
+                    "s_method_id": "18170",
+                    "s_method_code": "flatrate_flatrate",
+                    "s_method_title": "Flat Rate",
+                    "s_method_fee": 0,
+                    "s_method_name": "Fixed",
+                    "s_method_selected": true
+                }
+            ],
+            "order_line_items": [
+                {
+                    "product_id": "232911",
+                    "stock_status": true,
+                    "product_name": "Test Product",
+                    "product_regular_price": 200,
+                    "product_price": 200,
+                    "product_image": "http://3.1.117.187/media/catalog/product/cache/1/small_image/600x600/040ec09b1e35df139433887a97daa66f/images/catalog/product/placeholder/small_image.jpg",
+                    "product_qty": 1,
+                    "brand": "",
+                    "selected_options": [
+                        {
+                            "id": "Color",
+                            "options": [
+                                {
+                                    "option_id": "41",
+                                    "option_value": "#BB3467",
+                                    "option_price": 0,
+                                    "option_title": "Color",
+                                    "position": "0",
+                                    "option_type_id": "93",
+                                    "option_type": "single",
+                                    "is_required": "YES",
+                                    "dependence_option_ids": [
+                                        "232912",
+                                        "232913"
+                                    ],
+                                    "dependence_options": [
+                                        {
+                                            "id": 1202,
+                                            "stock_status": true
+                                        },
+                                        {
+                                            "id": 1204,
+                                            "stock_status": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "Size",
+                            "options": [
+                                {
+                                    "option_id": "1202",
+                                    "option_value": "0-3M",
+                                    "option_price": 0,
+                                    "option_title": "Size",
+                                    "position": "0",
+                                    "option_type_id": "160",
+                                    "option_type": "single",
+                                    "is_required": "YES",
+                                    "dependence_option_ids": [
+                                        "232912",
+                                        "232914"
+                                    ],
+                                    "dependence_options": [
+                                        {
+                                            "id": 41,
+                                            "stock_status": true
+                                        },
+                                        {
+                                            "id": 40,
+                                            "stock_status": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "gifting_items": [],
+            "payment_info": [],
+            "contact_config": {
+                "email": "support@mail.com",
+                "contact_phone": "+971 55 6411590",
+                "whatsapp_contact_phone": "+971 55 6411590",
+                "contact_message": "No Message is found"
+            }
+        }
+    ]
+}
+```
+
+
+###Request Parameters
+
+Parameter | DataType | Length | Required | Description
+--------- | -------- | ------ | -------- | -----------
+customer_email | String | 100 | Mandatory | Set customer email address
+billingAddress | String | 255 | Mandatory | Set billing Address json array
+shippingAddress | String | 255 | Mandatory | Set Shipping Address json array
+prefix | String | 10 | Mandatory | Set name prefix like **Mr.** , **Mrs**, **Miss**
+name | String | 20 | Mandatory | Name of customer
+company | String | 50 | Optional | Set company name if company address
+street | String | 100 | Mandatory | Set street address
+city | String | 30 | Mandatory | Set city name
+zip | Int | 10 | Mandatory | Set pin/zip code 
+country_code | String | 10 | Mandatory | Set country short code
+email | String | 255 | Mandatory | Set customer billing/shipping email address
+phone | Number | 10 | Mandatory | Set 10 digit phone number like **1234567890**
+
 
 
 
